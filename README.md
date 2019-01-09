@@ -1,5 +1,7 @@
 # LCTableView
 
+一个摆脱代理方法的TableView。
+
 [![CI Status](https://img.shields.io/travis/LuckyCat7848/LCTableView.svg?style=flat)](https://travis-ci.org/LuckyCat7848/LCTableView)
 [![Version](https://img.shields.io/cocoapods/v/LCTableView.svg?style=flat)](https://cocoapods.org/pods/LCTableView)
 [![License](https://img.shields.io/cocoapods/l/LCTableView.svg?style=flat)](https://cocoapods.org/pods/LCTableView)
