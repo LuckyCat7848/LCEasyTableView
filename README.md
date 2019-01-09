@@ -24,7 +24,7 @@ pod 'LCTableView'
 
 ## Author
 
-LuckyCat7848, yaqiong.zhang@1hai.cn
+LuckyCat7848,
 
 ## License
 

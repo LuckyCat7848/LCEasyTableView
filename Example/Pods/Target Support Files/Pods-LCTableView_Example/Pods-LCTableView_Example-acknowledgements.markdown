@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## LCTableView
 
-Copyright (c) 2019 LuckyCat7848 <yaqiong.zhang@1hai.cn>
+Copyright (c) 2019 LuckyCat7848 
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
