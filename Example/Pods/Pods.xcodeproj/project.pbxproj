@@ -1,0 +1,743 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B58FDD8AF4C2DC54BD1294C5C837D7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		21320D72414DBA0639FBBEEFE8B2EB52 /* Pods-LCTableView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FFD3F63FD54CCD4F75C107F8138E5487 /* Pods-LCTableView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		274B5FA7D870D867CE44E82326282E37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		3A3B4A9AF7E871AD6D6D9D59FFB9DEA3 /* Pods-LCTableView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 28F6AFC5D15E9F21B37A8B079DB08B56 /* Pods-LCTableView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6E278489330CF3BC710D2AF3F77C838C /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A45794B68382FD5350017BAF5FD074 /* ReplaceMe.m */; };
+		7AF7E6BE0D2CBC3F58C0EEB2E30B1801 /* LCTableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 46DB1059F28D17B095B19775CB9433C3 /* LCTableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7EE07BDF632745614D978709EFC0F758 /* LCTableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92DBF7254AEA1CF0AC171E566D131BDB /* LCTableView-dummy.m */; };
+		9049D0DD5408E232BECA9D63B5585F36 /* Pods-LCTableView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB77C33D6150F8DEBDB695EFFAD73EA /* Pods-LCTableView_Example-dummy.m */; };
+		B74FD2C47AAF348778558DD858C2B38C /* Pods-LCTableView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3E3D9373DC912CDBD5C7EB9F12CCC3 /* Pods-LCTableView_Tests-dummy.m */; };
+		EA57AC7936917CA99C6D2394F1AACC6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A977B6D60F9A99307B14C7FB6530D673 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E8B57EFE21256918582774D6EC8F67C2;
+			remoteInfo = "Pods-LCTableView_Example";
+		};
+		CD2BD980030D08AAAC4B99645451C49B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CB215E128FE6C3F3FAD65150D0BA26E;
+			remoteInfo = LCTableView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		094ECE12805DBB8AC741B2233C37B320 /* LCTableView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LCTableView-prefix.pch"; sourceTree = "<group>"; };
+		0FB45644F3CEB809ABB221D4CA55150A /* Pods-LCTableView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LCTableView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		1976D9F3701D4F58BF9C88699C279358 /* LCTableView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LCTableView.modulemap; sourceTree = "<group>"; };
+		28F6AFC5D15E9F21B37A8B079DB08B56 /* Pods-LCTableView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LCTableView_Example-umbrella.h"; sourceTree = "<group>"; };
+		39BD106362435D17AED0CA0E857599FE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B980D5AE6333A5663C77056CC2A7ACC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CD6803FA8E4244733020DF85546980D /* Pods-LCTableView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LCTableView_Example-frameworks.sh"; sourceTree = "<group>"; };
+		3E9E5CA261B37C7733BCBB00820B0915 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		431DB1874C84970FC9FCFB808A721F1D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		4511DA22A1DC5CF7960F53161BD37687 /* Pods-LCTableView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LCTableView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		46DB1059F28D17B095B19775CB9433C3 /* LCTableView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LCTableView-umbrella.h"; sourceTree = "<group>"; };
+		5492C8DC27DE510E663D7BA8DB6B5036 /* Pods-LCTableView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LCTableView_Tests-resources.sh"; sourceTree = "<group>"; };
+		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		69EC28173666C119869B090583E15EAE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		6EA7254AC8B9EAE53EC573399759B2DD /* Pods_LCTableView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LCTableView_Tests.framework; path = "Pods-LCTableView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ECD598D13442F1107BBDFD1CD1CB223 /* Pods-LCTableView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LCTableView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		8035649184535070DAFD6C0D3AB0A4F6 /* Pods-LCTableView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LCTableView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		8FC2BC2E809E6CA38B05A468F3CB9815 /* Pods-LCTableView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LCTableView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		92DBF7254AEA1CF0AC171E566D131BDB /* LCTableView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LCTableView-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9AB77C33D6150F8DEBDB695EFFAD73EA /* Pods-LCTableView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LCTableView_Example-dummy.m"; sourceTree = "<group>"; };
+		A6A6F13EF758B39D22CEC045DF7AEC1E /* Pods-LCTableView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LCTableView_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		AC349B91B9D0222E510C7BC93510EA7F /* LCTableView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = LCTableView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B5B0B4C5C79386E8D44730B15275486B /* Pods-LCTableView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LCTableView_Example.modulemap"; sourceTree = "<group>"; };
+		B9EA0BAF8C19D767B3B694780B8C24B9 /* LCTableView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LCTableView.xcconfig; sourceTree = "<group>"; };
+		BD568302E4F0056C2E09EF1B001CB86B /* LCTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LCTableView.framework; path = LCTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD66B168CF6055352504DB04D017213A /* Pods_LCTableView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LCTableView_Example.framework; path = "Pods-LCTableView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C22637E8ED98465CF8B5AA663BCBB7C9 /* Pods-LCTableView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LCTableView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D46891AE857A7637786071C01C826DA9 /* Pods-LCTableView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LCTableView_Tests.modulemap"; sourceTree = "<group>"; };
+		D9C503DF01C585FC62D33567DD80D95E /* Pods-LCTableView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LCTableView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		E0B2AD3171E58B0C076308493E00953C /* Pods-LCTableView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LCTableView_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		E40AA10E115AEBE20EB77FB8C588D25A /* Pods-LCTableView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LCTableView_Example-resources.sh"; sourceTree = "<group>"; };
+		E8A45794B68382FD5350017BAF5FD074 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = ReplaceMe.m; path = LCTableView/Classes/ReplaceMe.m; sourceTree = "<group>"; };
+		FB3E3D9373DC912CDBD5C7EB9F12CCC3 /* Pods-LCTableView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LCTableView_Tests-dummy.m"; sourceTree = "<group>"; };
+		FFD3F63FD54CCD4F75C107F8138E5487 /* Pods-LCTableView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LCTableView_Tests-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		241E4E324B9D95AD42326BFDFD5621D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				274B5FA7D870D867CE44E82326282E37 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BDA73FFDAAB761C1125B28DC0961904C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA57AC7936917CA99C6D2394F1AACC6B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5E7F032EC8B44E14A5791888F713630 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B58FDD8AF4C2DC54BD1294C5C837D7F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1CF4E317BE2EE061F2E1E89E0E833274 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3E9E5CA261B37C7733BCBB00820B0915 /* Info.plist */,
+				1976D9F3701D4F58BF9C88699C279358 /* LCTableView.modulemap */,
+				B9EA0BAF8C19D767B3B694780B8C24B9 /* LCTableView.xcconfig */,
+				92DBF7254AEA1CF0AC171E566D131BDB /* LCTableView-dummy.m */,
+				094ECE12805DBB8AC741B2233C37B320 /* LCTableView-prefix.pch */,
+				46DB1059F28D17B095B19775CB9433C3 /* LCTableView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/LCTableView";
+			sourceTree = "<group>";
+		};
+		218B9B0E2DC1C0370268BDF2E6B29791 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AC0F60222F23482D763D6BDCCA52989 /* Pods-LCTableView_Example */,
+				276DF4D329CCFD85C81E885EDA3DF40B /* Pods-LCTableView_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		276DF4D329CCFD85C81E885EDA3DF40B /* Pods-LCTableView_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				39BD106362435D17AED0CA0E857599FE /* Info.plist */,
+				D46891AE857A7637786071C01C826DA9 /* Pods-LCTableView_Tests.modulemap */,
+				4511DA22A1DC5CF7960F53161BD37687 /* Pods-LCTableView_Tests-acknowledgements.markdown */,
+				0FB45644F3CEB809ABB221D4CA55150A /* Pods-LCTableView_Tests-acknowledgements.plist */,
+				FB3E3D9373DC912CDBD5C7EB9F12CCC3 /* Pods-LCTableView_Tests-dummy.m */,
+				E0B2AD3171E58B0C076308493E00953C /* Pods-LCTableView_Tests-frameworks.sh */,
+				5492C8DC27DE510E663D7BA8DB6B5036 /* Pods-LCTableView_Tests-resources.sh */,
+				FFD3F63FD54CCD4F75C107F8138E5487 /* Pods-LCTableView_Tests-umbrella.h */,
+				D9C503DF01C585FC62D33567DD80D95E /* Pods-LCTableView_Tests.debug.xcconfig */,
+				A6A6F13EF758B39D22CEC045DF7AEC1E /* Pods-LCTableView_Tests.release.xcconfig */,
+			);
+			name = "Pods-LCTableView_Tests";
+			path = "Target Support Files/Pods-LCTableView_Tests";
+			sourceTree = "<group>";
+		};
+		302D8AABAA8694F4138B9A21FD4739E2 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				AC349B91B9D0222E510C7BC93510EA7F /* LCTableView.podspec */,
+				431DB1874C84970FC9FCFB808A721F1D /* LICENSE */,
+				69EC28173666C119869B090583E15EAE /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		3AC0F60222F23482D763D6BDCCA52989 /* Pods-LCTableView_Example */ = {
+			isa = PBXGroup;
+			children = (
+				3B980D5AE6333A5663C77056CC2A7ACC /* Info.plist */,
+				B5B0B4C5C79386E8D44730B15275486B /* Pods-LCTableView_Example.modulemap */,
+				8FC2BC2E809E6CA38B05A468F3CB9815 /* Pods-LCTableView_Example-acknowledgements.markdown */,
+				8035649184535070DAFD6C0D3AB0A4F6 /* Pods-LCTableView_Example-acknowledgements.plist */,
+				9AB77C33D6150F8DEBDB695EFFAD73EA /* Pods-LCTableView_Example-dummy.m */,
+				3CD6803FA8E4244733020DF85546980D /* Pods-LCTableView_Example-frameworks.sh */,
+				E40AA10E115AEBE20EB77FB8C588D25A /* Pods-LCTableView_Example-resources.sh */,
+				28F6AFC5D15E9F21B37A8B079DB08B56 /* Pods-LCTableView_Example-umbrella.h */,
+				C22637E8ED98465CF8B5AA663BCBB7C9 /* Pods-LCTableView_Example.debug.xcconfig */,
+				6ECD598D13442F1107BBDFD1CD1CB223 /* Pods-LCTableView_Example.release.xcconfig */,
+			);
+			name = "Pods-LCTableView_Example";
+			path = "Target Support Files/Pods-LCTableView_Example";
+			sourceTree = "<group>";
+		};
+		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		69C47ACC9FCC9E8696CA73E5DEC38EF3 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A463C5253BB9975AF0FABD724422A99D /* LCTableView */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				69C47ACC9FCC9E8696CA73E5DEC38EF3 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				BA751B4362A402A9B7C43780E8EAD19E /* Products */,
+				218B9B0E2DC1C0370268BDF2E6B29791 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A463C5253BB9975AF0FABD724422A99D /* LCTableView */ = {
+			isa = PBXGroup;
+			children = (
+				E8A45794B68382FD5350017BAF5FD074 /* ReplaceMe.m */,
+				302D8AABAA8694F4138B9A21FD4739E2 /* Pod */,
+				1CF4E317BE2EE061F2E1E89E0E833274 /* Support Files */,
+			);
+			name = LCTableView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		BA751B4362A402A9B7C43780E8EAD19E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD568302E4F0056C2E09EF1B001CB86B /* LCTableView.framework */,
+				BD66B168CF6055352504DB04D017213A /* Pods_LCTableView_Example.framework */,
+				6EA7254AC8B9EAE53EC573399759B2DD /* Pods_LCTableView_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E0D919E635D23B70123790B8308F8EF /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		9AE81A09501C5A11335405CB499090A8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AF7E6BE0D2CBC3F58C0EEB2E30B1801 /* LCTableView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A55EA2DA30812F386A136C4ADA071710 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21320D72414DBA0639FBBEEFE8B2EB52 /* Pods-LCTableView_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6AAFC280FB722FB41678053D4B1A933 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A3B4A9AF7E871AD6D6D9D59FFB9DEA3 /* Pods-LCTableView_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8CB215E128FE6C3F3FAD65150D0BA26E /* LCTableView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE88BD55702B30BA7A00D798ECF55595 /* Build configuration list for PBXNativeTarget "LCTableView" */;
+			buildPhases = (
+				8EEFC3FA259BC1B24827ED01CF4BA569 /* Sources */,
+				241E4E324B9D95AD42326BFDFD5621D6 /* Frameworks */,
+				9AE81A09501C5A11335405CB499090A8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LCTableView;
+			productName = LCTableView;
+			productReference = BD568302E4F0056C2E09EF1B001CB86B /* LCTableView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D00AEF1FD020408234D71DC9225112D5 /* Pods-LCTableView_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 179B22E0D76CC076968FBE9E68B18C79 /* Build configuration list for PBXNativeTarget "Pods-LCTableView_Tests" */;
+			buildPhases = (
+				AA5A0563BE30A86E437AC32F42AE43BA /* Sources */,
+				BDA73FFDAAB761C1125B28DC0961904C /* Frameworks */,
+				A55EA2DA30812F386A136C4ADA071710 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7F7569242F2312CC0C0ACB120378CF77 /* PBXTargetDependency */,
+			);
+			name = "Pods-LCTableView_Tests";
+			productName = "Pods-LCTableView_Tests";
+			productReference = 6EA7254AC8B9EAE53EC573399759B2DD /* Pods_LCTableView_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E8B57EFE21256918582774D6EC8F67C2 /* Pods-LCTableView_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16896FB14D26953E95EAB7FB84C6793F /* Build configuration list for PBXNativeTarget "Pods-LCTableView_Example" */;
+			buildPhases = (
+				F9EDDD4AB578139547F96977B5B9836B /* Sources */,
+				E5E7F032EC8B44E14A5791888F713630 /* Frameworks */,
+				C6AAFC280FB722FB41678053D4B1A933 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2C76ACC27C216EB17538111F74E2B07 /* PBXTargetDependency */,
+			);
+			name = "Pods-LCTableView_Example";
+			productName = "Pods-LCTableView_Example";
+			productReference = BD66B168CF6055352504DB04D017213A /* Pods_LCTableView_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = BA751B4362A402A9B7C43780E8EAD19E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CB215E128FE6C3F3FAD65150D0BA26E /* LCTableView */,
+				E8B57EFE21256918582774D6EC8F67C2 /* Pods-LCTableView_Example */,
+				D00AEF1FD020408234D71DC9225112D5 /* Pods-LCTableView_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8EEFC3FA259BC1B24827ED01CF4BA569 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EE07BDF632745614D978709EFC0F758 /* LCTableView-dummy.m in Sources */,
+				6E278489330CF3BC710D2AF3F77C838C /* ReplaceMe.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA5A0563BE30A86E437AC32F42AE43BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B74FD2C47AAF348778558DD858C2B38C /* Pods-LCTableView_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9EDDD4AB578139547F96977B5B9836B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9049D0DD5408E232BECA9D63B5585F36 /* Pods-LCTableView_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7F7569242F2312CC0C0ACB120378CF77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-LCTableView_Example";
+			target = E8B57EFE21256918582774D6EC8F67C2 /* Pods-LCTableView_Example */;
+			targetProxy = A977B6D60F9A99307B14C7FB6530D673 /* PBXContainerItemProxy */;
+		};
+		D2C76ACC27C216EB17538111F74E2B07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LCTableView;
+			target = 8CB215E128FE6C3F3FAD65150D0BA26E /* LCTableView */;
+			targetProxy = CD2BD980030D08AAAC4B99645451C49B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0D06908ADD80A26222D4B93B63E09A23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9EA0BAF8C19D767B3B694780B8C24B9 /* LCTableView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LCTableView/LCTableView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LCTableView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LCTableView/LCTableView.modulemap";
+				PRODUCT_MODULE_NAME = LCTableView;
+				PRODUCT_NAME = LCTableView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1EE19F5DD95931924296F637BF18BD8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		ABD526AA963A904E7A5B058550FCECDB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6ECD598D13442F1107BBDFD1CD1CB223 /* Pods-LCTableView_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LCTableView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LCTableView_Example/Pods-LCTableView_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C97B03D45ADA1F0C57802892CC542A4C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9EA0BAF8C19D767B3B694780B8C24B9 /* LCTableView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LCTableView/LCTableView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LCTableView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LCTableView/LCTableView.modulemap";
+				PRODUCT_MODULE_NAME = LCTableView;
+				PRODUCT_NAME = LCTableView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CBC5F7B270BEF03B81C36EE8808FC7B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C22637E8ED98465CF8B5AA663BCBB7C9 /* Pods-LCTableView_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LCTableView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LCTableView_Example/Pods-LCTableView_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EE6F870D4263D00A3C4528825A16FD9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6A6F13EF758B39D22CEC045DF7AEC1E /* Pods-LCTableView_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LCTableView_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LCTableView_Tests/Pods-LCTableView_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F4568DEE257655D290C2B9CEAB37C934 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		F79CFBF59BC81478813FAED764F44A49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9C503DF01C585FC62D33567DD80D95E /* Pods-LCTableView_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LCTableView_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LCTableView_Tests/Pods-LCTableView_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16896FB14D26953E95EAB7FB84C6793F /* Build configuration list for PBXNativeTarget "Pods-LCTableView_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBC5F7B270BEF03B81C36EE8808FC7B7 /* Debug */,
+				ABD526AA963A904E7A5B058550FCECDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		179B22E0D76CC076968FBE9E68B18C79 /* Build configuration list for PBXNativeTarget "Pods-LCTableView_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F79CFBF59BC81478813FAED764F44A49 /* Debug */,
+				EE6F870D4263D00A3C4528825A16FD9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EE19F5DD95931924296F637BF18BD8F /* Debug */,
+				F4568DEE257655D290C2B9CEAB37C934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE88BD55702B30BA7A00D798ECF55595 /* Build configuration list for PBXNativeTarget "LCTableView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C97B03D45ADA1F0C57802892CC542A4C /* Debug */,
+				0D06908ADD80A26222D4B93B63E09A23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

@@ -1,0 +1,6 @@
+framework module LCTableView {
+  umbrella header "LCTableView-umbrella.h"
+
+  export *
+  module * { export * }
+}

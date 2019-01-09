@@ -1,0 +1,16 @@
+PODS:
+  - LCTableView (0.1.0)
+
+DEPENDENCIES:
+  - LCTableView (from `../`)
+
+EXTERNAL SOURCES:
+  LCTableView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LCTableView: 22785626946554733b91bdc2fce48f9b31aefaa7
+
+PODFILE CHECKSUM: a0bc2c09bbf2a47877f553d139de534139bb6c4f
+
+COCOAPODS: 1.5.3

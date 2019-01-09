@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'LCTableView'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of LCTableView.'
+  s.summary          = '一个摆脱代理方法的TableView。'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -24,7 +24,7 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/LuckyCat7848/LCTableView'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'LuckyCat7848' => 'yaqiong.zhang@1hai.cn' }
+  s.author           = { 'LuckyCat7848' => '1451558949@qq.com' }
   s.source           = { :git => 'https://github.com/LuckyCat7848/LCTableView.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
