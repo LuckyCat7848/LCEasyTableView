@@ -1,7 +1,7 @@
 {
   "name": "LCTableView",
   "version": "0.1.0",
-  "summary": "A short description of LCTableView.",
+  "summary": "一个摆脱代理方法的TableView。",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/LuckyCat7848/LCTableView",
   "license": {
@@ -9,7 +9,7 @@
     "file": "LICENSE"
   },
   "authors": {
-    "LuckyCat7848": "yaqiong.zhang@1hai.cn"
+    "LuckyCat7848": ""
   },
   "source": {
     "git": "https://github.com/LuckyCat7848/LCTableView.git",
@@ -18,5 +18,10 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "LCTableView/Classes/**/*"
+  "source_files": "LCTableView/Classes/**/*",
+  "dependencies": {
+    "MJRefresh": [
+
+    ]
+  }
 }

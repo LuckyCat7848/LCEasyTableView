@@ -13,4 +13,9 @@
 #ifdef __OBJC__
     @import UIKit;
     @import Foundation;
+
+/** weak & strong */
+#define kLCWeakify(type)           __weak typeof(type) weak##type = type;
+#define kLCStrongify(_instance)    __strong typeof(weak##_instance) _instance = weak##_instance;
+
 #endif

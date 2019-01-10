@@ -10,6 +10,14 @@
 #endif
 #endif
 
+#import "EHICellViewModelProtocol.h"
+#import "EHITableView.h"
+#import "EHIActionCellViewModel.h"
+#import "EHILabelCellViewModel.h"
+#import "EHITextFieldCellViewModel.h"
+#import "EHIActionCell.h"
+#import "EHILabelCell.h"
+#import "EHITextFieldCell.h"
 
 FOUNDATION_EXPORT double LCTableViewVersionNumber;
 FOUNDATION_EXPORT const unsigned char LCTableViewVersionString[];

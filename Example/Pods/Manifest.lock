@@ -1,15 +1,22 @@
 PODS:
-  - LCTableView (0.1.0)
+  - LCTableView (0.1.0):
+    - MJRefresh
+  - MJRefresh (3.1.15.7)
 
 DEPENDENCIES:
   - LCTableView (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MJRefresh
 
 EXTERNAL SOURCES:
   LCTableView:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LCTableView: 22785626946554733b91bdc2fce48f9b31aefaa7
+  LCTableView: 41df2179e81c5a5069d053410c7033f1b980aeb9
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
 
 PODFILE CHECKSUM: a0bc2c09bbf2a47877f553d139de534139bb6c4f
 
