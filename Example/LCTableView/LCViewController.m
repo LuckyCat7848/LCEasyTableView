@@ -10,16 +10,15 @@
 #import "EHITableView.h"
 #import "EHIActionCellViewModel.h"
 
+#import "LCDataStyleSectionsViewController.h"
+#import "LCDataStyleAllViewController.h"
+#import "LCCellsViewController.h"
+
 @interface LCViewController ()<EHITableViewDelegate>
 
 @property (nonatomic, strong) EHITableView *tableView;
 
-/** 刷新控件：头部 */
-@property (nonatomic, strong) MJRefreshNormalHeader *refreshHeader;
-/** 刷新控件：底部 */
-@property (nonatomic, strong) MJRefreshBackNormalFooter *refreshFooter;
-
-@property (nonatomic, strong) NSMutableArray *dataArray;
+@property (nonatomic, copy) NSArray<NSDictionary *> *titleArray;
 
 @end
 
@@ -28,57 +27,32 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.refreshHeader = self.refreshHeader;
-    [self.refreshHeader beginRefreshing];
+    self.title = @"1个section,多个row";
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    [self configDatas];
 }
 
-#pragma mark - Method
-
-- (void)requestDataWithHeaderRefresh:(BOOL)isHeaderRefresh {
-    sleep(3);
-    
-    if (isHeaderRefresh) {
-        self.tableView.refreshFooter = self.refreshFooter; // 显示尾部
-    }
-    
-    // 数据
-    [self.dataArray addObjectsFromArray:[self getDatas]];
-    self.tableView.dataArray = self.dataArray;
-
-    // 结束刷新
-    [self.refreshHeader endRefreshing];
-    [self.refreshFooter endRefreshing];
-    if (self.dataArray.count == 3) {
-        [self.refreshFooter endRefreshingWithNoMoreData];
-    }
-}
-
-/** 获取数据 */
-- (NSArray *)getDatas {
+- (void)configDatas {
     NSMutableArray *dataArray = [NSMutableArray array];
-    for (NSUInteger i = 0; i < 1; i++) {
-        NSMutableArray *array = [NSMutableArray array];
-        for (NSUInteger j = 0; j < 3; j++) {
-            EHIActionCellViewModel *cellVM = [[EHIActionCellViewModel alloc] init];
-            cellVM.cellHeight = 44;
-            cellVM.textStr = [NSString stringWithFormat:@"actionCell %lu,%lu", (unsigned long)i, (unsigned long)j];
-            [array addObject:cellVM];
-        }
-        [dataArray addObject:array];
+    for (NSUInteger i = 0; i < self.titleArray.count; i++) {
+        NSDictionary *dic = self.titleArray[i];
+        
+        EHIActionCellViewModel *cellVM = [[EHIActionCellViewModel alloc] init];
+        cellVM.textStr = dic[@"title"];
+        [dataArray addObject:cellVM];
     }
-    return dataArray;
+    self.tableView.dataArray = dataArray;
 }
 
 #pragma mark - EHITableViewDelegate
 
-- (CGFloat)tableView:(EHITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 10;
-}
-
-- (UIView *)tableView:(EHITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *view = [[UIView alloc] init];
-    view.backgroundColor = [UIColor yellowColor];
-    return view;
+- (void)tableView:(EHITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath viewModel:(id)viewModel {
+    NSDictionary *dic = self.titleArray[indexPath.row];
+    
+    Class class = NSClassFromString(dic[@"class"]);
+    UIViewController *viewController = [[class alloc] init];
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 #pragma mark - Getter
@@ -86,12 +60,7 @@
 - (EHITableView *)tableView {
     if (!_tableView) {
         EHITableView *tableView = [[EHITableView alloc] initWithFrame:self.view.bounds];
-        tableView.dataType = EHITableViewDataTypeAll;
         tableView.delegate = self;
-        
-        UILabel *view = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
-        view.text = @"这是一个很随意的空页面";
-        tableView.noDataView = view;
         
         [self.view addSubview:tableView];
         _tableView = tableView;
@@ -99,41 +68,20 @@
     return _tableView;
 }
 
-- (NSMutableArray *)dataArray {
-    if (!_dataArray) {
-        _dataArray = [NSMutableArray array];
+- (NSArray<NSDictionary *> *)titleArray {
+    if (!_titleArray) {
+        _titleArray = @[
+                        @{@"title" : @"多个section,1个row（空页面+下拉刷新/上拉加载）",
+                          @"class" : NSStringFromClass([LCDataStyleSectionsViewController class])},
+                        
+                        @{@"title" : @"多个section,多个row",
+                          @"class" : NSStringFromClass([LCDataStyleSectionsViewController class])},
+                        
+                        @{@"title" : @"不同的cell显示",
+                          @"class" : NSStringFromClass([LCDataStyleSectionsViewController class])},
+                        ];
     }
-    return _dataArray;
-}
-
-- (MJRefreshNormalHeader *)refreshHeader {
-    if (!_refreshHeader) {
-        kLCWeakify(self)
-        MJRefreshNormalHeader *refreshHeader = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-            kLCStrongify(self)
-            [self.dataArray removeAllObjects];
-            self.tableView.dataArray = self.dataArray;
-
-            self.tableView.refreshFooter = nil; // 下拉刷新的时候不显示尾部刷新
-            [self requestDataWithHeaderRefresh:YES];
-        }];
-        refreshHeader.lastUpdatedTimeLabel.hidden = YES;
-        
-        _refreshHeader = refreshHeader;
-    }
-    return _refreshHeader;
-}
-
-- (MJRefreshBackNormalFooter *)refreshFooter {
-    if (!_refreshFooter) {
-        kLCWeakify(self)
-        MJRefreshBackNormalFooter *refreshFooter = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-            kLCStrongify(self)
-            [self requestDataWithHeaderRefresh:NO];
-        }];
-        _refreshFooter = refreshFooter;
-    }
-    return _refreshFooter;
+    return _titleArray;
 }
 
 - (void)didReceiveMemoryWarning {

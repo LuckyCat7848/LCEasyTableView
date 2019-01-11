@@ -21,7 +21,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        _dataType = EHITableViewDataTypeRow;
+        _dataStyle = EHITableViewDataStyleRows;
         _endDecelerateCount = 1;
     }
     return self;
@@ -45,8 +45,8 @@
 - (void)setDataArray:(NSArray *)dataArray {
     _dataArray = dataArray;
     
-    if (self.dataType == EHITableViewDataTypeAll && _dataArray.count) {
-        NSAssert([_dataArray[0] isKindOfClass:[NSArray class]], @"EHITableViewDataTypeAll数据为嵌套数组");
+    if (self.dataStyle == EHITableViewDataStyleAll && _dataArray.count) {
+        NSAssert([_dataArray[0] isKindOfClass:[NSArray class]], @"EHITableViewDataStyleAll数据为嵌套数组");
     }
     
     [self.mainTable reloadData];
@@ -68,14 +68,14 @@
 #pragma mark - UITableViewDelegate & UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    switch (self.dataType) {
-        case EHITableViewDataTypeRow:
+    switch (self.dataStyle) {
+        case EHITableViewDataStyleRows:
             return 1;
             break;
-        case EHITableViewDataTypeSection:
+        case EHITableViewDataStyleSections:
             return self.dataArray.count;
             break;
-        case EHITableViewDataTypeAll:
+        case EHITableViewDataStyleAll:
             return self.dataArray.count;
             break;
         default:
@@ -85,14 +85,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    switch (self.dataType) {
-        case EHITableViewDataTypeRow:
+    switch (self.dataStyle) {
+        case EHITableViewDataStyleRows:
             return self.dataArray.count;
             break;
-        case EHITableViewDataTypeSection:
+        case EHITableViewDataStyleSections:
             return 1;
             break;
-        case EHITableViewDataTypeAll:
+        case EHITableViewDataStyleAll:
             return [self.dataArray[section] count];
             break;
         default:
@@ -133,35 +133,55 @@
     if ([self.delegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)]) {
         return [self.delegate tableView:self heightForRowAtIndexPath:indexPath];
     }
-    if (self.cellClass) {
+
+    // MVVM
+    id object = [self cellViewModelWithIndexPath:indexPath];
+    if ([object conformsToProtocol:@protocol(EHICellViewModelProtocol)]) {
+        id<EHICellViewModelProtocol> cellViewModel = object;
+        return cellViewModel.cellHeight;
+    }
+
+    // Normal
+    if ([self.delegate respondsToSelector:@selector(tableView:cellClassForRowAtIndexPath:)]) {
         return tableView.rowHeight;
     }
-    id<EHICellViewModelProtocol> cellViewModel = [self cellViewModelWithIndexPath:indexPath];
-    return cellViewModel.cellHeight;
+    return UITableViewAutomaticDimension;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    Class cellClass = self.cellClass;
+    Class cellClass = [UITableViewCell class];
+    // 获取cellClass
     id object = [self cellViewModelWithIndexPath:indexPath];
-    if (!cellClass) {
+    if ([object conformsToProtocol:@protocol(EHICellViewModelProtocol)]) {
+        // MVVM
         id<EHICellViewModelProtocol> cellViewModel = object;
         cellClass = [cellViewModel.class cellClass];
+    
+    } else if ([self.delegate respondsToSelector:@selector(tableView:cellClassForRowAtIndexPath:)]) {
+        // Normal
+        cellClass = [self.delegate tableView:self cellClassForRowAtIndexPath:indexPath];
     }
+    
+    // 获取cell
     NSString *identifier = NSStringFromClass(cellClass);
-    id cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        if (self.isNibCell) {
+        NSString *nibPath = [[NSBundle mainBundle] pathForResource:identifier ofType:@"nib"];
+        if (nibPath) {
             cell = [[[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil] objectAtIndex:0];
         } else {
             cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
     }
-    if ([cell respondsToSelector:@selector(setViewModel:)]) {
+    if ([object conformsToProtocol:@protocol(EHICellViewModelProtocol)] && [cell respondsToSelector:@selector(setViewModel:)]) {
+        // 赋值：EHICellViewModel
         [cell performSelector:@selector(setViewModel:) withObject:object];
-    }
-    if ([cell respondsToSelector:@selector(setModel:)]) {
+
+    } else if ([cell respondsToSelector:@selector(setModel:)]) {
+        // 赋值：Model
         [cell performSelector:@selector(setModel:) withObject:object];
     }
+    // 赋值后特殊处理
     if ([self.delegate respondsToSelector:@selector(tableView:cellForRowAtIndexPath:tableViewCell:viewModel:)]) {
         [self.delegate tableView:self cellForRowAtIndexPath:indexPath tableViewCell:cell viewModel:object];
     }
@@ -183,14 +203,14 @@
 
 /** 根据数据类型和位置取数据 */
 - (id<EHICellViewModelProtocol>)cellViewModelWithIndexPath:(NSIndexPath *)indexPath {
-    switch (self.dataType) {
-        case EHITableViewDataTypeRow:
+    switch (self.dataStyle) {
+        case EHITableViewDataStyleRows:
             return self.dataArray[indexPath.row];
             break;
-        case EHITableViewDataTypeSection:
+        case EHITableViewDataStyleSections:
             return self.dataArray[indexPath.section];
             break;
-        case EHITableViewDataTypeAll:
+        case EHITableViewDataStyleAll:
             return self.dataArray[indexPath.section][indexPath.row];
             break;
         default:
@@ -250,8 +270,8 @@
         tableView.delegate = self;
         tableView.backgroundColor = [UIColor clearColor];
         tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-        tableView.showsVerticalScrollIndicator = YES;
-        
+        tableView.rowHeight = UITableViewAutomaticDimension;
+
         tableView.tableFooterView = [[UIView alloc] init];
 
         _mainTable = tableView;

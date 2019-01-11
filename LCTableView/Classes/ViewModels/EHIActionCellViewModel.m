@@ -16,7 +16,7 @@ SetCellClass(EHIActionCell);
     self = [super init];
     if (self) {
         // 默认设置
-//        _cellHeight = autoHeightOf6(37);
+        _cellHeight = 44;
 //        _textLeft = autoWidthOf6(16);
 //
 //        _textColor = HEXCOLOR_29B7B7;

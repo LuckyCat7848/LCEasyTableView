@@ -10,11 +10,11 @@
 #import "EHICellViewModelProtocol.h"
 #import "MJRefresh.h"
 
-/** 数据格式类型 */
-typedef NS_ENUM(NSInteger, EHITableViewDataType) {
-    EHITableViewDataTypeRow,    /// 默认:1个section,多个row
-    EHITableViewDataTypeSection,/// 多个section,1个row
-    EHITableViewDataTypeAll,    /// 多个section,多个row（数据为嵌套数组）
+/** 数据格式样式 */
+typedef NS_ENUM(NSInteger, EHITableViewDataStyle) {
+    EHITableViewDataStyleRows,    /// 默认:1个section,多个row
+    EHITableViewDataStyleSections,/// 多个section,1个row
+    EHITableViewDataStyleAll,    /// 多个section,多个row（数据为嵌套数组）
 };
 
 @class EHITableView;
@@ -31,6 +31,9 @@ typedef NS_ENUM(NSInteger, EHITableViewDataType) {
 - (CGFloat)tableView:(EHITableView *)tableView heightForFooterInSection:(NSInteger)section;
 - (UIView *)tableView:(EHITableView *)tableView viewForFooterInSection:(NSInteger)section;
 
+/** cellClasslass */
+- (Class)tableView:(EHITableView *)tableView cellClassForRowAtIndexPath:(NSIndexPath *)indexPath;
+
 /** cell */
 - (CGFloat)tableView:(EHITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)tableView:(EHITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath tableViewCell:(UITableViewCell *)tableViewCell viewModel:(id)viewModel;
@@ -44,7 +47,7 @@ typedef NS_ENUM(NSInteger, EHITableViewDataType) {
 @interface EHITableView : UIView
 
 /** 数据类型 */
-@property (nonatomic, assign) EHITableViewDataType dataType;
+@property (nonatomic, assign) EHITableViewDataStyle dataStyle;
 /** 代理 */
 @property (nonatomic, weak) id<EHITableViewDelegate> delegate;
 
@@ -56,14 +59,9 @@ typedef NS_ENUM(NSInteger, EHITableViewDataType) {
 @property (nonatomic, strong) UIView *noDataView;
 
 /**
- 数据(如果EHITableViewDataTypeAll,为嵌套数组)
+ 数据(如果EHITableViewDataStyleAll,为嵌套数组)
  */
 @property (nonatomic, copy) NSArray *dataArray;
-
-/** cell是否是xib */
-@property (nonatomic, assign) BOOL isNibCell;
-/** 如果不用ViewModel,可以设置cell的类 */
-@property (nonatomic, strong) Class cellClass;
 
 /** 用于处理减速 */
 @property (nonatomic, assign) NSUInteger endDecelerateCount;

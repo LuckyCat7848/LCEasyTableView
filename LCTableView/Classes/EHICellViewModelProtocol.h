@@ -9,15 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#define EHIClass(_name_) NSClassFromString(((__bridge NSString *)CFSTR(#_name_)))
-
+#define LCClass(_name_) NSClassFromString(((__bridge NSString *)CFSTR(#_name_)))
 
 #define SetCellClass(className) \
 + (Class)cellClass {\
 static Class class;\
 static dispatch_once_t onceToken;\
 dispatch_once(&onceToken, ^{\
-class = EHIClass(className);\
+class = LCClass(className);\
 });\
 return class;\
 }\
@@ -27,7 +26,7 @@ return class;\
 static Class class;\
 static dispatch_once_t onceToken;\
 dispatch_once(&onceToken, ^{\
-class = EHIClass(className);\
+class = LCClass(className);\
 });\
 return class;\
 }\

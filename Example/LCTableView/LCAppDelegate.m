@@ -7,12 +7,17 @@
 //
 
 #import "LCAppDelegate.h"
+#import "LCViewController.h"
 
 @implementation LCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    LCViewController *viewController = [[LCViewController alloc] init];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    self.window.rootViewController = navController;
+    
     return YES;
 }
 

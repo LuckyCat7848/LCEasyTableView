@@ -31,6 +31,10 @@
 		990894B821E5E302009AC16B /* EHIActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894AD21E5E302009AC16B /* EHIActionCell.m */; };
 		990894B921E5E302009AC16B /* EHILabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894AF21E5E302009AC16B /* EHILabelCell.m */; };
 		990894BA21E5E302009AC16B /* EHITextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894B121E5E302009AC16B /* EHITextFieldCell.m */; };
+		990894C721E71BF9009AC16B /* LCDataStyleAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894C421E71BF9009AC16B /* LCDataStyleAllViewController.m */; };
+		990894C821E71BF9009AC16B /* LCDataStyleSectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894C621E71BF9009AC16B /* LCDataStyleSectionsViewController.m */; };
+		990894CC21E71EEC009AC16B /* LCCellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894CB21E71EEC009AC16B /* LCCellsViewController.m */; };
+		990894D121E72173009AC16B /* LCAnimalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894D021E72173009AC16B /* LCAnimalModel.m */; };
 		9F805060D4B3A214BC5CA826 /* Pods_LCTableView_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEF5C925B0CC0295BE2D076D /* Pods_LCTableView_Example.framework */; };
 		B2DE2CAA15A8305EAFC694FE /* Pods_LCTableView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C069C2DECE9D6340CA03DF1C /* Pods_LCTableView_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -89,6 +93,14 @@
 		990894AF21E5E302009AC16B /* EHILabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHILabelCell.m; sourceTree = "<group>"; };
 		990894B021E5E302009AC16B /* EHITextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHITextFieldCell.h; sourceTree = "<group>"; };
 		990894B121E5E302009AC16B /* EHITextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHITextFieldCell.m; sourceTree = "<group>"; };
+		990894C321E71BF9009AC16B /* LCDataStyleAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDataStyleAllViewController.h; sourceTree = "<group>"; };
+		990894C421E71BF9009AC16B /* LCDataStyleAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDataStyleAllViewController.m; sourceTree = "<group>"; };
+		990894C521E71BF9009AC16B /* LCDataStyleSectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDataStyleSectionsViewController.h; sourceTree = "<group>"; };
+		990894C621E71BF9009AC16B /* LCDataStyleSectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDataStyleSectionsViewController.m; sourceTree = "<group>"; };
+		990894CA21E71EEC009AC16B /* LCCellsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCCellsViewController.h; sourceTree = "<group>"; };
+		990894CB21E71EEC009AC16B /* LCCellsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCCellsViewController.m; sourceTree = "<group>"; };
+		990894CF21E72173009AC16B /* LCAnimalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCAnimalModel.h; sourceTree = "<group>"; };
+		990894D021E72173009AC16B /* LCAnimalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCAnimalModel.m; sourceTree = "<group>"; };
 		A4D07DC0D2BB864B63708E27 /* Pods-LCTableView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCTableView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LCTableView_Example/Pods-LCTableView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C069C2DECE9D6340CA03DF1C /* Pods_LCTableView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LCTableView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF5C925B0CC0295BE2D076D /* Pods_LCTableView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LCTableView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +176,10 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* LCViewController.h */,
 				6003F5A6195388D20070C39A /* LCViewController.m */,
+				990894C221E71BF9009AC16B /* DataStyle */,
+				990894C921E71EC0009AC16B /* CellStyle */,
+				990894CD21E72101009AC16B /* Views */,
+				990894CE21E72134009AC16B /* Models */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -286,6 +302,42 @@
 			children = (
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		990894C221E71BF9009AC16B /* DataStyle */ = {
+			isa = PBXGroup;
+			children = (
+				990894C521E71BF9009AC16B /* LCDataStyleSectionsViewController.h */,
+				990894C621E71BF9009AC16B /* LCDataStyleSectionsViewController.m */,
+				990894C321E71BF9009AC16B /* LCDataStyleAllViewController.h */,
+				990894C421E71BF9009AC16B /* LCDataStyleAllViewController.m */,
+			);
+			path = DataStyle;
+			sourceTree = "<group>";
+		};
+		990894C921E71EC0009AC16B /* CellStyle */ = {
+			isa = PBXGroup;
+			children = (
+				990894CA21E71EEC009AC16B /* LCCellsViewController.h */,
+				990894CB21E71EEC009AC16B /* LCCellsViewController.m */,
+			);
+			path = CellStyle;
+			sourceTree = "<group>";
+		};
+		990894CD21E72101009AC16B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		990894CE21E72134009AC16B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				990894CF21E72173009AC16B /* LCAnimalModel.h */,
+				990894D021E72173009AC16B /* LCAnimalModel.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,13 +503,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				990894D121E72173009AC16B /* LCAnimalModel.m in Sources */,
+				990894CC21E71EEC009AC16B /* LCCellsViewController.m in Sources */,
 				990894B921E5E302009AC16B /* EHILabelCell.m in Sources */,
 				6003F59E195388D20070C39A /* LCAppDelegate.m in Sources */,
 				990894BA21E5E302009AC16B /* EHITextFieldCell.m in Sources */,
 				990894B721E5E302009AC16B /* EHITextFieldCellViewModel.m in Sources */,
 				6003F5A7195388D20070C39A /* LCViewController.m in Sources */,
 				990894B421E5E302009AC16B /* EHITableView.m in Sources */,
+				990894C721E71BF9009AC16B /* LCDataStyleAllViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				990894C821E71BF9009AC16B /* LCDataStyleSectionsViewController.m in Sources */,
 				990894B621E5E302009AC16B /* EHILabelCellViewModel.m in Sources */,
 				990894B821E5E302009AC16B /* EHIActionCell.m in Sources */,
 				990894B521E5E302009AC16B /* EHIActionCellViewModel.m in Sources */,
