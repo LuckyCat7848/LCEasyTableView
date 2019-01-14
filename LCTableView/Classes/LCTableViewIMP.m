@@ -1,67 +1,17 @@
 //
-//  EHITableView.m
-//  TestTableView
+//  LCTableViewIMP.m
+//  LCTableView_Example
 //
-//  Created by LuckyCat on 2017/12/26.
-//  Copyright © 2017年 LuckyCat. All rights reserved.
+//  Created by LuckyCat on 2019/1/14.
+//  Copyright © 2019年 LuckyCat7848. All rights reserved.
 //
 
-#import "EHITableView.h"
+#import "LCTableViewIMP.h"
 
-@interface EHITableView ()<UITableViewDataSource, UITableViewDelegate>
-
-/** 真正的TableView */
-@property (nonatomic, strong) UITableView *mainTable;
-
+@interface LCTableViewIMP () 
 @end
 
-@implementation EHITableView
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        _dataStyle = EHITableViewDataStyleRows;
-    }
-    return self;
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    self.mainTable.frame = self.bounds;
-    _noDataView.center = self.mainTable.center;
-}
-
-#pragma mark - Setter
-
-- (void)setNoDataView:(UIView *)noDataView {
-    _noDataView = noDataView;
-    
-    [self addSubview:_noDataView];
-}
-
-- (void)setDataArray:(NSArray *)dataArray {
-    _dataArray = dataArray;
-    
-    if (self.dataStyle == EHITableViewDataStyleAll && _dataArray.count) {
-        NSAssert([_dataArray[0] isKindOfClass:[NSArray class]], @"EHITableViewDataStyleAll数据为嵌套数组");
-    }
-    
-    [self.mainTable reloadData];
-    _noDataView.hidden = _dataArray.count;
-}
-
-- (void)setRefreshHeader:(MJRefreshNormalHeader *)refreshHeader {
-    _refreshHeader = refreshHeader;
-    
-    self.mainTable.mj_header = refreshHeader;
-}
-
-- (void)setRefreshFooter:(MJRefreshBackNormalFooter *)refreshFooter {
-    _refreshFooter = refreshFooter;
-    
-    self.mainTable.mj_footer = refreshFooter;
-}
+@implementation LCTableViewIMP
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
 
@@ -100,49 +50,49 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if ([self.delegate respondsToSelector:@selector(tableView:heightForHeaderInSection:)]) {
-        return [self.delegate tableView:self heightForHeaderInSection:section];
-    }
+//    if ([self.delegate respondsToSelector:@selector(tableView:heightForHeaderInSection:)]) {
+//        return [self.delegate tableView:self heightForHeaderInSection:section];
+//    }
     return 0.1;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if ([self.delegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
-        return [self.delegate tableView:self viewForHeaderInSection:section];
-    }
+//    if ([self.delegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
+//        return [self.delegate tableView:self viewForHeaderInSection:section];
+//    }
     return [UIView new];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    if ([self.delegate respondsToSelector:@selector(tableView:heightForFooterInSection:)]) {
-        return [self.delegate tableView:self heightForFooterInSection:section];
-    }
+//    if ([self.delegate respondsToSelector:@selector(tableView:heightForFooterInSection:)]) {
+//        return [self.delegate tableView:self heightForFooterInSection:section];
+//    }
     return 0.1;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    if ([self.delegate respondsToSelector:@selector(tableView:viewForFooterInSection:)]) {
-        return [self.delegate tableView:self viewForFooterInSection:section];
-    }
+//    if ([self.delegate respondsToSelector:@selector(tableView:viewForFooterInSection:)]) {
+//        return [self.delegate tableView:self viewForFooterInSection:section];
+//    }
     return [UIView new];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if ([self.delegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)]) {
-        return [self.delegate tableView:self heightForRowAtIndexPath:indexPath];
-    }
-
+//    if ([self.delegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)]) {
+//        return [self.delegate tableView:self heightForRowAtIndexPath:indexPath];
+//    }
+    
     // MVVM
     id object = [self cellViewModelWithIndexPath:indexPath];
     if ([object conformsToProtocol:@protocol(EHICellViewModelProtocol)]) {
         id<EHICellViewModelProtocol> cellViewModel = object;
         return cellViewModel.cellHeight;
     }
-
+    
     // Normal
-    if ([self.delegate respondsToSelector:@selector(tableView:cellClassForRowAtIndexPath:)]) {
-        return tableView.rowHeight;
-    }
+//    if ([self.delegate respondsToSelector:@selector(tableView:cellClassForRowAtIndexPath:)]) {
+//        return tableView.rowHeight;
+//    }
     return UITableViewAutomaticDimension;
 }
 
@@ -154,10 +104,10 @@
         // MVVM
         id<EHICellViewModelProtocol> cellViewModel = object;
         cellClass = [cellViewModel.class cellClass];
-    
-    } else if ([self.delegate respondsToSelector:@selector(tableView:cellClassForRowAtIndexPath:)]) {
-        // Normal
-        cellClass = [self.delegate tableView:self cellClassForRowAtIndexPath:indexPath];
+        
+//    } else if ([self.delegate respondsToSelector:@selector(tableView:cellClassForRowAtIndexPath:)]) {
+//        // Normal
+//        cellClass = [self.delegate tableView:self cellClassForRowAtIndexPath:indexPath];
     }
     
     // 获取cell
@@ -174,27 +124,29 @@
     if ([object conformsToProtocol:@protocol(EHICellViewModelProtocol)] && [cell respondsToSelector:@selector(setViewModel:)]) {
         // 赋值：EHICellViewModel
         [cell performSelector:@selector(setViewModel:) withObject:object];
-
+        
     } else if ([cell respondsToSelector:@selector(setModel:)]) {
         // 赋值：Model
         [cell performSelector:@selector(setModel:) withObject:object];
     }
     // 赋值后特殊处理
-    if ([self.delegate respondsToSelector:@selector(tableView:cellForRowAtIndexPath:tableViewCell:viewModel:)]) {
-        [self.delegate tableView:self cellForRowAtIndexPath:indexPath tableViewCell:cell viewModel:object];
-    }
+//    if ([self.delegate respondsToSelector:@selector(tableView:cellForRowAtIndexPath:tableViewCell:viewModel:)]) {
+//        [self.delegate tableView:self cellForRowAtIndexPath:indexPath tableViewCell:cell viewModel:object];
+//    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    id<EHICellViewModelProtocol> cellViewModel = [self cellViewModelWithIndexPath:indexPath];
-    
-    if ([self.delegate respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:viewModel:)]) {
-        [self.delegate tableView:self didSelectRowAtIndexPath:indexPath viewModel:cellViewModel];
-    }
-    NSLog(@"didSelectRowAtIndexPath：%ld  %ld， %@", (long)indexPath.section, (long)indexPath.row, cellViewModel);
+//    for (id target in self.proxy.targets) {
+//        if (target == self) {
+//            continue;
+//        }
+//        if ([target respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
+//            [target tableView:tableView didSelectRowAtIndexPath:indexPath];
+//        }
+//    }
 }
 
 #pragma mark - Method
@@ -215,25 +167,6 @@
             break;
     }
     return nil;
-}
-
-#pragma mark - Getter
-
-- (UITableView *)mainTable {
-    if (!_mainTable) {
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        tableView.dataSource = self;
-        tableView.delegate = self;
-        tableView.backgroundColor = [UIColor clearColor];
-        tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-        tableView.rowHeight = UITableViewAutomaticDimension;
-
-        tableView.tableFooterView = [[UIView alloc] init];
-
-        _mainTable = tableView;
-        [self addSubview:_mainTable];
-    }
-    return _mainTable;
 }
 
 @end

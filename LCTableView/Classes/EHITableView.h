@@ -31,16 +31,13 @@ typedef NS_ENUM(NSInteger, EHITableViewDataStyle) {
 - (CGFloat)tableView:(EHITableView *)tableView heightForFooterInSection:(NSInteger)section;
 - (UIView *)tableView:(EHITableView *)tableView viewForFooterInSection:(NSInteger)section;
 
-/** cellClasslass */
+/** cellClass */
 - (Class)tableView:(EHITableView *)tableView cellClassForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 /** cell */
 - (CGFloat)tableView:(EHITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 - (void)tableView:(EHITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath tableViewCell:(UITableViewCell *)tableViewCell viewModel:(id)viewModel;
 - (void)tableView:(EHITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath viewModel:(id)viewModel;
-
-/** 滑动方向 */
-- (void)tableView:(EHITableView *)tableView didScrollWithDirection:(BOOL)isUpDirection;
 
 @end
 
@@ -62,8 +59,5 @@ typedef NS_ENUM(NSInteger, EHITableViewDataStyle) {
  数据(如果EHITableViewDataStyleAll,为嵌套数组)
  */
 @property (nonatomic, copy) NSArray *dataArray;
-
-/** 用于处理减速 */
-@property (nonatomic, assign) NSUInteger endDecelerateCount;
 
 @end
