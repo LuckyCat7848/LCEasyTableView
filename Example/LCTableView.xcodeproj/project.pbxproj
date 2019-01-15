@@ -22,6 +22,7 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		9902FFAE21EDACAE0024C497 /* LCAnimalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFAD21EDACAE0024C497 /* LCAnimalCell.m */; };
 		990894B221E5E302009AC16B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 9908949E21E5E302009AC16B /* .gitkeep */; };
 		990894B321E5E302009AC16B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 990894A021E5E302009AC16B /* .gitkeep */; };
 		990894B421E5E302009AC16B /* EHITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894A321E5E302009AC16B /* EHITableView.m */; };
@@ -32,7 +33,6 @@
 		990894B921E5E302009AC16B /* EHILabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894AF21E5E302009AC16B /* EHILabelCell.m */; };
 		990894BA21E5E302009AC16B /* EHITextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894B121E5E302009AC16B /* EHITextFieldCell.m */; };
 		990894C721E71BF9009AC16B /* LCDataStyleAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894C421E71BF9009AC16B /* LCDataStyleAllViewController.m */; };
-		990894C821E71BF9009AC16B /* LCDataStyleSectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894C621E71BF9009AC16B /* LCDataStyleSectionsViewController.m */; };
 		990894CC21E71EEC009AC16B /* LCCellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894CB21E71EEC009AC16B /* LCCellsViewController.m */; };
 		990894D121E72173009AC16B /* LCAnimalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894D021E72173009AC16B /* LCAnimalModel.m */; };
 		99F1A1D121EC21D10076E3B2 /* UITableView+LCAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F1A1D021EC21D10076E3B2 /* UITableView+LCAdd.m */; };
@@ -79,6 +79,8 @@
 		6CEF3A2BB624561A0501B1DF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9902FFAC21EDACAE0024C497 /* LCAnimalCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCAnimalCell.h; sourceTree = "<group>"; };
+		9902FFAD21EDACAE0024C497 /* LCAnimalCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCAnimalCell.m; sourceTree = "<group>"; };
 		9908949E21E5E302009AC16B /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		990894A021E5E302009AC16B /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		990894A121E5E302009AC16B /* EHICellViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHICellViewModelProtocol.h; sourceTree = "<group>"; };
@@ -98,8 +100,6 @@
 		990894B121E5E302009AC16B /* EHITextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHITextFieldCell.m; sourceTree = "<group>"; };
 		990894C321E71BF9009AC16B /* LCDataStyleAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDataStyleAllViewController.h; sourceTree = "<group>"; };
 		990894C421E71BF9009AC16B /* LCDataStyleAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDataStyleAllViewController.m; sourceTree = "<group>"; };
-		990894C521E71BF9009AC16B /* LCDataStyleSectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDataStyleSectionsViewController.h; sourceTree = "<group>"; };
-		990894C621E71BF9009AC16B /* LCDataStyleSectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDataStyleSectionsViewController.m; sourceTree = "<group>"; };
 		990894CA21E71EEC009AC16B /* LCCellsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCCellsViewController.h; sourceTree = "<group>"; };
 		990894CB21E71EEC009AC16B /* LCCellsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCCellsViewController.m; sourceTree = "<group>"; };
 		990894CF21E72173009AC16B /* LCAnimalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCAnimalModel.h; sourceTree = "<group>"; };
@@ -110,6 +110,7 @@
 		99F1A1D321EC2FCE0076E3B2 /* LCTableViewIMP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCTableViewIMP.m; sourceTree = "<group>"; };
 		99F1A1D521EC330E0076E3B2 /* LCTableViewProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCTableViewProxy.h; sourceTree = "<group>"; };
 		99F1A1D621EC330E0076E3B2 /* LCTableViewProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCTableViewProxy.m; sourceTree = "<group>"; };
+		99F1A1D821ED861D0076E3B2 /* EHICellModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EHICellModelProtocol.h; sourceTree = "<group>"; };
 		A4D07DC0D2BB864B63708E27 /* Pods-LCTableView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCTableView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LCTableView_Example/Pods-LCTableView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		C069C2DECE9D6340CA03DF1C /* Pods_LCTableView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LCTableView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF5C925B0CC0295BE2D076D /* Pods_LCTableView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LCTableView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,6 +272,7 @@
 			children = (
 				990894A021E5E302009AC16B /* .gitkeep */,
 				990894A121E5E302009AC16B /* EHICellViewModelProtocol.h */,
+				99F1A1D821ED861D0076E3B2 /* EHICellModelProtocol.h */,
 				990894A221E5E302009AC16B /* EHITableView.h */,
 				990894A321E5E302009AC16B /* EHITableView.m */,
 				99F1A1CF21EC21D10076E3B2 /* UITableView+LCAdd.h */,
@@ -322,8 +324,6 @@
 		990894C221E71BF9009AC16B /* DataStyle */ = {
 			isa = PBXGroup;
 			children = (
-				990894C521E71BF9009AC16B /* LCDataStyleSectionsViewController.h */,
-				990894C621E71BF9009AC16B /* LCDataStyleSectionsViewController.m */,
 				990894C321E71BF9009AC16B /* LCDataStyleAllViewController.h */,
 				990894C421E71BF9009AC16B /* LCDataStyleAllViewController.m */,
 			);
@@ -342,6 +342,8 @@
 		990894CD21E72101009AC16B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9902FFAC21EDACAE0024C497 /* LCAnimalCell.h */,
+				9902FFAD21EDACAE0024C497 /* LCAnimalCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -520,6 +522,7 @@
 			files = (
 				990894D121E72173009AC16B /* LCAnimalModel.m in Sources */,
 				990894CC21E71EEC009AC16B /* LCCellsViewController.m in Sources */,
+				9902FFAE21EDACAE0024C497 /* LCAnimalCell.m in Sources */,
 				990894B921E5E302009AC16B /* EHILabelCell.m in Sources */,
 				99F1A1D421EC2FCE0076E3B2 /* LCTableViewIMP.m in Sources */,
 				6003F59E195388D20070C39A /* LCAppDelegate.m in Sources */,
@@ -530,7 +533,6 @@
 				990894B421E5E302009AC16B /* EHITableView.m in Sources */,
 				990894C721E71BF9009AC16B /* LCDataStyleAllViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				990894C821E71BF9009AC16B /* LCDataStyleSectionsViewController.m in Sources */,
 				990894B621E5E302009AC16B /* EHILabelCellViewModel.m in Sources */,
 				990894B821E5E302009AC16B /* EHIActionCell.m in Sources */,
 				99F1A1D121EC21D10076E3B2 /* UITableView+LCAdd.m in Sources */,

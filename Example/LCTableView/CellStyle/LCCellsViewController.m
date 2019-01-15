@@ -7,14 +7,13 @@
 //
 
 #import "LCCellsViewController.h"
-#import "EHITableView.h"
-#import "EHIActionCellViewModel.h"
+#import "UITableView+LCAdd.h"
 #import "LCAnimalModel.h"
 #import "EHIActionCell.h"
 
-@interface LCCellsViewController ()<EHITableViewDelegate>
+@interface LCCellsViewController ()
 
-@property (nonatomic, strong) EHITableView *tableView;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -45,7 +44,7 @@
         LCAnimalModel *model = [[LCAnimalModel alloc] init];
         [dataArray addObject:model];
     }
-    self.tableView.dataArray = dataArray;
+    [self.tableView.lc_dataArray addObjectsFromArray:dataArray];
 }
 
 #pragma mark - Method
@@ -54,17 +53,17 @@
 //    return [EHIActionCell class];
 //}
 
-- (void)tableView:(EHITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath tableViewCell:(UITableViewCell *)tableViewCell viewModel:(id)viewModel {
-    tableViewCell.textLabel.numberOfLines = 0;
-    tableViewCell.textLabel.text = @"数据啊号地块为光伏而非接口都粉红色的就看见返回客户方科技阿萨";
-}
+//- (void)tableView:(EHITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath tableViewCell:(UITableViewCell *)tableViewCell viewModel:(id)viewModel {
+//    tableViewCell.textLabel.numberOfLines = 0;
+//    tableViewCell.textLabel.text = @"数据啊号地块为光伏而非接口都粉红色的就看见返回客户方科技阿萨";
+//}
 
 #pragma mark - Getter
 
-- (EHITableView *)tableView {
+- (UITableView *)tableView {
     if (!_tableView) {
-        EHITableView *tableView = [[EHITableView alloc] initWithFrame:self.view.bounds];
-        tableView.delegate = self;
+        UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+//        tableView.delegate = self;
         
         [self.view addSubview:tableView];
         _tableView = tableView;

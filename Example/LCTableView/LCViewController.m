@@ -8,10 +8,8 @@
 
 #import "LCViewController.h"
 #import "UITableView+LCAdd.h"
-#import "EHITableView.h"
 #import "EHIActionCellViewModel.h"
 
-#import "LCDataStyleSectionsViewController.h"
 #import "LCDataStyleAllViewController.h"
 #import "LCCellsViewController.h"
 
@@ -48,13 +46,14 @@
 
 #pragma mark - UITableViewDelegate && UITableViewDataSource
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return 100;
+//}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *dic = self.titleArray[indexPath.row];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    NSDictionary *dic = self.titleArray[indexPath.row];
     Class class = NSClassFromString(dic[@"class"]);
     UIViewController *viewController = [[class alloc] init];
     [self.navigationController pushViewController:viewController animated:YES];
@@ -66,6 +65,7 @@
     if (!_tableView) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
         tableView.lc_Delegate = self;
+        tableView.rowHeight = UITableViewAutomaticDimension;
         
         [self.view addSubview:tableView];
         _tableView = tableView;
@@ -76,9 +76,6 @@
 - (NSArray<NSDictionary *> *)titleArray {
     if (!_titleArray) {
         _titleArray = @[
-                        @{@"title" : @"多个section,1个row（空页面+下拉刷新/上拉加载）",
-                          @"class" : NSStringFromClass([LCDataStyleSectionsViewController class])},
-                        
                         @{@"title" : @"多个section,多个row",
                           @"class" : NSStringFromClass([LCDataStyleAllViewController class])},
                         

@@ -12,9 +12,12 @@
 
 /** 数据格式样式 */
 typedef NS_ENUM(NSInteger, EHITableViewDataStyle) {
-    EHITableViewDataStyleRows,    /// 默认:1个section,多个row
-    EHITableViewDataStyleSections,/// 多个section,1个row
-    EHITableViewDataStyleAll,    /// 多个section,多个row（数据为嵌套数组）
+    /** 默认:1个section,多个row */
+    EHITableViewDataStyleRows,
+    /** 多个section,1个row */
+    EHITableViewDataStyleSections,
+    /** 多个section,多个row（数据为嵌套数组） */
+    EHITableViewDataStyleAll,
 };
 
 @class EHITableView;

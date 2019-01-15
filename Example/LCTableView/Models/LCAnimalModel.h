@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EHICellModelProtocol.h"
 
 /** 动物类型 */
 typedef NS_ENUM(NSInteger, LCAnimalType) {
@@ -14,7 +15,7 @@ typedef NS_ENUM(NSInteger, LCAnimalType) {
     LCAnimalTypeGog, /// 狗
 };
 
-@interface LCAnimalModel : NSObject
+@interface LCAnimalModel : NSObject<EHICellModelProtocol>
 
 /** Id */
 @property (nonatomic, assign) NSInteger Id;

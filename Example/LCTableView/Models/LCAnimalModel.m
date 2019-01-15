@@ -10,4 +10,8 @@
 
 @implementation LCAnimalModel
 
++ (Class)cellClass {
+    return [UITableViewCell class];
+}
+
 @end

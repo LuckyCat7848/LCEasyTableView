@@ -70,50 +70,52 @@
         return cellViewModel.cellHeight;
     }
     
-    // Normal
-//    if ([self.delegate respondsToSelector:@selector(tableView:cellClassForRowAtIndexPath:)]) {
-//        return tableView.rowHeight;
+//    // Normal
+//    if ([object conformsToProtocol:@protocol(EHICellModelProtocol)]) {
+//        id<EHICellModelProtocol> model = object;
+//        return model.cellHeight;
 //    }
+
     return UITableViewAutomaticDimension;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     Class cellClass = [UITableViewCell class];
-    // 获取cellClass
+    // TODO：获取cellClass
     id object = [self cellViewModelWithIndexPath:indexPath];
     if ([object conformsToProtocol:@protocol(EHICellViewModelProtocol)]) {
         // MVVM
         id<EHICellViewModelProtocol> cellViewModel = object;
         cellClass = [cellViewModel.class cellClass];
         
-//    } else if ([self.delegate respondsToSelector:@selector(tableView:cellClassForRowAtIndexPath:)]) {
-//        // Normal
-//        cellClass = [self.delegate tableView:self cellClassForRowAtIndexPath:indexPath];
+    } else if ([object conformsToProtocol:@protocol(EHICellModelProtocol)]) {
+        // Normal
+        id<EHICellModelProtocol> model = object;
+        cellClass = [model.class cellClass];
     }
     
-    // 获取cell
+    // TODO：获取cell
     NSString *identifier = NSStringFromClass(cellClass);
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         NSString *nibPath = [[NSBundle mainBundle] pathForResource:identifier ofType:@"nib"];
         if (nibPath) {
+            // nib
             cell = [[[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil] objectAtIndex:0];
         } else {
+            // class
             cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
     }
+    // TODO：赋值
     if ([object conformsToProtocol:@protocol(EHICellViewModelProtocol)] && [cell respondsToSelector:@selector(setViewModel:)]) {
-        // 赋值：EHICellViewModel
+        // MVVM
         [cell performSelector:@selector(setViewModel:) withObject:object];
         
-    } else if ([cell respondsToSelector:@selector(setModel:)]) {
-        // 赋值：Model
+    } else if ([object conformsToProtocol:@protocol(EHICellModelProtocol)] && [cell respondsToSelector:@selector(setModel:)]) {
+        // Normal
         [cell performSelector:@selector(setModel:) withObject:object];
     }
-    // 赋值后特殊处理
-//    if ([self.delegate respondsToSelector:@selector(tableView:cellForRowAtIndexPath:tableViewCell:viewModel:)]) {
-//        [self.delegate tableView:self cellForRowAtIndexPath:indexPath tableViewCell:cell viewModel:object];
-//    }
     return cell;
 }
 
