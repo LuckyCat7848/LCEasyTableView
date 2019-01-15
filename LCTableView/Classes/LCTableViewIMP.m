@@ -8,9 +8,6 @@
 
 #import "LCTableViewIMP.h"
 
-@interface LCTableViewIMP () 
-@end
-
 @implementation LCTableViewIMP
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
@@ -50,38 +47,22 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    if ([self.delegate respondsToSelector:@selector(tableView:heightForHeaderInSection:)]) {
-//        return [self.delegate tableView:self heightForHeaderInSection:section];
-//    }
     return 0.1;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    if ([self.delegate respondsToSelector:@selector(tableView:viewForHeaderInSection:)]) {
-//        return [self.delegate tableView:self viewForHeaderInSection:section];
-//    }
     return [UIView new];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    if ([self.delegate respondsToSelector:@selector(tableView:heightForFooterInSection:)]) {
-//        return [self.delegate tableView:self heightForFooterInSection:section];
-//    }
     return 0.1;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-//    if ([self.delegate respondsToSelector:@selector(tableView:viewForFooterInSection:)]) {
-//        return [self.delegate tableView:self viewForFooterInSection:section];
-//    }
     return [UIView new];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if ([self.delegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)]) {
-//        return [self.delegate tableView:self heightForRowAtIndexPath:indexPath];
-//    }
-    
     // MVVM
     id object = [self cellViewModelWithIndexPath:indexPath];
     if ([object conformsToProtocol:@protocol(EHICellViewModelProtocol)]) {
@@ -138,15 +119,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-//    for (id target in self.proxy.targets) {
-//        if (target == self) {
-//            continue;
-//        }
-//        if ([target respondsToSelector:@selector(tableView:didSelectRowAtIndexPath:)]) {
-//            [target tableView:tableView didSelectRowAtIndexPath:indexPath];
-//        }
-//    }
 }
 
 #pragma mark - Method

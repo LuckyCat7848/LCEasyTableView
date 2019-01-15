@@ -65,7 +65,7 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-        [tableView lc_addDelegate:self];
+        tableView.lc_Delegate = self;
         
         [self.view addSubview:tableView];
         _tableView = tableView;

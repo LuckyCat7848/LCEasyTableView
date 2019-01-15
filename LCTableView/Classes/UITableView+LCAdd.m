@@ -7,13 +7,14 @@
 //
 
 #import "UITableView+LCAdd.h"
-//#import "LCTableViewProxy.h"
+#import "LCTableViewProxy.h"
 #import "LCTableViewIMP.h"
 
 static const void *kLCTableViewProxy = &kLCTableViewProxy;
 static const void *kLCTableViewIMP = &kLCTableViewIMP;
 
 static const void *kLCTableViewDataStyle = &kLCTableViewDataStyle;
+static const void *kLCTableViewDelegate = &kLCTableViewDelegate;
 static const void *kLCTableViewDataArray = &kLCTableViewDataArray;
 
 @interface UITableView ()
@@ -27,15 +28,16 @@ static const void *kLCTableViewDataArray = &kLCTableViewDataArray;
 
 #pragma mark - public
 
-- (void)lc_addDelegate:(id<UITableViewDelegate>)delegate {
-    [self.proxy addTarget:delegate];
+- (void)setLc_Delegate:(id<UITableViewDelegate,UITableViewDataSource>)lc_Delegate {
+    objc_setAssociatedObject(self, kLCTableViewDelegate, lc_Delegate, OBJC_ASSOCIATION_ASSIGN);
+    self.proxy.extraDelegate = lc_Delegate;
 }
 
-- (void)lc_addDataSource:(id<UITableViewDataSource>)dataSource {
-    [self.proxy addTarget:dataSource];
+- (id<UITableViewDelegate,UITableViewDataSource>)lc_Delegate {
+    return objc_getAssociatedObject(self, kLCTableViewDelegate);
 }
 
-#pragma mark - getter && setter
+#pragma mark - data
 
 - (void)setLc_dataStyle:(EHITableViewDataStyle)lc_dataStyle {
     objc_setAssociatedObject(self, kLCTableViewDataStyle, @(lc_dataStyle), OBJC_ASSOCIATION_ASSIGN);
@@ -55,10 +57,9 @@ static const void *kLCTableViewDataArray = &kLCTableViewDataArray;
     if (!array) {
         array = [NSMutableArray array];
         self.lc_dataArray = array;
-        
         self.imp.dataArray = array;
-        [self.proxy addTarget:self.imp];
-        self.imp.proxy = self.proxy;
+        
+        self.proxy.impDelegate = self.imp;
         self.delegate = (id<UITableViewDelegate>)self.proxy;
         self.dataSource = (id<UITableViewDataSource>)self.proxy;
     }
