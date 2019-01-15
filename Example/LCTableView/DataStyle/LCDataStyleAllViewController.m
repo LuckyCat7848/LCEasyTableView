@@ -7,12 +7,12 @@
 //
 
 #import "LCDataStyleAllViewController.h"
-#import "EHITableView.h"
+#import "UITableView+LCAdd.h"
 #import "EHIActionCellViewModel.h"
 
-@interface LCDataStyleAllViewController ()<EHITableViewDelegate>
+@interface LCDataStyleAllViewController ()<UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) EHITableView *tableView;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -38,7 +38,7 @@
         }
         [dataArray addObject:array];
     }
-    self.tableView.dataArray = dataArray;
+    [self.tableView.lc_dataArray addObjectsFromArray:dataArray];
 }
 
 #pragma mark - EHITableViewDelegate
@@ -49,18 +49,18 @@
 
 - (UIView *)tableView:(EHITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *label = [[UILabel alloc] init];
-    label.backgroundColor = [UIColor yellowColor];
+    label.backgroundColor = [UIColor lightGrayColor];
     label.text = [NSString stringWithFormat:@"section %ld", (long)section];
     return label;
 }
 
 #pragma mark - Getter
 
-- (EHITableView *)tableView {
+- (UITableView *)tableView {
     if (!_tableView) {
-        EHITableView *tableView = [[EHITableView alloc] initWithFrame:self.view.bounds];
-        tableView.dataStyle = EHITableViewDataStyleAll;
-        tableView.delegate = self;
+        UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
+        tableView.lc_dataStyle = EHITableViewDataStyleAll;
+        tableView.lc_Delegate = self;
         
         [self.view addSubview:tableView];
         _tableView = tableView;

@@ -51,17 +51,17 @@
     _noDataView.hidden = _dataArray.count;
 }
 
-- (void)setRefreshHeader:(MJRefreshNormalHeader *)refreshHeader {
-    _refreshHeader = refreshHeader;
-    
-    self.mainTable.mj_header = refreshHeader;
-}
-
-- (void)setRefreshFooter:(MJRefreshBackNormalFooter *)refreshFooter {
-    _refreshFooter = refreshFooter;
-    
-    self.mainTable.mj_footer = refreshFooter;
-}
+//- (void)setRefreshHeader:(MJRefreshNormalHeader *)refreshHeader {
+//    _refreshHeader = refreshHeader;
+//    
+//    self.mainTable.mj_header = refreshHeader;
+//}
+//
+//- (void)setRefreshFooter:(MJRefreshBackNormalFooter *)refreshFooter {
+//    _refreshFooter = refreshFooter;
+//    
+//    self.mainTable.mj_footer = refreshFooter;
+//}
 
 #pragma mark - UITableViewDelegate & UITableViewDataSource
 

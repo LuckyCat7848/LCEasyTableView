@@ -18,10 +18,5 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "LCTableView/Classes/**/*",
-  "dependencies": {
-    "MJRefresh": [
-
-    ]
-  }
+  "source_files": "LCTableView/Classes/**/*"
 }

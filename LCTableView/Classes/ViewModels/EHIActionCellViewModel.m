@@ -12,6 +12,10 @@
 
 SetCellClass(EHIActionCell);
 
++ (LCCellDataType)cellDataType {
+    return LCCellDataTypeViewModel;
+}
+
 - (instancetype)init {
     self = [super init];
     if (self) {

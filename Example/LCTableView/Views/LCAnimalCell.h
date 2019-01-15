@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LCAnimalCellViewModel.h"
 
 @interface LCAnimalCell : UITableViewCell
+
+/** 数据 */
+@property (nonatomic, strong) LCAnimalModel *model;
+
+/** 数据：VM */
+@property (nonatomic, strong) LCAnimalCellViewModel *viewModel;
 
 @end

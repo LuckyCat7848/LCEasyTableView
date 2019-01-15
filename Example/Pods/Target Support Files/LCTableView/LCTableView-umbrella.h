@@ -12,6 +12,10 @@
 
 #import "EHICellViewModelProtocol.h"
 #import "EHITableView.h"
+#import "LCCellDataProtocol.h"
+#import "LCTableViewIMP.h"
+#import "LCTableViewProxy.h"
+#import "UITableView+LCAdd.h"
 #import "EHIActionCellViewModel.h"
 #import "EHILabelCellViewModel.h"
 #import "EHITextFieldCellViewModel.h"

@@ -7,6 +7,7 @@
 //
 
 #import "UITableView+LCAdd.h"
+#import <objc/runtime.h>
 #import "LCTableViewProxy.h"
 #import "LCTableViewIMP.h"
 

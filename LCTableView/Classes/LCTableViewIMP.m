@@ -63,19 +63,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    // MVVM
     id object = [self cellViewModelWithIndexPath:indexPath];
-    if ([object conformsToProtocol:@protocol(EHICellViewModelProtocol)]) {
-        id<EHICellViewModelProtocol> cellViewModel = object;
-        return cellViewModel.cellHeight;
+    if ([object conformsToProtocol:@protocol(LCCellDataProtocol)]) {
+        id<LCCellDataProtocol> data = object;
+        return data.cellHeight;
     }
-    
-//    // Normal
-//    if ([object conformsToProtocol:@protocol(EHICellModelProtocol)]) {
-//        id<EHICellModelProtocol> model = object;
-//        return model.cellHeight;
-//    }
-
     return UITableViewAutomaticDimension;
 }
 
@@ -83,15 +75,9 @@
     Class cellClass = [UITableViewCell class];
     // TODO：获取cellClass
     id object = [self cellViewModelWithIndexPath:indexPath];
-    if ([object conformsToProtocol:@protocol(EHICellViewModelProtocol)]) {
-        // MVVM
-        id<EHICellViewModelProtocol> cellViewModel = object;
-        cellClass = [cellViewModel.class cellClass];
-        
-    } else if ([object conformsToProtocol:@protocol(EHICellModelProtocol)]) {
-        // Normal
-        id<EHICellModelProtocol> model = object;
-        cellClass = [model.class cellClass];
+    if ([object conformsToProtocol:@protocol(LCCellDataProtocol)]) {
+        id<LCCellDataProtocol> data = object;
+        cellClass = [data.class cellClass];
     }
     
     // TODO：获取cell
@@ -100,21 +86,24 @@
     if (cell == nil) {
         NSString *nibPath = [[NSBundle mainBundle] pathForResource:identifier ofType:@"nib"];
         if (nibPath) {
-            // nib
             cell = [[[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil] objectAtIndex:0];
         } else {
-            // class
             cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
     }
     // TODO：赋值
-    if ([object conformsToProtocol:@protocol(EHICellViewModelProtocol)] && [cell respondsToSelector:@selector(setViewModel:)]) {
-        // MVVM
-        [cell performSelector:@selector(setViewModel:) withObject:object];
+    if ([object conformsToProtocol:@protocol(LCCellDataProtocol)]) {
+        id<LCCellDataProtocol> data = object;
+        LCCellDataType type = 0;
+        if ([data.class respondsToSelector:@selector(cellDataType)]) {
+            type = [data.class cellDataType];
+        }
+        if (type == LCCellDataTypeModel && [cell respondsToSelector:@selector(setModel:)]) {
+            [cell performSelector:@selector(setModel:) withObject:object];
         
-    } else if ([object conformsToProtocol:@protocol(EHICellModelProtocol)] && [cell respondsToSelector:@selector(setModel:)]) {
-        // Normal
-        [cell performSelector:@selector(setModel:) withObject:object];
+        } else if (type == LCCellDataTypeViewModel && [cell respondsToSelector:@selector(setViewModel:)]) {
+            [cell performSelector:@selector(setViewModel:) withObject:object];
+        }
     }
     return cell;
 }
@@ -126,7 +115,7 @@
 #pragma mark - Method
 
 /** 根据数据类型和位置取数据 */
-- (id<EHICellViewModelProtocol>)cellViewModelWithIndexPath:(NSIndexPath *)indexPath {
+- (id<LCCellDataProtocol>)cellViewModelWithIndexPath:(NSIndexPath *)indexPath {
     switch (self.dataStyle) {
         case EHITableViewDataStyleRows:
             return self.dataArray[indexPath.row];

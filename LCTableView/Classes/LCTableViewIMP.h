@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EHICellViewModelProtocol.h"
-#import "EHICellModelProtocol.h"
+#import "LCCellDataProtocol.h"
 #import "EHITableView.h"
 
 @interface LCTableViewIMP : NSObject<UITableViewDelegate, UITableViewDataSource>

@@ -9,9 +9,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EHICellViewModelProtocol.h"
+#import "LCCellDataProtocol.h"
 
-@interface EHIActionCellViewModel : NSObject<EHICellViewModelProtocol>
+@interface EHIActionCellViewModel : NSObject<LCCellDataProtocol>
 
 @property (nonatomic, assign) NSInteger identityType;
 @property (nonatomic, strong) id model;
@@ -49,5 +49,6 @@
 
 /** 写明这个ViewModel对应的cell类 */
 + (Class)cellClass;
++ (LCCellDataType)cellDataType;
 
 @end

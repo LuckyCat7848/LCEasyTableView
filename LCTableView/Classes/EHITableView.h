@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "EHICellViewModelProtocol.h"
-#import "MJRefresh.h"
 
 /** 数据格式样式 */
 typedef NS_ENUM(NSInteger, EHITableViewDataStyle) {
@@ -52,8 +51,8 @@ typedef NS_ENUM(NSInteger, EHITableViewDataStyle) {
 @property (nonatomic, weak) id<EHITableViewDelegate> delegate;
 
 /** 刷新控件 */
-@property (nonatomic, strong) MJRefreshNormalHeader *refreshHeader;
-@property (nonatomic, strong) MJRefreshBackNormalFooter *refreshFooter;
+//@property (nonatomic, strong) MJRefreshNormalHeader *refreshHeader;
+//@property (nonatomic, strong) MJRefreshBackNormalFooter *refreshFooter;
 
 /** 无数据时显示空视图 */
 @property (nonatomic, strong) UIView *noDataView;
