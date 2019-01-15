@@ -1,5 +1,5 @@
 //
-//  EHILabelCellViewModel.h
+//  LCLabelCellViewModel.h
 //  1haiiPhone
 //
 //  Created by LuckyCat on 2017/12/28.
@@ -9,12 +9,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EHICellViewModelProtocol.h"
-//#import "EHIVATInvoiceCompanyModel.h"
+#import "LCCellDataProtocol.h"
 
-@interface EHILabelCellViewModel : NSObject<EHICellViewModelProtocol>
+@interface LCLabelCellViewModel : NSObject<LCCellDataProtocol>
 
-//@property (nonatomic, strong) EHIVATInvoiceCompanyModel *model;
+@property (nonatomic, strong) id model;
 @property (nonatomic, assign) CGFloat cellHeight;
 
 /** 提示语左边的宽度 */

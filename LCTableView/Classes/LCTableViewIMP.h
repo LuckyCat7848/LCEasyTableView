@@ -8,15 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "LCCellDataProtocol.h"
-#import "EHITableView.h"
+#import "LCTableViewDefines.h"
 
 @interface LCTableViewIMP : NSObject<UITableViewDelegate, UITableViewDataSource>
 
 /** 数据类型 */
-@property (nonatomic, assign) EHITableViewDataStyle dataStyle;
+@property (nonatomic, assign) LCTableViewDataStyle dataStyle;
 
 /**
- 数据(如果EHITableViewDataStyleAll,为嵌套数组)
+ 数据(如果LCTableViewDataStyleAll,为嵌套数组)
  */
 @property (nonatomic, strong) NSArray *dataArray;
 

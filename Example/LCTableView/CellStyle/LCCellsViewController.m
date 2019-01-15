@@ -51,15 +51,6 @@
 
 #pragma mark - Method
 
-//- (Class)tableView:(EHITableView *)tableView cellClassForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return [EHIActionCell class];
-//}
-
-//- (void)tableView:(EHITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath tableViewCell:(UITableViewCell *)tableViewCell viewModel:(id)viewModel {
-//    tableViewCell.textLabel.numberOfLines = 0;
-//    tableViewCell.textLabel.text = @"数据啊号地块为光伏而非接口都粉红色的就看见返回客户方科技阿萨";
-//}
-
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    NSString *identifier = @"cellPool";
 //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];

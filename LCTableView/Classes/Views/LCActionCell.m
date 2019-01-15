@@ -1,14 +1,14 @@
 //
-//  EHIActionCell.m
+//  LCActionCell.m
 //  1haiiPhone
 //
 //  Created by LuckyCat on 2018/7/31.
 //  Copyright © 2018年 EHi. All rights reserved.
 //
 
-#import "EHIActionCell.h"
+#import "LCActionCell.h"
 
-@interface EHIActionCell ()
+@interface LCActionCell ()
 
 /** 顶部分割线 */
 @property (nonatomic, strong) UIView *topLineView;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation EHIActionCell
+@implementation LCActionCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -34,7 +34,7 @@
 
 #pragma mark - 赋值
 
-- (void)setViewModel:(EHIActionCellViewModel *)viewModel {
+- (void)setViewModel:(LCActionCellViewModel *)viewModel {
     _viewModel = viewModel;
     
     // 文字

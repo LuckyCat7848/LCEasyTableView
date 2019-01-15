@@ -1,5 +1,5 @@
 //
-//  EHITextFieldCell.h
+//  LCTextFieldCell.h
 //  1haiiPhone
 //
 //  Created by LuckyCat on 2017/12/26.
@@ -9,11 +9,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EHITextFieldCellViewModel.h"
+#import "LCTextFieldCellViewModel.h"
 
-@interface EHITextFieldCell : UITableViewCell
+@interface LCTextFieldCell : UITableViewCell
 
 /** 数据赋值 */
-@property (nonatomic, strong) EHITextFieldCellViewModel *viewModel;
+@property (nonatomic, strong) LCTextFieldCellViewModel *viewModel;
 
 @end

@@ -1,14 +1,14 @@
 //
-//  EHITextFieldCell.m
+//  LCTextFieldCell.m
 //  1haiiPhone
 //
 //  Created by LuckyCat on 2017/12/26.
 //  Copyright © 2017年 EHi. All rights reserved.
 //
 
-#import "EHITextFieldCell.h"
+#import "LCTextFieldCell.h"
 
-@interface EHITextFieldCell ()<UITextFieldDelegate>
+@interface LCTextFieldCell ()<UITextFieldDelegate>
 
 /** 提示文字 */
 @property (nonatomic, strong) UILabel *tipLabel;
@@ -35,7 +35,7 @@
 
 @end
 
-@implementation EHITextFieldCell
+@implementation LCTextFieldCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -53,7 +53,7 @@
 
 #pragma mark - 赋值
 
-- (void)setViewModel:(EHITextFieldCellViewModel *)viewModel {
+- (void)setViewModel:(LCTextFieldCellViewModel *)viewModel {
     _viewModel = viewModel;
     
     self.intputBeginBlock = viewModel.intputBeginBlock;

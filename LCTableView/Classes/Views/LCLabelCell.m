@@ -1,14 +1,14 @@
 //
-//  EHILabelCell.m
+//  LCLabelCell.m
 //  1haiiPhone
 //
 //  Created by LuckyCat on 2017/12/28.
 //  Copyright © 2017年 EHi. All rights reserved.
 //
 
-#import "EHILabelCell.h"
+#import "LCLabelCell.h"
 
-@interface EHILabelCell ()
+@interface LCLabelCell ()
 
 /** 提示文字 */
 @property (nonatomic, strong) UILabel *tipLabel;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation EHILabelCell
+@implementation LCLabelCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -30,7 +30,7 @@
 
 #pragma mark - 赋值
 
-- (void)setViewModel:(EHILabelCellViewModel *)viewModel {
+- (void)setViewModel:(LCLabelCellViewModel *)viewModel {
     _viewModel = viewModel;
     
     self.tipLabel.textColor = viewModel.tipTextColor;

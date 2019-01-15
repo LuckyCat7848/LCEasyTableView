@@ -1,16 +1,16 @@
 //
-//  EHILabelCellViewModel.m
+//  LCLabelCellViewModel.m
 //  1haiiPhone
 //
 //  Created by LuckyCat on 2017/12/28.
 //  Copyright © 2017年 EHi. All rights reserved.
 //
 
-#import "EHILabelCellViewModel.h"
+#import "LCLabelCellViewModel.h"
 
-@implementation EHILabelCellViewModel
+@implementation LCLabelCellViewModel
 
-SetCellClass(EHILabelCell);
+SetCellClass(LCLabelCell);
 
 - (instancetype)init {
     self = [super init];
@@ -44,7 +44,7 @@ SetCellClass(EHILabelCell);
 //    model = model;
 }
 
-//- (void)setModel:(EHIVATInvoiceCompanyModel *)model {
+//- (void)setModel:(VATInvoiceCompanyModel *)model {
 //    _model = model;
 //    
 //    self.tipStr = model.Title;

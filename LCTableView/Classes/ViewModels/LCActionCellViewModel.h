@@ -1,5 +1,5 @@
 //
-//  EHIActionCellViewModel.h
+//  LCActionCellViewModel.h
 //  1haiiPhone
 //
 //  Created by LuckyCat on 2018/7/31.
@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 #import "LCCellDataProtocol.h"
 
-@interface EHIActionCellViewModel : NSObject<LCCellDataProtocol>
+@interface LCActionCellViewModel : NSObject<LCCellDataProtocol>
 
 @property (nonatomic, assign) NSInteger identityType;
 @property (nonatomic, strong) id model;

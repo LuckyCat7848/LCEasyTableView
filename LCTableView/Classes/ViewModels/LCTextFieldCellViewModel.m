@@ -1,20 +1,20 @@
 //
-//  EHITextFieldCellViewModel.m
+//  LCTextFieldCellViewModel.m
 //  1haiiPhone
 //
 //  Created by LuckyCat on 2017/12/25.
 //  Copyright © 2017年 EHi. All rights reserved.
 //
 
-#import "EHITextFieldCellViewModel.h"
+#import "LCTextFieldCellViewModel.h"
 
-@implementation EHITextFieldCellModel
+@implementation LCTextFieldCellModel
 
 @end
 
-@implementation EHITextFieldCellViewModel
+@implementation LCTextFieldCellViewModel
 
-SetCellClass(EHITextFieldCell);
+SetCellClass(LCTextFieldCell);
 
 - (instancetype)init {
     self = [super init];
@@ -46,7 +46,7 @@ SetCellClass(EHITextFieldCell);
 //    self.contentFrame = CGRectMake(contentPointX, 0, Main_Screen_Width - contentPointX - CGRectGetMinX(self.tipFrame), self.cellHeight);
 }
 
-- (void)setModel:(EHITextFieldCellModel *)model {
+- (void)setModel:(LCTextFieldCellModel *)model {
     _model = model;
     
     self.tipStr = model.tipString;

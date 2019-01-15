@@ -14,13 +14,13 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     switch (self.dataStyle) {
-        case EHITableViewDataStyleRows:
+        case LCTableViewDataStyleRows:
             return 1;
             break;
-        case EHITableViewDataStyleSections:
+        case LCTableViewDataStyleSections:
             return self.dataArray.count;
             break;
-        case EHITableViewDataStyleAll:
+        case LCTableViewDataStyleAll:
             return self.dataArray.count;
             break;
         default:
@@ -31,13 +31,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (self.dataStyle) {
-        case EHITableViewDataStyleRows:
+        case LCTableViewDataStyleRows:
             return self.dataArray.count;
             break;
-        case EHITableViewDataStyleSections:
+        case LCTableViewDataStyleSections:
             return 1;
             break;
-        case EHITableViewDataStyleAll:
+        case LCTableViewDataStyleAll:
             return [self.dataArray[section] count];
             break;
         default:
@@ -117,13 +117,13 @@
 /** 根据数据类型和位置取数据 */
 - (id<LCCellDataProtocol>)cellViewModelWithIndexPath:(NSIndexPath *)indexPath {
     switch (self.dataStyle) {
-        case EHITableViewDataStyleRows:
+        case LCTableViewDataStyleRows:
             return self.dataArray[indexPath.row];
             break;
-        case EHITableViewDataStyleSections:
+        case LCTableViewDataStyleSections:
             return self.dataArray[indexPath.section];
             break;
-        case EHITableViewDataStyleAll:
+        case LCTableViewDataStyleAll:
             return self.dataArray[indexPath.section][indexPath.row];
             break;
         default:

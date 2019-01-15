@@ -8,7 +8,7 @@
 
 #import "LCDataStyleAllViewController.h"
 #import "UITableView+LCAdd.h"
-#import "EHIActionCellViewModel.h"
+#import "LCActionCellViewModel.h"
 
 @interface LCDataStyleAllViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -32,7 +32,7 @@
     for (NSUInteger i = 0; i < 3; i++) {
         NSMutableArray *array = [NSMutableArray array];
         for (NSUInteger j = 0; j < 2; j++) {
-            EHIActionCellViewModel *cellVM = [[EHIActionCellViewModel alloc] init];
+            LCActionCellViewModel *cellVM = [[LCActionCellViewModel alloc] init];
             cellVM.textStr = [NSString stringWithFormat:@"actionCell %lu,%lu", (unsigned long)i, (unsigned long)j];
             [array addObject:cellVM];
         }
@@ -41,13 +41,13 @@
     [self.tableView.lc_dataArray addObjectsFromArray:dataArray];
 }
 
-#pragma mark - EHITableViewDelegate
+#pragma mark - UITableViewDelegate & UITableViewDataSource
 
-- (CGFloat)tableView:(EHITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     return 20;
 }
 
-- (UIView *)tableView:(EHITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *label = [[UILabel alloc] init];
     label.backgroundColor = [UIColor lightGrayColor];
     label.text = [NSString stringWithFormat:@"section %ld", (long)section];
@@ -59,7 +59,7 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-        tableView.lc_dataStyle = EHITableViewDataStyleAll;
+        tableView.lc_dataStyle = LCTableViewDataStyleAll;
         tableView.lc_Delegate = self;
         
         [self.view addSubview:tableView];

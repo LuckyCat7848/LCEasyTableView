@@ -1,5 +1,5 @@
 //
-//  EHITextFieldCellViewModel.h
+//  LCTextFieldCellViewModel.h
 //  1haiiPhone
 //
 //  Created by LuckyCat on 2017/12/25.
@@ -9,10 +9,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EHICellViewModelProtocol.h"
+#import "LCCellDataProtocol.h"
 
 /** cell使用到的数据 */
-@interface EHITextFieldCellModel : NSObject
+@interface LCTextFieldCellModel : NSObject
 
 @property (nonatomic, copy) NSString *tipString;
 @property (nonatomic, copy) NSString *contentString;
@@ -20,9 +20,9 @@
 
 @end
 
-@interface EHITextFieldCellViewModel : NSObject<EHICellViewModelProtocol>
+@interface LCTextFieldCellViewModel : NSObject<LCCellDataProtocol>
 
-@property (nonatomic, strong) EHITextFieldCellModel *model;
+@property (nonatomic, strong) LCTextFieldCellModel *model;
 @property (nonatomic, assign) CGFloat cellHeight;
 
 /** 统一对齐提示语的宽度 */

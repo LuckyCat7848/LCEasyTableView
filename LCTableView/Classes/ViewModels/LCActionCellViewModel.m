@@ -1,16 +1,16 @@
 //
-//  EHIActionCellViewModel.m
+//  LCActionCellViewModel.m
 //  1haiiPhone
 //
 //  Created by LuckyCat on 2018/7/31.
 //  Copyright © 2018年 EHi. All rights reserved.
 //
 
-#import "EHIActionCellViewModel.h"
+#import "LCActionCellViewModel.h"
 
-@implementation EHIActionCellViewModel
+@implementation LCActionCellViewModel
 
-SetCellClass(EHIActionCell);
+SetCellClass(LCActionCell);
 
 + (LCCellDataType)cellDataType {
     return LCCellDataTypeViewModel;

@@ -40,12 +40,12 @@ static const void *kLCTableViewDataArray = &kLCTableViewDataArray;
 
 #pragma mark - data
 
-- (void)setLc_dataStyle:(EHITableViewDataStyle)lc_dataStyle {
+- (void)setLc_dataStyle:(LCTableViewDataStyle)lc_dataStyle {
     objc_setAssociatedObject(self, kLCTableViewDataStyle, @(lc_dataStyle), OBJC_ASSOCIATION_ASSIGN);
     self.imp.dataStyle = lc_dataStyle;
 }
 
-- (EHITableViewDataStyle)lc_dataStyle {
+- (LCTableViewDataStyle)lc_dataStyle {
     return [objc_getAssociatedObject(self, kLCTableViewDataStyle) integerValue];
 }
 

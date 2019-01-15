@@ -7,37 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02AA8A6CED9AE1794E3D276154C7C696 /* LCActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 914BF8AF3ABD68BF3CDBC2D94D9023F8 /* LCActionCell.m */; };
+		0B41F3DC78493EAEB91BFA411065D1CE /* LCTextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 72B990515171BFA8B831B5911A86DFF4 /* LCTextFieldCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0B58FDD8AF4C2DC54BD1294C5C837D7F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		0B68DC863BADCDDCC1EC092EEF5D76BA /* LCTableViewIMP.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AD7C1F18AA79F41CD643D8E5A1868D0 /* LCTableViewIMP.m */; };
-		0C17886DD63CC6B795A7C19DAB0E5D55 /* UITableView+LCAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = 784479C5B8DB60B4B969BAECDF628D97 /* UITableView+LCAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0F52B74979ACC7962777E65366369B76 /* EHILabelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FBDE29A09BC92CDDFD01D7FB5874DA7 /* EHILabelCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0F6E56AE1A7832DECFBE443C636A5DAB /* LCTableViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC3745F35676A773AEE83B10FA1BC5B /* LCTableViewProxy.m */; };
-		13E351A5BEF51BB9B1E21C2A1F4EDE48 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		1A61AC74BDF0A00FACB8A5918989F939 /* LCCellDataProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AB496C6F1EEE00D84E932B87986BEB6 /* LCCellDataProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E6C1FBAD59CB0A8604D8574B9385656 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		144BA5A15E46664CB8DAF385F771A965 /* LCTextFieldCellViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = BA152FFCD2DEFF0F2F3A6D66942D0F9E /* LCTextFieldCellViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1B2109ADDD0D4B3E2465E078A3EE8E0B /* LCTableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0843876E07DF9A61D39661D4AC517963 /* LCTableView-dummy.m */; };
+		1C747E658514A45D336A6605937B7392 /* LCLabelCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F570FA701175878A1FECC9547F08095 /* LCLabelCellViewModel.m */; };
 		21320D72414DBA0639FBBEEFE8B2EB52 /* Pods-LCTableView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FFD3F63FD54CCD4F75C107F8138E5487 /* Pods-LCTableView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2C25C620D2BD872FC3D3FD8EFF29DAE9 /* EHIActionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 1490E84901CDA45A8FF92AB81BE6EA7C /* EHIActionCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3694D04DD45BF70E3997F576F4663711 /* EHITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F015D6FED6D5874651E037E44CA6786 /* EHITableView.m */; };
+		2B324D48CBBA4604481D7D246102A4B6 /* LCTableViewDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CBC09D44C2459C8718354F59093F43A /* LCTableViewDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A3B4A9AF7E871AD6D6D9D59FFB9DEA3 /* Pods-LCTableView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 28F6AFC5D15E9F21B37A8B079DB08B56 /* Pods-LCTableView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3A447FB8531D04AFA418747D0DE74611 /* LCTableViewProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ADA06C82DB12F23599C4E68F272C0FB /* LCTableViewProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4268FBF403F41A72314E56C66E43C33D /* UITableView+LCAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACA7708E8707EB09A130A2041185941 /* UITableView+LCAdd.m */; };
-		46A02958B04C4FC38DEA27906FBCD912 /* EHIActionCellViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 65771279B8B0D6B97DAF85FB28752B17 /* EHIActionCellViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		49236DBDB7A92CE6EC8B23CA4E497885 /* EHILabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B84F1EAF8FC493BFB2D3DF7102829B5A /* EHILabelCell.m */; };
-		504A09A5EC66FFFF93DE343EEBDFD4A4 /* EHIActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0364463691F267BC3E9BE8AB702034C2 /* EHIActionCell.m */; };
-		5767807E41B0190C7C8E30FF7EAB1743 /* LCTableViewIMP.h in Headers */ = {isa = PBXBuildFile; fileRef = 595EB5E1B53D05B7B3ADF40E98DD652C /* LCTableViewIMP.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5C461FF60B0925BC37A5BE4B201D6DB5 /* EHITextFieldCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7431FB01BA915F464C07D51A83D591AA /* EHITextFieldCellViewModel.m */; };
-		6BC585AA4F7F5928CBCB044D2633B488 /* EHIActionCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF78687DD1E2BB09A4B0E4758F05F2FF /* EHIActionCellViewModel.m */; };
-		6C21B5B29F51A7F1AF8C002096FDCC20 /* LCTableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1E6478612E974BD843064602DDD69C /* LCTableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8EB2B6790F182C17743E4E10F0F98955 /* EHITextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 67176E7D7EF2B067ED344E3138C7E4CA /* EHITextFieldCell.m */; };
-		8FE3C5704AD4DE8D6A1F23CB7563C7BF /* EHITextFieldCellViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = DECE07262289D21AE30CF20076675DDB /* EHITextFieldCellViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		423DA41F5C7BC911738942C89A6213F0 /* LCActionCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC73C20B62915D1492BD8B43EC5FF9AA /* LCActionCellViewModel.m */; };
+		5DACEEAB93A5EB274E1903E537035199 /* LCTableViewIMP.m in Sources */ = {isa = PBXBuildFile; fileRef = ED98A82E59C60051F3D27F84DFA3FA0E /* LCTableViewIMP.m */; };
+		7531008A78BA8B783B49910F5ED712DD /* LCTableViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = D7B9A18F9C0620DBED4D5EB99C191ED7 /* LCTableViewProxy.m */; };
+		7E5658E6BA5283B32C143E040B8561FF /* LCLabelCellViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = CE460FBA1F4CED91111C87773AF8E9BB /* LCLabelCellViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8ACDA0D62EA9DDBDECC794AD05F08C5D /* LCTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EFABA10732CA0155566A71643DB3B81 /* LCTextFieldCell.m */; };
+		8F64882B59E3893CEABFBCF389494D33 /* LCTableViewProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 221908F8DBAE32BB2879366442B99F09 /* LCTableViewProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9049D0DD5408E232BECA9D63B5585F36 /* Pods-LCTableView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AB77C33D6150F8DEBDB695EFFAD73EA /* Pods-LCTableView_Example-dummy.m */; };
-		ABA9728E18AEEABC31D8663447874D27 /* EHICellViewModelProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 72BF7A10A262C5CA75D7440E4E133462 /* EHICellViewModelProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B6D7E615A02ACF1109DEC236B463DD70 /* EHITableView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AC8D9A97B20D07114BEEE676899E408 /* EHITableView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A140C54F676803D90BB644BC0706D243 /* LCTextFieldCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 042CDA632EB00CA231B9ABB00E4AE206 /* LCTextFieldCellViewModel.m */; };
+		A185A404B654D9DBED3B1767FC642428 /* LCTableViewIMP.h in Headers */ = {isa = PBXBuildFile; fileRef = 615CABEA08BCBA2025C55027F52099D6 /* LCTableViewIMP.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD64CD241BB127EF9B60D6333072A9A2 /* UITableView+LCAdd.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE6A7464FAB95695023C7BFB12C8095 /* UITableView+LCAdd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B1659DFD93632C3A98C8AA49369A2B92 /* LCTableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C589F81F83009C1573BD34091935DA4C /* LCTableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B74FD2C47AAF348778558DD858C2B38C /* Pods-LCTableView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3E3D9373DC912CDBD5C7EB9F12CCC3 /* Pods-LCTableView_Tests-dummy.m */; };
-		C688D576305203D841A55E051198EF84 /* LCTableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A82B74B0513B5F3E356C813EDBC03F7F /* LCTableView-dummy.m */; };
-		CFBDFAF62BC8F188D023DD87265D3556 /* EHILabelCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9F23CD4BCF0BA39D73DF6D97D46BA8 /* EHILabelCellViewModel.m */; };
+		C2C637C8CCE22BE21699EC4A80C033F2 /* LCLabelCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F89FC777DA369EB26705F0B0DFB86D8 /* LCLabelCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAF7BFD84E0B37C1BDEBC123EA7E518F /* UITableView+LCAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D2BD57FCEA7048AA7188AA358671AE /* UITableView+LCAdd.m */; };
+		E4614484B3873E65D3B778E0A0D58626 /* LCActionCellViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 341F56EBB744E09378F52696500B93CC /* LCActionCellViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA57AC7936917CA99C6D2394F1AACC6B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		FC6592D05DEE62C830C5375F50181F98 /* EHITextFieldCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FF7573491B31A025B8956DF788CF966 /* EHITextFieldCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FF92AA44CA1320C55EC2776F678FF0F5 /* EHILabelCellViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 39F74F5B5787B2FEDD30FF2953CF317B /* EHILabelCellViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC34759E88F2DBF7845E16DDF9E631F4 /* LCLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0339661389D82F7C7B53B441F66E3A2C /* LCLabelCell.m */; };
+		ED67BDC3649ED9A411A0DF884368EB25 /* LCActionCell.h in Headers */ = {isa = PBXBuildFile; fileRef = F55CF7A19E1FD7031707E24123F3C76C /* LCActionCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F4D6FDBC07C668C7DE3883402791EAD4 /* LCCellDataProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 33E1AAD1E90CF103D119E97661DE041B /* LCCellDataProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,84 +50,82 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C1C303B64A8895D96C5F7CC3E3757DB9;
+			remoteGlobalIDString = 2F3489FBA443DACD6770F63064716F99;
 			remoteInfo = LCTableView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0364463691F267BC3E9BE8AB702034C2 /* EHIActionCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EHIActionCell.m; sourceTree = "<group>"; };
-		0ACA7708E8707EB09A130A2041185941 /* UITableView+LCAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+LCAdd.m"; path = "LCTableView/Classes/UITableView+LCAdd.m"; sourceTree = "<group>"; };
-		0ADA06C82DB12F23599C4E68F272C0FB /* LCTableViewProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCTableViewProxy.h; path = LCTableView/Classes/LCTableViewProxy.h; sourceTree = "<group>"; };
+		0339661389D82F7C7B53B441F66E3A2C /* LCLabelCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LCLabelCell.m; sourceTree = "<group>"; };
+		042CDA632EB00CA231B9ABB00E4AE206 /* LCTextFieldCellViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LCTextFieldCellViewModel.m; sourceTree = "<group>"; };
+		05671270491ADB7F6946B306E7309903 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0843876E07DF9A61D39661D4AC517963 /* LCTableView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LCTableView-dummy.m"; sourceTree = "<group>"; };
 		0FB45644F3CEB809ABB221D4CA55150A /* Pods-LCTableView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LCTableView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		1490E84901CDA45A8FF92AB81BE6EA7C /* EHIActionCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EHIActionCell.h; sourceTree = "<group>"; };
-		1AB496C6F1EEE00D84E932B87986BEB6 /* LCCellDataProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCCellDataProtocol.h; path = LCTableView/Classes/LCCellDataProtocol.h; sourceTree = "<group>"; };
-		1AC8D9A97B20D07114BEEE676899E408 /* EHITableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EHITableView.h; path = LCTableView/Classes/EHITableView.h; sourceTree = "<group>"; };
+		221908F8DBAE32BB2879366442B99F09 /* LCTableViewProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCTableViewProxy.h; path = LCTableView/Classes/LCTableViewProxy.h; sourceTree = "<group>"; };
 		28F6AFC5D15E9F21B37A8B079DB08B56 /* Pods-LCTableView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LCTableView_Example-umbrella.h"; sourceTree = "<group>"; };
-		2E3E0B169D148D85DA136C3293879D9B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		333ACBF753CA0A70A7ECC298D5DBF834 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		33E1AAD1E90CF103D119E97661DE041B /* LCCellDataProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCCellDataProtocol.h; path = LCTableView/Classes/LCCellDataProtocol.h; sourceTree = "<group>"; };
+		341F56EBB744E09378F52696500B93CC /* LCActionCellViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LCActionCellViewModel.h; sourceTree = "<group>"; };
 		39BD106362435D17AED0CA0E857599FE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		39F74F5B5787B2FEDD30FF2953CF317B /* EHILabelCellViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EHILabelCellViewModel.h; sourceTree = "<group>"; };
-		3AD7C1F18AA79F41CD643D8E5A1868D0 /* LCTableViewIMP.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LCTableViewIMP.m; path = LCTableView/Classes/LCTableViewIMP.m; sourceTree = "<group>"; };
 		3B980D5AE6333A5663C77056CC2A7ACC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CBC09D44C2459C8718354F59093F43A /* LCTableViewDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCTableViewDefines.h; path = LCTableView/Classes/LCTableViewDefines.h; sourceTree = "<group>"; };
 		3CD6803FA8E4244733020DF85546980D /* Pods-LCTableView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LCTableView_Example-frameworks.sh"; sourceTree = "<group>"; };
-		3F015D6FED6D5874651E037E44CA6786 /* EHITableView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = EHITableView.m; path = LCTableView/Classes/EHITableView.m; sourceTree = "<group>"; };
+		3F89FC777DA369EB26705F0B0DFB86D8 /* LCLabelCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LCLabelCell.h; sourceTree = "<group>"; };
 		4511DA22A1DC5CF7960F53161BD37687 /* Pods-LCTableView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LCTableView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4FBDE29A09BC92CDDFD01D7FB5874DA7 /* EHILabelCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EHILabelCell.h; sourceTree = "<group>"; };
 		5492C8DC27DE510E663D7BA8DB6B5036 /* Pods-LCTableView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LCTableView_Tests-resources.sh"; sourceTree = "<group>"; };
-		595EB5E1B53D05B7B3ADF40E98DD652C /* LCTableViewIMP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCTableViewIMP.h; path = LCTableView/Classes/LCTableViewIMP.h; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		65771279B8B0D6B97DAF85FB28752B17 /* EHIActionCellViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EHIActionCellViewModel.h; sourceTree = "<group>"; };
-		67176E7D7EF2B067ED344E3138C7E4CA /* EHITextFieldCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EHITextFieldCell.m; sourceTree = "<group>"; };
+		5F570FA701175878A1FECC9547F08095 /* LCLabelCellViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LCLabelCellViewModel.m; sourceTree = "<group>"; };
+		615CABEA08BCBA2025C55027F52099D6 /* LCTableViewIMP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LCTableViewIMP.h; path = LCTableView/Classes/LCTableViewIMP.h; sourceTree = "<group>"; };
 		6EA7254AC8B9EAE53EC573399759B2DD /* Pods_LCTableView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LCTableView_Tests.framework; path = "Pods-LCTableView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ECD598D13442F1107BBDFD1CD1CB223 /* Pods-LCTableView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LCTableView_Example.release.xcconfig"; sourceTree = "<group>"; };
-		72BF7A10A262C5CA75D7440E4E133462 /* EHICellViewModelProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EHICellViewModelProtocol.h; path = LCTableView/Classes/EHICellViewModelProtocol.h; sourceTree = "<group>"; };
-		7431FB01BA915F464C07D51A83D591AA /* EHITextFieldCellViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EHITextFieldCellViewModel.m; sourceTree = "<group>"; };
-		784479C5B8DB60B4B969BAECDF628D97 /* UITableView+LCAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+LCAdd.h"; path = "LCTableView/Classes/UITableView+LCAdd.h"; sourceTree = "<group>"; };
-		7EC3745F35676A773AEE83B10FA1BC5B /* LCTableViewProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LCTableViewProxy.m; path = LCTableView/Classes/LCTableViewProxy.m; sourceTree = "<group>"; };
-		7FF7573491B31A025B8956DF788CF966 /* EHITextFieldCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EHITextFieldCell.h; sourceTree = "<group>"; };
+		72B990515171BFA8B831B5911A86DFF4 /* LCTextFieldCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LCTextFieldCell.h; sourceTree = "<group>"; };
 		8035649184535070DAFD6C0D3AB0A4F6 /* Pods-LCTableView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LCTableView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		8EFABA10732CA0155566A71643DB3B81 /* LCTextFieldCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LCTextFieldCell.m; sourceTree = "<group>"; };
+		8F81B1D0B0FF0A1125D2BCF05AEEC329 /* LCTableView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LCTableView-prefix.pch"; sourceTree = "<group>"; };
 		8FC2BC2E809E6CA38B05A468F3CB9815 /* Pods-LCTableView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LCTableView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		90D331457AA3DEEE682EFDC79A325C88 /* LCTableView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = LCTableView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		914BF8AF3ABD68BF3CDBC2D94D9023F8 /* LCActionCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LCActionCell.m; sourceTree = "<group>"; };
+		9340BCBD8F649CEBA92354EFC1AEA294 /* LCTableView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LCTableView.xcconfig; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96D2BD57FCEA7048AA7188AA358671AE /* UITableView+LCAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+LCAdd.m"; path = "LCTableView/Classes/UITableView+LCAdd.m"; sourceTree = "<group>"; };
 		9AB77C33D6150F8DEBDB695EFFAD73EA /* Pods-LCTableView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LCTableView_Example-dummy.m"; sourceTree = "<group>"; };
 		A6A6F13EF758B39D22CEC045DF7AEC1E /* Pods-LCTableView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LCTableView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		A826E3EBDDE5D1659B31953A6F93D1DC /* LCTableView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LCTableView.modulemap; sourceTree = "<group>"; };
-		A82B74B0513B5F3E356C813EDBC03F7F /* LCTableView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LCTableView-dummy.m"; sourceTree = "<group>"; };
-		ACAB40C5EF60544BB6B6FB33C63BE466 /* LCTableView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = LCTableView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B5B0B4C5C79386E8D44730B15275486B /* Pods-LCTableView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LCTableView_Example.modulemap"; sourceTree = "<group>"; };
-		B84F1EAF8FC493BFB2D3DF7102829B5A /* EHILabelCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EHILabelCell.m; sourceTree = "<group>"; };
-		BB1E6478612E974BD843064602DDD69C /* LCTableView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LCTableView-umbrella.h"; sourceTree = "<group>"; };
-		BC9F23CD4BCF0BA39D73DF6D97D46BA8 /* EHILabelCellViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EHILabelCellViewModel.m; sourceTree = "<group>"; };
+		B8205D9F3912F586E6D8293CE7B3C69F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		BA152FFCD2DEFF0F2F3A6D66942D0F9E /* LCTextFieldCellViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LCTextFieldCellViewModel.h; sourceTree = "<group>"; };
 		BD568302E4F0056C2E09EF1B001CB86B /* LCTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LCTableView.framework; path = LCTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD66B168CF6055352504DB04D017213A /* Pods_LCTableView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LCTableView_Example.framework; path = "Pods-LCTableView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFD07389C72A6FD98D9A58BC71E26788 /* LCTableView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LCTableView-prefix.pch"; sourceTree = "<group>"; };
 		C22637E8ED98465CF8B5AA663BCBB7C9 /* Pods-LCTableView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LCTableView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		CF78687DD1E2BB09A4B0E4758F05F2FF /* EHIActionCellViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = EHIActionCellViewModel.m; sourceTree = "<group>"; };
+		C589F81F83009C1573BD34091935DA4C /* LCTableView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LCTableView-umbrella.h"; sourceTree = "<group>"; };
+		CC73C20B62915D1492BD8B43EC5FF9AA /* LCActionCellViewModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LCActionCellViewModel.m; sourceTree = "<group>"; };
+		CE460FBA1F4CED91111C87773AF8E9BB /* LCLabelCellViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LCLabelCellViewModel.h; sourceTree = "<group>"; };
 		D46891AE857A7637786071C01C826DA9 /* Pods-LCTableView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LCTableView_Tests.modulemap"; sourceTree = "<group>"; };
+		D7B9A18F9C0620DBED4D5EB99C191ED7 /* LCTableViewProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LCTableViewProxy.m; path = LCTableView/Classes/LCTableViewProxy.m; sourceTree = "<group>"; };
 		D9C503DF01C585FC62D33567DD80D95E /* Pods-LCTableView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LCTableView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		DECE07262289D21AE30CF20076675DDB /* EHITextFieldCellViewModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = EHITextFieldCellViewModel.h; sourceTree = "<group>"; };
 		E0B2AD3171E58B0C076308493E00953C /* Pods-LCTableView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LCTableView_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		E40AA10E115AEBE20EB77FB8C588D25A /* Pods-LCTableView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LCTableView_Example-resources.sh"; sourceTree = "<group>"; };
-		E69ED561EB70D155EA85A18F225D8E6E /* LCTableView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LCTableView.xcconfig; sourceTree = "<group>"; };
-		E8A2F90692AE4C28CE7B1AB0B1ABF428 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8A53687F4BC07353DC50915A2681AA5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		EAE6A7464FAB95695023C7BFB12C8095 /* UITableView+LCAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITableView+LCAdd.h"; path = "LCTableView/Classes/UITableView+LCAdd.h"; sourceTree = "<group>"; };
+		ED98A82E59C60051F3D27F84DFA3FA0E /* LCTableViewIMP.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LCTableViewIMP.m; path = LCTableView/Classes/LCTableViewIMP.m; sourceTree = "<group>"; };
+		F55CF7A19E1FD7031707E24123F3C76C /* LCActionCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LCActionCell.h; sourceTree = "<group>"; };
+		F729B162D278BB5B8B5517D807622DA2 /* LCTableView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LCTableView.modulemap; sourceTree = "<group>"; };
 		FB3E3D9373DC912CDBD5C7EB9F12CCC3 /* Pods-LCTableView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LCTableView_Tests-dummy.m"; sourceTree = "<group>"; };
 		FFD3F63FD54CCD4F75C107F8138E5487 /* Pods-LCTableView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LCTableView_Tests-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3E986106D395D920811D0A71F8332158 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E6C1FBAD59CB0A8604D8574B9385656 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BDA73FFDAAB761C1125B28DC0961904C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EA57AC7936917CA99C6D2394F1AACC6B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE8ECF4241542540B820C69013BC493B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				13E351A5BEF51BB9B1E21C2A1F4EDE48 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +167,20 @@
 			path = "Target Support Files/Pods-LCTableView_Tests";
 			sourceTree = "<group>";
 		};
+		30E044C44270F93BC415C2FD415B8841 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				05671270491ADB7F6946B306E7309903 /* Info.plist */,
+				F729B162D278BB5B8B5517D807622DA2 /* LCTableView.modulemap */,
+				9340BCBD8F649CEBA92354EFC1AEA294 /* LCTableView.xcconfig */,
+				0843876E07DF9A61D39661D4AC517963 /* LCTableView-dummy.m */,
+				8F81B1D0B0FF0A1125D2BCF05AEEC329 /* LCTableView-prefix.pch */,
+				C589F81F83009C1573BD34091935DA4C /* LCTableView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/LCTableView";
+			sourceTree = "<group>";
+		};
 		3AC0F60222F23482D763D6BDCCA52989 /* Pods-LCTableView_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,18 +199,18 @@
 			path = "Target Support Files/Pods-LCTableView_Example";
 			sourceTree = "<group>";
 		};
-		5A3F23C01D6E9E355669E9FE2F847DCF /* Views */ = {
+		4E03E7B270D54C8C2EA07F14492768E0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				1490E84901CDA45A8FF92AB81BE6EA7C /* EHIActionCell.h */,
-				0364463691F267BC3E9BE8AB702034C2 /* EHIActionCell.m */,
-				4FBDE29A09BC92CDDFD01D7FB5874DA7 /* EHILabelCell.h */,
-				B84F1EAF8FC493BFB2D3DF7102829B5A /* EHILabelCell.m */,
-				7FF7573491B31A025B8956DF788CF966 /* EHITextFieldCell.h */,
-				67176E7D7EF2B067ED344E3138C7E4CA /* EHITextFieldCell.m */,
+				341F56EBB744E09378F52696500B93CC /* LCActionCellViewModel.h */,
+				CC73C20B62915D1492BD8B43EC5FF9AA /* LCActionCellViewModel.m */,
+				CE460FBA1F4CED91111C87773AF8E9BB /* LCLabelCellViewModel.h */,
+				5F570FA701175878A1FECC9547F08095 /* LCLabelCellViewModel.m */,
+				BA152FFCD2DEFF0F2F3A6D66942D0F9E /* LCTextFieldCellViewModel.h */,
+				042CDA632EB00CA231B9ABB00E4AE206 /* LCTextFieldCellViewModel.m */,
 			);
-			name = Views;
-			path = LCTableView/Classes/Views;
+			name = ViewModels;
+			path = LCTableView/Classes/ViewModels;
 			sourceTree = "<group>";
 		};
 		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
@@ -211,65 +221,25 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		6F06570298AD972B2841AAC1F2356E3A /* LCTableView */ = {
-			isa = PBXGroup;
-			children = (
-				72BF7A10A262C5CA75D7440E4E133462 /* EHICellViewModelProtocol.h */,
-				1AC8D9A97B20D07114BEEE676899E408 /* EHITableView.h */,
-				3F015D6FED6D5874651E037E44CA6786 /* EHITableView.m */,
-				1AB496C6F1EEE00D84E932B87986BEB6 /* LCCellDataProtocol.h */,
-				595EB5E1B53D05B7B3ADF40E98DD652C /* LCTableViewIMP.h */,
-				3AD7C1F18AA79F41CD643D8E5A1868D0 /* LCTableViewIMP.m */,
-				0ADA06C82DB12F23599C4E68F272C0FB /* LCTableViewProxy.h */,
-				7EC3745F35676A773AEE83B10FA1BC5B /* LCTableViewProxy.m */,
-				784479C5B8DB60B4B969BAECDF628D97 /* UITableView+LCAdd.h */,
-				0ACA7708E8707EB09A130A2041185941 /* UITableView+LCAdd.m */,
-				E42A9143D6E587F9113C27EC6C178BB1 /* Pod */,
-				A641A5E80F9952B11ED32FDDA13939D5 /* Support Files */,
-				87613F9514E46C5E4A58FA39A4F9C359 /* ViewModels */,
-				5A3F23C01D6E9E355669E9FE2F847DCF /* Views */,
-			);
-			name = LCTableView;
-			path = ../..;
-			sourceTree = "<group>";
-		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				C91CDC31D49001256EF7BD50733820BE /* Development Pods */,
+				BE6CC5CED21C9D22C01D627B620E18FE /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				BA751B4362A402A9B7C43780E8EAD19E /* Products */,
 				218B9B0E2DC1C0370268BDF2E6B29791 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		87613F9514E46C5E4A58FA39A4F9C359 /* ViewModels */ = {
+		956746ED334B6EF7982349C34CC8F831 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				65771279B8B0D6B97DAF85FB28752B17 /* EHIActionCellViewModel.h */,
-				CF78687DD1E2BB09A4B0E4758F05F2FF /* EHIActionCellViewModel.m */,
-				39F74F5B5787B2FEDD30FF2953CF317B /* EHILabelCellViewModel.h */,
-				BC9F23CD4BCF0BA39D73DF6D97D46BA8 /* EHILabelCellViewModel.m */,
-				DECE07262289D21AE30CF20076675DDB /* EHITextFieldCellViewModel.h */,
-				7431FB01BA915F464C07D51A83D591AA /* EHITextFieldCellViewModel.m */,
+				90D331457AA3DEEE682EFDC79A325C88 /* LCTableView.podspec */,
+				B8205D9F3912F586E6D8293CE7B3C69F /* LICENSE */,
+				E8A53687F4BC07353DC50915A2681AA5 /* README.md */,
 			);
-			name = ViewModels;
-			path = LCTableView/Classes/ViewModels;
-			sourceTree = "<group>";
-		};
-		A641A5E80F9952B11ED32FDDA13939D5 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E8A2F90692AE4C28CE7B1AB0B1ABF428 /* Info.plist */,
-				A826E3EBDDE5D1659B31953A6F93D1DC /* LCTableView.modulemap */,
-				E69ED561EB70D155EA85A18F225D8E6E /* LCTableView.xcconfig */,
-				A82B74B0513B5F3E356C813EDBC03F7F /* LCTableView-dummy.m */,
-				BFD07389C72A6FD98D9A58BC71E26788 /* LCTableView-prefix.pch */,
-				BB1E6478612E974BD843064602DDD69C /* LCTableView-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/LCTableView";
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		BA751B4362A402A9B7C43780E8EAD19E /* Products */ = {
@@ -290,44 +260,67 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C91CDC31D49001256EF7BD50733820BE /* Development Pods */ = {
+		BE6CC5CED21C9D22C01D627B620E18FE /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6F06570298AD972B2841AAC1F2356E3A /* LCTableView */,
+				EDF9BEDAAC63154B0181ECFA3D7F9410 /* LCTableView */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		E42A9143D6E587F9113C27EC6C178BB1 /* Pod */ = {
+		D36E62ACDCCCD19248EC733A0104EF22 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				ACAB40C5EF60544BB6B6FB33C63BE466 /* LCTableView.podspec */,
-				333ACBF753CA0A70A7ECC298D5DBF834 /* LICENSE */,
-				2E3E0B169D148D85DA136C3293879D9B /* README.md */,
+				F55CF7A19E1FD7031707E24123F3C76C /* LCActionCell.h */,
+				914BF8AF3ABD68BF3CDBC2D94D9023F8 /* LCActionCell.m */,
+				3F89FC777DA369EB26705F0B0DFB86D8 /* LCLabelCell.h */,
+				0339661389D82F7C7B53B441F66E3A2C /* LCLabelCell.m */,
+				72B990515171BFA8B831B5911A86DFF4 /* LCTextFieldCell.h */,
+				8EFABA10732CA0155566A71643DB3B81 /* LCTextFieldCell.m */,
 			);
-			name = Pod;
+			name = Views;
+			path = LCTableView/Classes/Views;
+			sourceTree = "<group>";
+		};
+		EDF9BEDAAC63154B0181ECFA3D7F9410 /* LCTableView */ = {
+			isa = PBXGroup;
+			children = (
+				33E1AAD1E90CF103D119E97661DE041B /* LCCellDataProtocol.h */,
+				3CBC09D44C2459C8718354F59093F43A /* LCTableViewDefines.h */,
+				615CABEA08BCBA2025C55027F52099D6 /* LCTableViewIMP.h */,
+				ED98A82E59C60051F3D27F84DFA3FA0E /* LCTableViewIMP.m */,
+				221908F8DBAE32BB2879366442B99F09 /* LCTableViewProxy.h */,
+				D7B9A18F9C0620DBED4D5EB99C191ED7 /* LCTableViewProxy.m */,
+				EAE6A7464FAB95695023C7BFB12C8095 /* UITableView+LCAdd.h */,
+				96D2BD57FCEA7048AA7188AA358671AE /* UITableView+LCAdd.m */,
+				956746ED334B6EF7982349C34CC8F831 /* Pod */,
+				30E044C44270F93BC415C2FD415B8841 /* Support Files */,
+				4E03E7B270D54C8C2EA07F14492768E0 /* ViewModels */,
+				D36E62ACDCCCD19248EC733A0104EF22 /* Views */,
+			);
+			name = LCTableView;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		43B8F75950CA1AAB97461FF12D72AB51 /* Headers */ = {
+		5DCB0426ABD51767A9E0C64889405915 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C25C620D2BD872FC3D3FD8EFF29DAE9 /* EHIActionCell.h in Headers */,
-				46A02958B04C4FC38DEA27906FBCD912 /* EHIActionCellViewModel.h in Headers */,
-				ABA9728E18AEEABC31D8663447874D27 /* EHICellViewModelProtocol.h in Headers */,
-				0F52B74979ACC7962777E65366369B76 /* EHILabelCell.h in Headers */,
-				FF92AA44CA1320C55EC2776F678FF0F5 /* EHILabelCellViewModel.h in Headers */,
-				B6D7E615A02ACF1109DEC236B463DD70 /* EHITableView.h in Headers */,
-				FC6592D05DEE62C830C5375F50181F98 /* EHITextFieldCell.h in Headers */,
-				8FE3C5704AD4DE8D6A1F23CB7563C7BF /* EHITextFieldCellViewModel.h in Headers */,
-				1A61AC74BDF0A00FACB8A5918989F939 /* LCCellDataProtocol.h in Headers */,
-				6C21B5B29F51A7F1AF8C002096FDCC20 /* LCTableView-umbrella.h in Headers */,
-				5767807E41B0190C7C8E30FF7EAB1743 /* LCTableViewIMP.h in Headers */,
-				3A447FB8531D04AFA418747D0DE74611 /* LCTableViewProxy.h in Headers */,
-				0C17886DD63CC6B795A7C19DAB0E5D55 /* UITableView+LCAdd.h in Headers */,
+				ED67BDC3649ED9A411A0DF884368EB25 /* LCActionCell.h in Headers */,
+				E4614484B3873E65D3B778E0A0D58626 /* LCActionCellViewModel.h in Headers */,
+				F4D6FDBC07C668C7DE3883402791EAD4 /* LCCellDataProtocol.h in Headers */,
+				C2C637C8CCE22BE21699EC4A80C033F2 /* LCLabelCell.h in Headers */,
+				7E5658E6BA5283B32C143E040B8561FF /* LCLabelCellViewModel.h in Headers */,
+				B1659DFD93632C3A98C8AA49369A2B92 /* LCTableView-umbrella.h in Headers */,
+				2B324D48CBBA4604481D7D246102A4B6 /* LCTableViewDefines.h in Headers */,
+				A185A404B654D9DBED3B1767FC642428 /* LCTableViewIMP.h in Headers */,
+				8F64882B59E3893CEABFBCF389494D33 /* LCTableViewProxy.h in Headers */,
+				0B41F3DC78493EAEB91BFA411065D1CE /* LCTextFieldCell.h in Headers */,
+				144BA5A15E46664CB8DAF385F771A965 /* LCTextFieldCellViewModel.h in Headers */,
+				AD64CD241BB127EF9B60D6333072A9A2 /* UITableView+LCAdd.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,13 +343,13 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C1C303B64A8895D96C5F7CC3E3757DB9 /* LCTableView */ = {
+		2F3489FBA443DACD6770F63064716F99 /* LCTableView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E6EB9944C4863D5F0436453BEE1AE1CF /* Build configuration list for PBXNativeTarget "LCTableView" */;
+			buildConfigurationList = BC6B09B4E134E3055973ED1ED7D5E422 /* Build configuration list for PBXNativeTarget "LCTableView" */;
 			buildPhases = (
-				72D1D918CEB50D477C9FB3CA25A4C5A5 /* Sources */,
-				BE8ECF4241542540B820C69013BC493B /* Frameworks */,
-				43B8F75950CA1AAB97461FF12D72AB51 /* Headers */,
+				D9890305DD27ACF2D3B8A1D05F45736F /* Sources */,
+				3E986106D395D920811D0A71F8332158 /* Frameworks */,
+				5DCB0426ABD51767A9E0C64889405915 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -424,7 +417,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C1C303B64A8895D96C5F7CC3E3757DB9 /* LCTableView */,
+				2F3489FBA443DACD6770F63064716F99 /* LCTableView */,
 				E8B57EFE21256918582774D6EC8F67C2 /* Pods-LCTableView_Example */,
 				D00AEF1FD020408234D71DC9225112D5 /* Pods-LCTableView_Tests */,
 			);
@@ -432,29 +425,28 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		72D1D918CEB50D477C9FB3CA25A4C5A5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				504A09A5EC66FFFF93DE343EEBDFD4A4 /* EHIActionCell.m in Sources */,
-				6BC585AA4F7F5928CBCB044D2633B488 /* EHIActionCellViewModel.m in Sources */,
-				49236DBDB7A92CE6EC8B23CA4E497885 /* EHILabelCell.m in Sources */,
-				CFBDFAF62BC8F188D023DD87265D3556 /* EHILabelCellViewModel.m in Sources */,
-				3694D04DD45BF70E3997F576F4663711 /* EHITableView.m in Sources */,
-				8EB2B6790F182C17743E4E10F0F98955 /* EHITextFieldCell.m in Sources */,
-				5C461FF60B0925BC37A5BE4B201D6DB5 /* EHITextFieldCellViewModel.m in Sources */,
-				C688D576305203D841A55E051198EF84 /* LCTableView-dummy.m in Sources */,
-				0B68DC863BADCDDCC1EC092EEF5D76BA /* LCTableViewIMP.m in Sources */,
-				0F6E56AE1A7832DECFBE443C636A5DAB /* LCTableViewProxy.m in Sources */,
-				4268FBF403F41A72314E56C66E43C33D /* UITableView+LCAdd.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AA5A0563BE30A86E437AC32F42AE43BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B74FD2C47AAF348778558DD858C2B38C /* Pods-LCTableView_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9890305DD27ACF2D3B8A1D05F45736F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02AA8A6CED9AE1794E3D276154C7C696 /* LCActionCell.m in Sources */,
+				423DA41F5C7BC911738942C89A6213F0 /* LCActionCellViewModel.m in Sources */,
+				EC34759E88F2DBF7845E16DDF9E631F4 /* LCLabelCell.m in Sources */,
+				1C747E658514A45D336A6605937B7392 /* LCLabelCellViewModel.m in Sources */,
+				1B2109ADDD0D4B3E2465E078A3EE8E0B /* LCTableView-dummy.m in Sources */,
+				5DACEEAB93A5EB274E1903E537035199 /* LCTableViewIMP.m in Sources */,
+				7531008A78BA8B783B49910F5ED712DD /* LCTableViewProxy.m in Sources */,
+				8ACDA0D62EA9DDBDECC794AD05F08C5D /* LCTextFieldCell.m in Sources */,
+				A140C54F676803D90BB644BC0706D243 /* LCTextFieldCellViewModel.m in Sources */,
+				DAF7BFD84E0B37C1BDEBC123EA7E518F /* UITableView+LCAdd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,43 +470,12 @@
 		D2C76ACC27C216EB17538111F74E2B07 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = LCTableView;
-			target = C1C303B64A8895D96C5F7CC3E3757DB9 /* LCTableView */;
+			target = 2F3489FBA443DACD6770F63064716F99 /* LCTableView */;
 			targetProxy = CD2BD980030D08AAAC4B99645451C49B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		16E67D5E24E6C84EBF9EE86F7D7693A1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E69ED561EB70D155EA85A18F225D8E6E /* LCTableView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LCTableView/LCTableView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LCTableView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LCTableView/LCTableView.modulemap";
-				PRODUCT_MODULE_NAME = LCTableView;
-				PRODUCT_NAME = LCTableView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		1EE19F5DD95931924296F637BF18BD8F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -575,6 +536,67 @@
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		6874DE8F551AD10689FAFEFFE4A50285 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9340BCBD8F649CEBA92354EFC1AEA294 /* LCTableView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LCTableView/LCTableView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LCTableView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LCTableView/LCTableView.modulemap";
+				PRODUCT_MODULE_NAME = LCTableView;
+				PRODUCT_NAME = LCTableView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9F76AF319F3B17A752549ACF7A10D2F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9340BCBD8F649CEBA92354EFC1AEA294 /* LCTableView.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LCTableView/LCTableView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LCTableView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LCTableView/LCTableView.modulemap";
+				PRODUCT_MODULE_NAME = LCTableView;
+				PRODUCT_NAME = LCTableView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
@@ -737,36 +759,6 @@
 			};
 			name = Release;
 		};
-		F64E439166BE3435D800E0426615151D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E69ED561EB70D155EA85A18F225D8E6E /* LCTableView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LCTableView/LCTableView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LCTableView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LCTableView/LCTableView.modulemap";
-				PRODUCT_MODULE_NAME = LCTableView;
-				PRODUCT_NAME = LCTableView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		F79CFBF59BC81478813FAED764F44A49 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D9C503DF01C585FC62D33567DD80D95E /* Pods-LCTableView_Tests.debug.xcconfig */;
@@ -830,11 +822,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E6EB9944C4863D5F0436453BEE1AE1CF /* Build configuration list for PBXNativeTarget "LCTableView" */ = {
+		BC6B09B4E134E3055973ED1ED7D5E422 /* Build configuration list for PBXNativeTarget "LCTableView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F64E439166BE3435D800E0426615151D /* Debug */,
-				16E67D5E24E6C84EBF9EE86F7D7693A1 /* Release */,
+				9F76AF319F3B17A752549ACF7A10D2F4 /* Debug */,
+				6874DE8F551AD10689FAFEFFE4A50285 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

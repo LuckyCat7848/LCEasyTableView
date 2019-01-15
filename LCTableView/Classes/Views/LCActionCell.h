@@ -1,5 +1,5 @@
 //
-//  EHIActionCell.h
+//  LCActionCell.h
 //  1haiiPhone
 //
 //  Created by LuckyCat on 2018/7/31.
@@ -9,11 +9,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EHIActionCellViewModel.h"
+#import "LCActionCellViewModel.h"
 
-@interface EHIActionCell : UITableViewCell
+@interface LCActionCell : UITableViewCell
 
 /** 数据赋值 */
-@property (nonatomic, strong) EHIActionCellViewModel *viewModel;
+@property (nonatomic, strong) LCActionCellViewModel *viewModel;
 
 @end

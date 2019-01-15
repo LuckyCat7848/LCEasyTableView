@@ -27,13 +27,12 @@
 		9902FFB821EDB9BC0024C497 /* LCPlantModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFB721EDB9BC0024C497 /* LCPlantModel.m */; };
 		990894B221E5E302009AC16B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 9908949E21E5E302009AC16B /* .gitkeep */; };
 		990894B321E5E302009AC16B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 990894A021E5E302009AC16B /* .gitkeep */; };
-		990894B421E5E302009AC16B /* EHITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894A321E5E302009AC16B /* EHITableView.m */; };
-		990894B521E5E302009AC16B /* EHIActionCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894A621E5E302009AC16B /* EHIActionCellViewModel.m */; };
-		990894B621E5E302009AC16B /* EHILabelCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894A821E5E302009AC16B /* EHILabelCellViewModel.m */; };
-		990894B721E5E302009AC16B /* EHITextFieldCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894AA21E5E302009AC16B /* EHITextFieldCellViewModel.m */; };
-		990894B821E5E302009AC16B /* EHIActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894AD21E5E302009AC16B /* EHIActionCell.m */; };
-		990894B921E5E302009AC16B /* EHILabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894AF21E5E302009AC16B /* EHILabelCell.m */; };
-		990894BA21E5E302009AC16B /* EHITextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894B121E5E302009AC16B /* EHITextFieldCell.m */; };
+		990894B521E5E302009AC16B /* LCActionCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894A621E5E302009AC16B /* LCActionCellViewModel.m */; };
+		990894B621E5E302009AC16B /* LCLabelCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894A821E5E302009AC16B /* LCLabelCellViewModel.m */; };
+		990894B721E5E302009AC16B /* LCTextFieldCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894AA21E5E302009AC16B /* LCTextFieldCellViewModel.m */; };
+		990894B821E5E302009AC16B /* LCActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894AD21E5E302009AC16B /* LCActionCell.m */; };
+		990894B921E5E302009AC16B /* LCLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894AF21E5E302009AC16B /* LCLabelCell.m */; };
+		990894BA21E5E302009AC16B /* LCTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894B121E5E302009AC16B /* LCTextFieldCell.m */; };
 		990894C721E71BF9009AC16B /* LCDataStyleAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894C421E71BF9009AC16B /* LCDataStyleAllViewController.m */; };
 		990894CC21E71EEC009AC16B /* LCCellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894CB21E71EEC009AC16B /* LCCellsViewController.m */; };
 		990894D121E72173009AC16B /* LCAnimalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894D021E72173009AC16B /* LCAnimalModel.m */; };
@@ -87,23 +86,21 @@
 		9902FFB121EDB2210024C497 /* LCAnimalCellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCAnimalCellViewModel.m; sourceTree = "<group>"; };
 		9902FFB621EDB9BC0024C497 /* LCPlantModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCPlantModel.h; sourceTree = "<group>"; };
 		9902FFB721EDB9BC0024C497 /* LCPlantModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCPlantModel.m; sourceTree = "<group>"; };
+		9902FFB921EDCA680024C497 /* LCTableViewDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCTableViewDefines.h; sourceTree = "<group>"; };
 		9908949E21E5E302009AC16B /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		990894A021E5E302009AC16B /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		990894A121E5E302009AC16B /* EHICellViewModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHICellViewModelProtocol.h; sourceTree = "<group>"; };
-		990894A221E5E302009AC16B /* EHITableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHITableView.h; sourceTree = "<group>"; };
-		990894A321E5E302009AC16B /* EHITableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHITableView.m; sourceTree = "<group>"; };
-		990894A521E5E302009AC16B /* EHIActionCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIActionCellViewModel.h; sourceTree = "<group>"; };
-		990894A621E5E302009AC16B /* EHIActionCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIActionCellViewModel.m; sourceTree = "<group>"; };
-		990894A721E5E302009AC16B /* EHILabelCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHILabelCellViewModel.h; sourceTree = "<group>"; };
-		990894A821E5E302009AC16B /* EHILabelCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHILabelCellViewModel.m; sourceTree = "<group>"; };
-		990894A921E5E302009AC16B /* EHITextFieldCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHITextFieldCellViewModel.h; sourceTree = "<group>"; };
-		990894AA21E5E302009AC16B /* EHITextFieldCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHITextFieldCellViewModel.m; sourceTree = "<group>"; };
-		990894AC21E5E302009AC16B /* EHIActionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHIActionCell.h; sourceTree = "<group>"; };
-		990894AD21E5E302009AC16B /* EHIActionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHIActionCell.m; sourceTree = "<group>"; };
-		990894AE21E5E302009AC16B /* EHILabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHILabelCell.h; sourceTree = "<group>"; };
-		990894AF21E5E302009AC16B /* EHILabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHILabelCell.m; sourceTree = "<group>"; };
-		990894B021E5E302009AC16B /* EHITextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHITextFieldCell.h; sourceTree = "<group>"; };
-		990894B121E5E302009AC16B /* EHITextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHITextFieldCell.m; sourceTree = "<group>"; };
+		990894A521E5E302009AC16B /* LCActionCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActionCellViewModel.h; sourceTree = "<group>"; };
+		990894A621E5E302009AC16B /* LCActionCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCActionCellViewModel.m; sourceTree = "<group>"; };
+		990894A721E5E302009AC16B /* LCLabelCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCLabelCellViewModel.h; sourceTree = "<group>"; };
+		990894A821E5E302009AC16B /* LCLabelCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCLabelCellViewModel.m; sourceTree = "<group>"; };
+		990894A921E5E302009AC16B /* LCTextFieldCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTextFieldCellViewModel.h; sourceTree = "<group>"; };
+		990894AA21E5E302009AC16B /* LCTextFieldCellViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTextFieldCellViewModel.m; sourceTree = "<group>"; };
+		990894AC21E5E302009AC16B /* LCActionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActionCell.h; sourceTree = "<group>"; };
+		990894AD21E5E302009AC16B /* LCActionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCActionCell.m; sourceTree = "<group>"; };
+		990894AE21E5E302009AC16B /* LCLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCLabelCell.h; sourceTree = "<group>"; };
+		990894AF21E5E302009AC16B /* LCLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCLabelCell.m; sourceTree = "<group>"; };
+		990894B021E5E302009AC16B /* LCTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTextFieldCell.h; sourceTree = "<group>"; };
+		990894B121E5E302009AC16B /* LCTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTextFieldCell.m; sourceTree = "<group>"; };
 		990894C321E71BF9009AC16B /* LCDataStyleAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDataStyleAllViewController.h; sourceTree = "<group>"; };
 		990894C421E71BF9009AC16B /* LCDataStyleAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDataStyleAllViewController.m; sourceTree = "<group>"; };
 		990894CA21E71EEC009AC16B /* LCCellsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCCellsViewController.h; sourceTree = "<group>"; };
@@ -287,10 +284,8 @@
 			isa = PBXGroup;
 			children = (
 				990894A021E5E302009AC16B /* .gitkeep */,
+				9902FFB921EDCA680024C497 /* LCTableViewDefines.h */,
 				99F1A1D821ED861D0076E3B2 /* LCCellDataProtocol.h */,
-				990894A121E5E302009AC16B /* EHICellViewModelProtocol.h */,
-				990894A221E5E302009AC16B /* EHITableView.h */,
-				990894A321E5E302009AC16B /* EHITableView.m */,
 				99F1A1CF21EC21D10076E3B2 /* UITableView+LCAdd.h */,
 				99F1A1D021EC21D10076E3B2 /* UITableView+LCAdd.m */,
 				99F1A1D521EC330E0076E3B2 /* LCTableViewProxy.h */,
@@ -307,12 +302,12 @@
 		990894A421E5E302009AC16B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				990894A521E5E302009AC16B /* EHIActionCellViewModel.h */,
-				990894A621E5E302009AC16B /* EHIActionCellViewModel.m */,
-				990894A721E5E302009AC16B /* EHILabelCellViewModel.h */,
-				990894A821E5E302009AC16B /* EHILabelCellViewModel.m */,
-				990894A921E5E302009AC16B /* EHITextFieldCellViewModel.h */,
-				990894AA21E5E302009AC16B /* EHITextFieldCellViewModel.m */,
+				990894A521E5E302009AC16B /* LCActionCellViewModel.h */,
+				990894A621E5E302009AC16B /* LCActionCellViewModel.m */,
+				990894A721E5E302009AC16B /* LCLabelCellViewModel.h */,
+				990894A821E5E302009AC16B /* LCLabelCellViewModel.m */,
+				990894A921E5E302009AC16B /* LCTextFieldCellViewModel.h */,
+				990894AA21E5E302009AC16B /* LCTextFieldCellViewModel.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -320,12 +315,12 @@
 		990894AB21E5E302009AC16B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				990894AC21E5E302009AC16B /* EHIActionCell.h */,
-				990894AD21E5E302009AC16B /* EHIActionCell.m */,
-				990894AE21E5E302009AC16B /* EHILabelCell.h */,
-				990894AF21E5E302009AC16B /* EHILabelCell.m */,
-				990894B021E5E302009AC16B /* EHITextFieldCell.h */,
-				990894B121E5E302009AC16B /* EHITextFieldCell.m */,
+				990894AC21E5E302009AC16B /* LCActionCell.h */,
+				990894AD21E5E302009AC16B /* LCActionCell.m */,
+				990894AE21E5E302009AC16B /* LCLabelCell.h */,
+				990894AF21E5E302009AC16B /* LCLabelCell.m */,
+				990894B021E5E302009AC16B /* LCTextFieldCell.h */,
+				990894B121E5E302009AC16B /* LCTextFieldCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -540,20 +535,19 @@
 				990894CC21E71EEC009AC16B /* LCCellsViewController.m in Sources */,
 				9902FFAE21EDACAE0024C497 /* LCAnimalCell.m in Sources */,
 				9902FFB221EDB2210024C497 /* LCAnimalCellViewModel.m in Sources */,
-				990894B921E5E302009AC16B /* EHILabelCell.m in Sources */,
+				990894B921E5E302009AC16B /* LCLabelCell.m in Sources */,
 				99F1A1D421EC2FCE0076E3B2 /* LCTableViewIMP.m in Sources */,
 				6003F59E195388D20070C39A /* LCAppDelegate.m in Sources */,
-				990894BA21E5E302009AC16B /* EHITextFieldCell.m in Sources */,
+				990894BA21E5E302009AC16B /* LCTextFieldCell.m in Sources */,
 				99F1A1D721EC330E0076E3B2 /* LCTableViewProxy.m in Sources */,
-				990894B721E5E302009AC16B /* EHITextFieldCellViewModel.m in Sources */,
+				990894B721E5E302009AC16B /* LCTextFieldCellViewModel.m in Sources */,
 				6003F5A7195388D20070C39A /* LCViewController.m in Sources */,
-				990894B421E5E302009AC16B /* EHITableView.m in Sources */,
 				990894C721E71BF9009AC16B /* LCDataStyleAllViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				990894B621E5E302009AC16B /* EHILabelCellViewModel.m in Sources */,
-				990894B821E5E302009AC16B /* EHIActionCell.m in Sources */,
+				990894B621E5E302009AC16B /* LCLabelCellViewModel.m in Sources */,
+				990894B821E5E302009AC16B /* LCActionCell.m in Sources */,
 				99F1A1D121EC21D10076E3B2 /* UITableView+LCAdd.m in Sources */,
-				990894B521E5E302009AC16B /* EHIActionCellViewModel.m in Sources */,
+				990894B521E5E302009AC16B /* LCActionCellViewModel.m in Sources */,
 				9902FFB821EDB9BC0024C497 /* LCPlantModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

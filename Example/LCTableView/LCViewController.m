@@ -8,7 +8,7 @@
 
 #import "LCViewController.h"
 #import "UITableView+LCAdd.h"
-#import "EHIActionCellViewModel.h"
+#import "LCActionCellViewModel.h"
 
 #import "LCDataStyleAllViewController.h"
 #import "LCCellsViewController.h"
@@ -37,7 +37,7 @@
     for (NSUInteger i = 0; i < self.titleArray.count; i++) {
         NSDictionary *dic = self.titleArray[i];
         
-        EHIActionCellViewModel *cellVM = [[EHIActionCellViewModel alloc] init];
+        LCActionCellViewModel *cellVM = [[LCActionCellViewModel alloc] init];
         cellVM.textStr = dic[@"title"];
         [dataArray addObject:cellVM];
     }
