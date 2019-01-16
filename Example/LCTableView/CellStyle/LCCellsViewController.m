@@ -9,6 +9,7 @@
 #import "LCCellsViewController.h"
 #import "UITableView+LCAdd.h"
 #import "LCAnimalCellViewModel.h"
+#import "LCPlantModel.h"
 
 @interface LCCellsViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -29,21 +30,31 @@
 
 - (void)configDatas {
     NSArray *titleArray = @[@"正常",
-                            @"MVVM"];
+                            @"MVVM",
+                            @"Xib"];
     
     NSMutableArray *dataArray = [NSMutableArray array];
     for (NSUInteger i = 0; i < titleArray.count; i++) {
-        LCAnimalModel *model = [[LCAnimalModel alloc] init];
-        model.Name = titleArray[i];
         if (i == 0) {
             // Normal
+            LCAnimalModel *model = [[LCAnimalModel alloc] init];
+            model.Name = titleArray[i];
             model.cellHeight = 80;
             [dataArray addObject:model];
-        } else {
+        } else if (i == 1) {
             // MVVM
+            LCAnimalModel *model = [[LCAnimalModel alloc] init];
+            model.Name = titleArray[i];
+            
             LCAnimalCellViewModel *cellVM = [[LCAnimalCellViewModel alloc] init];
             cellVM.model = model;
             [dataArray addObject:cellVM];
+        } else {
+            // Xib
+            LCPlantModel *model = [[LCPlantModel alloc] init];
+            model.Name = titleArray[i];
+            model.cellHeight = 120;
+            [dataArray addObject:model];
         }
     }
     [self.tableView.lc_dataArray addObjectsFromArray:dataArray];

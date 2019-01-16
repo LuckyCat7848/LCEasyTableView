@@ -10,8 +10,9 @@
 #endif
 #endif
 
+#import "UIView+LCAdd.h"
 #import "LCCellDataProtocol.h"
-#import "LCTableViewDefines.h"
+#import "LCDefines.h"
 #import "LCTableViewIMP.h"
 #import "LCTableViewProxy.h"
 #import "UITableView+LCAdd.h"

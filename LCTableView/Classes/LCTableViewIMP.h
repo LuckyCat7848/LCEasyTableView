@@ -5,10 +5,12 @@
 //  Created by LuckyCat on 2019/1/14.
 //  Copyright © 2019年 LuckyCat7848. All rights reserved.
 //
+//  默认实现TableView的代理方法
+//
 
 #import <Foundation/Foundation.h>
 #import "LCCellDataProtocol.h"
-#import "LCTableViewDefines.h"
+#import "LCDefines.h"
 
 @interface LCTableViewIMP : NSObject<UITableViewDelegate, UITableViewDataSource>
 

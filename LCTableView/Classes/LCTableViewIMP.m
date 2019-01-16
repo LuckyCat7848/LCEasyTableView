@@ -83,7 +83,7 @@
     // TODO：获取cell
     NSString *identifier = NSStringFromClass(cellClass);
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (cell == nil) {
+    if (!cell) {
         NSString *nibPath = [[NSBundle mainBundle] pathForResource:identifier ofType:@"nib"];
         if (nibPath) {
             cell = [[[NSBundle mainBundle] loadNibNamed:identifier owner:self options:nil] objectAtIndex:0];
@@ -91,13 +91,15 @@
             cell = [[cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
         }
     }
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    id object = [self cellViewModelWithIndexPath:indexPath];
     // TODO：赋值
     if ([object conformsToProtocol:@protocol(LCCellDataProtocol)]) {
         id<LCCellDataProtocol> data = object;
-        LCCellDataType type = 0;
-        if ([data.class respondsToSelector:@selector(cellDataType)]) {
-            type = [data.class cellDataType];
-        }
+        LCCellDataType type = [data.class cellDataType];
         if (type == LCCellDataTypeModel && [cell respondsToSelector:@selector(setModel:)]) {
             [cell performSelector:@selector(setModel:) withObject:object];
         
@@ -105,7 +107,6 @@
             [cell performSelector:@selector(setViewModel:) withObject:object];
         }
     }
-    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

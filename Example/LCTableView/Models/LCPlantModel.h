@@ -22,4 +22,7 @@
 
 @property (nonatomic, assign) CGFloat cellHeight;
 
++ (Class)cellClass;
++ (LCCellDataType)cellDataType;
+
 @end

@@ -11,10 +11,7 @@
 @implementation LCAnimalCellViewModel
 
 SetCellClass(LCAnimalCell)
-
-+ (LCCellDataType)cellDataType {
-    return LCCellDataTypeViewModel;
-}
+SetCellDataType(LCCellDataTypeViewModel)
 
 - (instancetype)init {
     self = [super init];

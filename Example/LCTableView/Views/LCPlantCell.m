@@ -1,27 +1,25 @@
 //
-//  LCAnimalCell.m
+//  LCPlantCell.m
 //  LCTableView_Example
 //
 //  Created by LuckyCat on 2019/1/15.
 //  Copyright © 2019年 LuckyCat7848. All rights reserved.
 //
 
-#import "LCAnimalCell.h"
+#import "LCPlantCell.h"
 
-@implementation LCAnimalCell
+@implementation LCPlantCell
+
+- (void)awakeFromNib {
+    [super awakeFromNib];
+}
 
 #pragma mark - Setter
 
-- (void)setModel:(LCAnimalModel *)model {
+- (void)setModel:(LCPlantModel *)model {
     _model = model;
     
     self.textLabel.text = model.Name;
-}
-
-- (void)setViewModel:(LCAnimalCellViewModel *)viewModel {
-    _viewModel = viewModel;
-    
-    self.textLabel.text = viewModel.nameString;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

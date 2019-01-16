@@ -1,27 +1,27 @@
 //
-//  LCDataStyleAllViewController.m
+//  LCDataStyleSectionsViewController.m
 //  LCTableView_Example
 //
-//  Created by LuckyCat on 2019/1/10.
+//  Created by LuckyCat on 2019/1/16.
 //  Copyright © 2019年 LuckyCat7848. All rights reserved.
 //
 
-#import "LCDataStyleAllViewController.h"
+#import "LCDataStyleSectionsViewController.h"
 #import "UITableView+LCAdd.h"
 #import "LCActionCellViewModel.h"
 
-@interface LCDataStyleAllViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface LCDataStyleSectionsViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 
 @end
 
-@implementation LCDataStyleAllViewController
+@implementation LCDataStyleSectionsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.title = @"多个section,多个row";
+    
+    self.title = @"多个section,1个row";
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self configDatas];
@@ -30,13 +30,10 @@
 - (void)configDatas {
     NSMutableArray *dataArray = [NSMutableArray array];
     for (NSUInteger i = 0; i < 3; i++) {
-        NSMutableArray *array = [NSMutableArray array];
-        for (NSUInteger j = 0; j < i + 1; j++) {
-            LCActionCellViewModel *cellVM = [[LCActionCellViewModel alloc] init];
-            cellVM.textStr = [NSString stringWithFormat:@"actionCell %lu,%lu", (unsigned long)i, (unsigned long)j];
-            [array addObject:cellVM];
-        }
-        [dataArray addObject:array];
+        LCActionCellViewModel *cellVM = [[LCActionCellViewModel alloc] init];
+        cellVM.cellHeight = 120;
+        cellVM.textStr = @"就我自几个儿~";
+        [dataArray addObject:cellVM];
     }
     [self.tableView.lc_dataArray addObjectsFromArray:dataArray];
 }
@@ -50,7 +47,6 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *label = [[UILabel alloc] init];
     label.backgroundColor = [UIColor lightGrayColor];
-    label.text = [NSString stringWithFormat:@"section %ld", (long)section];
     return label;
 }
 
@@ -59,7 +55,7 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-        tableView.lc_dataStyle = LCTableViewDataStyleAll;
+        tableView.lc_dataStyle = LCTableViewDataStyleSections;
         tableView.lc_Delegate = self;
         
         [self.view addSubview:tableView];

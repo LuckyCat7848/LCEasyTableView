@@ -7,6 +7,8 @@
 //
 
 #import "LCActionCell.h"
+#import "UIView+LCAdd.h"
+#import "LCDefines.h"
 
 @interface LCActionCell ()
 
@@ -38,11 +40,11 @@
     _viewModel = viewModel;
     
     // 文字
-    self.textLabel.frame = viewModel.textFrame;
     self.textLabel.textColor = viewModel.textColor;
     self.textLabel.font = viewModel.textFont;
     self.textLabel.textAlignment = viewModel.textAlignment;
     self.textLabel.text = viewModel.textStr;
+    self.textLabel.numberOfLines = 0;
     
     // 箭头图片
     if (viewModel.indicatorImage) {
@@ -51,17 +53,33 @@
         UIImageView *accessoryView = [[UIImageView alloc] initWithImage:viewModel.indicatorImage];
         accessoryView.contentMode = UIViewContentModeScaleAspectFit;
         self.accessoryView = accessoryView;
-        self.accessoryView.frame = viewModel.indicatorFrame;
     } else {
         self.accessoryType = UITableViewCellAccessoryNone;
     }
     
     // 分隔线
     self.topLineView.backgroundColor = viewModel.lineColor;
-    self.topLineView.frame = viewModel.topLineFrame;
+    self.topLineView.hidden = !viewModel.showTopLine;
     
     self.bottomLineView.backgroundColor = viewModel.lineColor;
-    self.bottomLineView.frame = viewModel.bottomLineFrame;
+    self.bottomLineView.hidden = !viewModel.showBottomLine;
+}
+
+#pragma mark - Layout
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    LCActionCellViewModel *vm = self.viewModel;
+    
+    CGFloat accessoryLeft = self.width - vm.indicatorImage.size.width - vm.textLeft;
+    self.accessoryView.frame = CGRectMake(accessoryLeft, 0, vm.indicatorImage.size.width, self.height);
+    
+    self.textLabel.frame = CGRectMake(vm.textLeft, 0, accessoryLeft - vm.textLeft - 10, self.height);
+    
+    self.topLineView.frame = CGRectMake(vm.topLineInsets.left, 0, self.width - vm.topLineInsets.left - vm.topLineInsets.right, kLCLineWidth);
+    
+    self.bottomLineView.frame = CGRectMake(vm.bottomLineInsets.left, self.height - kLCLineWidth, self.width - vm.bottomLineInsets.left - vm.bottomLineInsets.right, kLCLineWidth);
 }
 
 #pragma mark - Getter

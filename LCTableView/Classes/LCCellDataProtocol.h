@@ -5,6 +5,8 @@
 //  Created by LuckyCat on 2019/1/15.
 //  Copyright © 2019年 LuckyCat7848. All rights reserved.
 //
+//  cell数据的协议：model或viewModel遵循该协议
+//
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -21,15 +23,15 @@ class = LCClass(className);\
 return class;\
 }\
 
-//#define SetCellDataType(dataTypeName) \
-//+ (Class)cellDataType {\
-//static LCCellDataType dataType;\
-//static dispatch_once_t onceToken;\
-//dispatch_once(&onceToken, ^{\
-//dataType = dataTypeName;\
-//});\
-//return class;\
-//}\
+#define SetCellDataType(dataTypeName) \
++ (LCCellDataType)cellDataType {\
+static LCCellDataType dataType;\
+static dispatch_once_t onceToken;\
+dispatch_once(&onceToken, ^{\
+dataType = dataTypeName;\
+});\
+return dataType;\
+}\
 
 /** cell数据的类型 */
 typedef NS_ENUM(NSInteger, LCCellDataType) {
@@ -42,11 +44,10 @@ typedef NS_ENUM(NSInteger, LCCellDataType) {
 @protocol LCCellDataProtocol <NSObject>
 
 @required
-@property (nonatomic, assign) CGFloat cellHeight;
-+ (Class)cellClass;
 
-@optional
-/** cell数据类型(默认使用Model) */
+@property (nonatomic, assign) CGFloat cellHeight;
+
++ (Class)cellClass;
 + (LCCellDataType)cellDataType;
 
 @end

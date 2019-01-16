@@ -5,6 +5,8 @@
 //  Created by LuckyCat on 2019/1/14.
 //  Copyright © 2019年 LuckyCat7848. All rights reserved.
 //
+//  管理：1.默认代理 2.添加tableView的类自己想实现代理
+//
 
 #import <Foundation/Foundation.h>
 

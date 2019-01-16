@@ -10,8 +10,10 @@
 #import "UITableView+LCAdd.h"
 #import "LCActionCellViewModel.h"
 
+#import "LCDataStyleSectionsViewController.h"
 #import "LCDataStyleAllViewController.h"
 #import "LCCellsViewController.h"
+#import "LCTableStyleViewController.h"
 
 @interface LCViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -76,11 +78,17 @@
 - (NSArray<NSDictionary *> *)titleArray {
     if (!_titleArray) {
         _titleArray = @[
+                        @{@"title" : @"多个section,1个row",
+                          @"class" : NSStringFromClass([LCDataStyleSectionsViewController class])},
+  
                         @{@"title" : @"多个section,多个row",
                           @"class" : NSStringFromClass([LCDataStyleAllViewController class])},
                         
                         @{@"title" : @"不同的cell显示",
                           @"class" : NSStringFromClass([LCCellsViewController class])},
+                        
+                        @{@"title" : @"表格样式",
+                          @"class" : NSStringFromClass([LCTableStyleViewController class])},
                         ];
     }
     return _titleArray;

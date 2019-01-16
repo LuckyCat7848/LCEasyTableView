@@ -5,9 +5,11 @@
 //  Created by LuckyCat on 2019/1/14.
 //  Copyright © 2019年 LuckyCat7848. All rights reserved.
 //
+//  TableView的扩展
+//
 
 #import <UIKit/UIKit.h>
-#import "LCTableViewDefines.h"
+#import "LCDefines.h"
 
 @interface UITableView (LCAdd)
 
