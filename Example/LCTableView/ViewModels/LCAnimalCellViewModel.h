@@ -18,6 +18,5 @@
 @property (nonatomic, copy) NSString *nameString;
 
 + (Class)cellClass;
-+ (LCCellDataType)cellDataType;
 
 @end

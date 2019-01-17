@@ -35,8 +35,7 @@
 @property (nonatomic, assign) BOOL showTopLine;
 @property (nonatomic, assign) BOOL showBottomLine;
 
-/** 写明这个ViewModel对应的cell类、Type */
+/** 写明这个ViewModel对应的cell类 */
 + (Class)cellClass;
-+ (LCCellDataType)cellDataType;
 
 @end

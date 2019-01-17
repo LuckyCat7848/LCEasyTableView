@@ -98,12 +98,10 @@
     id object = [self cellViewModelWithIndexPath:indexPath];
     // TODO：赋值
     if ([object conformsToProtocol:@protocol(LCCellDataProtocol)]) {
-        id<LCCellDataProtocol> data = object;
-        LCCellDataType type = [data.class cellDataType];
-        if (type == LCCellDataTypeModel && [cell respondsToSelector:@selector(setModel:)]) {
+        if ([cell respondsToSelector:@selector(setModel:)]) {
             [cell performSelector:@selector(setModel:) withObject:object];
         
-        } else if (type == LCCellDataTypeViewModel && [cell respondsToSelector:@selector(setViewModel:)]) {
+        } else if ([cell respondsToSelector:@selector(setViewModel:)]) {
             [cell performSelector:@selector(setViewModel:) withObject:object];
         }
     }

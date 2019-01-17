@@ -12,12 +12,6 @@
 
 #pragma mark - Setter
 
-- (void)setModel:(LCAnimalModel *)model {
-    _model = model;
-    
-    self.textLabel.text = model.Name;
-}
-
 - (void)setViewModel:(LCAnimalCellViewModel *)viewModel {
     _viewModel = viewModel;
     

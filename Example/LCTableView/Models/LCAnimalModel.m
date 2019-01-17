@@ -10,7 +10,4 @@
 
 @implementation LCAnimalModel
 
-SetCellClass(LCAnimalCell)
-SetCellDataType(LCCellDataTypeModel)
-
 @end

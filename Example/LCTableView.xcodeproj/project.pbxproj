@@ -32,6 +32,8 @@
 		9902FFD821EF2DF60024C497 /* LCTableStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFD121EF2DF60024C497 /* LCTableStyleViewController.m */; };
 		9902FFD921EF2DF60024C497 /* LCDataStyleAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFD421EF2DF60024C497 /* LCDataStyleAllViewController.m */; };
 		9902FFDA21EF2DF60024C497 /* LCDataStyleSectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFD621EF2DF60024C497 /* LCDataStyleSectionsViewController.m */; };
+		9902FFDD21F055E00024C497 /* LCPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFDC21F055E00024C497 /* LCPersonModel.m */; };
+		9902FFE021F0566F0024C497 /* LCPersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFDF21F0566F0024C497 /* LCPersonCell.m */; };
 		990894B221E5E302009AC16B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 9908949E21E5E302009AC16B /* .gitkeep */; };
 		990894B321E5E302009AC16B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 990894A021E5E302009AC16B /* .gitkeep */; };
 		990894B521E5E302009AC16B /* LCActionCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894A621E5E302009AC16B /* LCActionCellViewModel.m */; };
@@ -105,6 +107,10 @@
 		9902FFD421EF2DF60024C497 /* LCDataStyleAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDataStyleAllViewController.m; sourceTree = "<group>"; };
 		9902FFD521EF2DF60024C497 /* LCDataStyleSectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDataStyleSectionsViewController.h; sourceTree = "<group>"; };
 		9902FFD621EF2DF60024C497 /* LCDataStyleSectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDataStyleSectionsViewController.m; sourceTree = "<group>"; };
+		9902FFDB21F055E00024C497 /* LCPersonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCPersonModel.h; sourceTree = "<group>"; };
+		9902FFDC21F055E00024C497 /* LCPersonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCPersonModel.m; sourceTree = "<group>"; };
+		9902FFDE21F0566F0024C497 /* LCPersonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCPersonCell.h; sourceTree = "<group>"; };
+		9902FFDF21F0566F0024C497 /* LCPersonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCPersonCell.m; sourceTree = "<group>"; };
 		9908949E21E5E302009AC16B /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		990894A021E5E302009AC16B /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		990894A521E5E302009AC16B /* LCActionCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActionCellViewModel.h; sourceTree = "<group>"; };
@@ -381,6 +387,8 @@
 		990894CD21E72101009AC16B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9902FFDE21F0566F0024C497 /* LCPersonCell.h */,
+				9902FFDF21F0566F0024C497 /* LCPersonCell.m */,
 				9902FFAC21EDACAE0024C497 /* LCAnimalCell.h */,
 				9902FFAD21EDACAE0024C497 /* LCAnimalCell.m */,
 				9902FFBD21EDDA8D0024C497 /* LCPlantCell.h */,
@@ -393,6 +401,8 @@
 		990894CE21E72134009AC16B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9902FFDB21F055E00024C497 /* LCPersonModel.h */,
+				9902FFDC21F055E00024C497 /* LCPersonModel.m */,
 				990894CF21E72173009AC16B /* LCAnimalModel.h */,
 				990894D021E72173009AC16B /* LCAnimalModel.m */,
 				9902FFBA21EDDA4A0024C497 /* LCPlantModel.h */,
@@ -570,6 +580,7 @@
 				990894B921E5E302009AC16B /* LCLabelCell.m in Sources */,
 				99F1A1D421EC2FCE0076E3B2 /* LCTableViewIMP.m in Sources */,
 				9902FFDA21EF2DF60024C497 /* LCDataStyleSectionsViewController.m in Sources */,
+				9902FFE021F0566F0024C497 /* LCPersonCell.m in Sources */,
 				6003F59E195388D20070C39A /* LCAppDelegate.m in Sources */,
 				9902FFCB21EEF0A20024C497 /* UIView+LCAdd.m in Sources */,
 				990894BA21E5E302009AC16B /* LCTextFieldCell.m in Sources */,
@@ -578,6 +589,7 @@
 				990894B721E5E302009AC16B /* LCTextFieldCellViewModel.m in Sources */,
 				9902FFBC21EDDA4A0024C497 /* LCPlantModel.m in Sources */,
 				9902FFD821EF2DF60024C497 /* LCTableStyleViewController.m in Sources */,
+				9902FFDD21F055E00024C497 /* LCPersonModel.m in Sources */,
 				6003F5A7195388D20070C39A /* LCViewController.m in Sources */,
 				9902FFC021EDDA8D0024C497 /* LCPlantCell.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,

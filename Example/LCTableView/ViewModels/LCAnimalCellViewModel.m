@@ -11,7 +11,6 @@
 @implementation LCAnimalCellViewModel
 
 SetCellClass(LCAnimalCell)
-SetCellDataType(LCCellDataTypeViewModel)
 
 - (instancetype)init {
     self = [super init];

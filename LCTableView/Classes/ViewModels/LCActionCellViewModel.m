@@ -12,7 +12,6 @@
 @implementation LCActionCellViewModel
 
 SetCellClass(LCActionCell);
-SetCellDataType(LCCellDataTypeViewModel)
 
 - (instancetype)init {
     self = [super init];

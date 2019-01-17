@@ -11,6 +11,5 @@
 @implementation LCPlantModel
 
 SetCellClass(LCPlantCell)
-SetCellDataType(LCCellDataTypeModel)
 
 @end
