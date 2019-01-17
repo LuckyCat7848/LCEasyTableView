@@ -27,9 +27,11 @@
 		9902FFBC21EDDA4A0024C497 /* LCPlantModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFBB21EDDA4A0024C497 /* LCPlantModel.m */; };
 		9902FFC021EDDA8D0024C497 /* LCPlantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFBE21EDDA8D0024C497 /* LCPlantCell.m */; };
 		9902FFC121EDDA8D0024C497 /* LCPlantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9902FFBF21EDDA8D0024C497 /* LCPlantCell.xib */; };
-		9902FFC421EEC7B80024C497 /* LCDataStyleSectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFC321EEC7B80024C497 /* LCDataStyleSectionsViewController.m */; };
-		9902FFC721EECEB00024C497 /* LCTableStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFC621EECEB00024C497 /* LCTableStyleViewController.m */; };
 		9902FFCB21EEF0A20024C497 /* UIView+LCAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFCA21EEF0A20024C497 /* UIView+LCAdd.m */; };
+		9902FFD721EF2DF60024C497 /* LCCellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFCF21EF2DF60024C497 /* LCCellsViewController.m */; };
+		9902FFD821EF2DF60024C497 /* LCTableStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFD121EF2DF60024C497 /* LCTableStyleViewController.m */; };
+		9902FFD921EF2DF60024C497 /* LCDataStyleAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFD421EF2DF60024C497 /* LCDataStyleAllViewController.m */; };
+		9902FFDA21EF2DF60024C497 /* LCDataStyleSectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFD621EF2DF60024C497 /* LCDataStyleSectionsViewController.m */; };
 		990894B221E5E302009AC16B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 9908949E21E5E302009AC16B /* .gitkeep */; };
 		990894B321E5E302009AC16B /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 990894A021E5E302009AC16B /* .gitkeep */; };
 		990894B521E5E302009AC16B /* LCActionCellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894A621E5E302009AC16B /* LCActionCellViewModel.m */; };
@@ -38,8 +40,6 @@
 		990894B821E5E302009AC16B /* LCActionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894AD21E5E302009AC16B /* LCActionCell.m */; };
 		990894B921E5E302009AC16B /* LCLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894AF21E5E302009AC16B /* LCLabelCell.m */; };
 		990894BA21E5E302009AC16B /* LCTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894B121E5E302009AC16B /* LCTextFieldCell.m */; };
-		990894C721E71BF9009AC16B /* LCDataStyleAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894C421E71BF9009AC16B /* LCDataStyleAllViewController.m */; };
-		990894CC21E71EEC009AC16B /* LCCellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894CB21E71EEC009AC16B /* LCCellsViewController.m */; };
 		990894D121E72173009AC16B /* LCAnimalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894D021E72173009AC16B /* LCAnimalModel.m */; };
 		99F1A1D121EC21D10076E3B2 /* UITableView+LCAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F1A1D021EC21D10076E3B2 /* UITableView+LCAdd.m */; };
 		99F1A1D421EC2FCE0076E3B2 /* LCTableViewIMP.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F1A1D321EC2FCE0076E3B2 /* LCTableViewIMP.m */; };
@@ -94,13 +94,17 @@
 		9902FFBD21EDDA8D0024C497 /* LCPlantCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCPlantCell.h; sourceTree = "<group>"; };
 		9902FFBE21EDDA8D0024C497 /* LCPlantCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCPlantCell.m; sourceTree = "<group>"; };
 		9902FFBF21EDDA8D0024C497 /* LCPlantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LCPlantCell.xib; sourceTree = "<group>"; };
-		9902FFC221EEC7B80024C497 /* LCDataStyleSectionsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCDataStyleSectionsViewController.h; sourceTree = "<group>"; };
-		9902FFC321EEC7B80024C497 /* LCDataStyleSectionsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCDataStyleSectionsViewController.m; sourceTree = "<group>"; };
-		9902FFC521EECEB00024C497 /* LCTableStyleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCTableStyleViewController.h; sourceTree = "<group>"; };
-		9902FFC621EECEB00024C497 /* LCTableStyleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCTableStyleViewController.m; sourceTree = "<group>"; };
 		9902FFC821EED2940024C497 /* LCDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCDefines.h; sourceTree = "<group>"; };
 		9902FFC921EEF0A20024C497 /* UIView+LCAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LCAdd.h"; sourceTree = "<group>"; };
 		9902FFCA21EEF0A20024C497 /* UIView+LCAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LCAdd.m"; sourceTree = "<group>"; };
+		9902FFCE21EF2DF60024C497 /* LCCellsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCellsViewController.h; sourceTree = "<group>"; };
+		9902FFCF21EF2DF60024C497 /* LCCellsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCellsViewController.m; sourceTree = "<group>"; };
+		9902FFD021EF2DF60024C497 /* LCTableStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTableStyleViewController.h; sourceTree = "<group>"; };
+		9902FFD121EF2DF60024C497 /* LCTableStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTableStyleViewController.m; sourceTree = "<group>"; };
+		9902FFD321EF2DF60024C497 /* LCDataStyleAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDataStyleAllViewController.h; sourceTree = "<group>"; };
+		9902FFD421EF2DF60024C497 /* LCDataStyleAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDataStyleAllViewController.m; sourceTree = "<group>"; };
+		9902FFD521EF2DF60024C497 /* LCDataStyleSectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDataStyleSectionsViewController.h; sourceTree = "<group>"; };
+		9902FFD621EF2DF60024C497 /* LCDataStyleSectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDataStyleSectionsViewController.m; sourceTree = "<group>"; };
 		9908949E21E5E302009AC16B /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		990894A021E5E302009AC16B /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		990894A521E5E302009AC16B /* LCActionCellViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCActionCellViewModel.h; sourceTree = "<group>"; };
@@ -115,10 +119,6 @@
 		990894AF21E5E302009AC16B /* LCLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCLabelCell.m; sourceTree = "<group>"; };
 		990894B021E5E302009AC16B /* LCTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTextFieldCell.h; sourceTree = "<group>"; };
 		990894B121E5E302009AC16B /* LCTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTextFieldCell.m; sourceTree = "<group>"; };
-		990894C321E71BF9009AC16B /* LCDataStyleAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCDataStyleAllViewController.h; sourceTree = "<group>"; };
-		990894C421E71BF9009AC16B /* LCDataStyleAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCDataStyleAllViewController.m; sourceTree = "<group>"; };
-		990894CA21E71EEC009AC16B /* LCCellsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCCellsViewController.h; sourceTree = "<group>"; };
-		990894CB21E71EEC009AC16B /* LCCellsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCCellsViewController.m; sourceTree = "<group>"; };
 		990894CF21E72173009AC16B /* LCAnimalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCAnimalModel.h; sourceTree = "<group>"; };
 		990894D021E72173009AC16B /* LCAnimalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCAnimalModel.m; sourceTree = "<group>"; };
 		99F1A1CF21EC21D10076E3B2 /* UITableView+LCAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+LCAdd.h"; sourceTree = "<group>"; };
@@ -203,8 +203,7 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* LCViewController.h */,
 				6003F5A6195388D20070C39A /* LCViewController.m */,
-				990894C221E71BF9009AC16B /* DataStyle */,
-				990894C921E71EC0009AC16B /* CellStyle */,
+				9902FFCC21EF2DF60024C497 /* ViewControllers */,
 				9902FFAF21EDB2080024C497 /* ViewModels */,
 				990894CD21E72101009AC16B /* Views */,
 				990894CE21E72134009AC16B /* Models */,
@@ -274,6 +273,37 @@
 				9902FFB121EDB2210024C497 /* LCAnimalCellViewModel.m */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		9902FFCC21EF2DF60024C497 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9902FFCD21EF2DF60024C497 /* CellStyle */,
+				9902FFD221EF2DF60024C497 /* DataStyle */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9902FFCD21EF2DF60024C497 /* CellStyle */ = {
+			isa = PBXGroup;
+			children = (
+				9902FFCE21EF2DF60024C497 /* LCCellsViewController.h */,
+				9902FFCF21EF2DF60024C497 /* LCCellsViewController.m */,
+				9902FFD021EF2DF60024C497 /* LCTableStyleViewController.h */,
+				9902FFD121EF2DF60024C497 /* LCTableStyleViewController.m */,
+			);
+			path = CellStyle;
+			sourceTree = "<group>";
+		};
+		9902FFD221EF2DF60024C497 /* DataStyle */ = {
+			isa = PBXGroup;
+			children = (
+				9902FFD321EF2DF60024C497 /* LCDataStyleAllViewController.h */,
+				9902FFD421EF2DF60024C497 /* LCDataStyleAllViewController.m */,
+				9902FFD521EF2DF60024C497 /* LCDataStyleSectionsViewController.h */,
+				9902FFD621EF2DF60024C497 /* LCDataStyleSectionsViewController.m */,
+			);
+			path = DataStyle;
 			sourceTree = "<group>";
 		};
 		9908949C21E5E302009AC16B /* LCTableView */ = {
@@ -346,28 +376,6 @@
 				9902FFCA21EEF0A20024C497 /* UIView+LCAdd.m */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		990894C221E71BF9009AC16B /* DataStyle */ = {
-			isa = PBXGroup;
-			children = (
-				9902FFC221EEC7B80024C497 /* LCDataStyleSectionsViewController.h */,
-				9902FFC321EEC7B80024C497 /* LCDataStyleSectionsViewController.m */,
-				990894C321E71BF9009AC16B /* LCDataStyleAllViewController.h */,
-				990894C421E71BF9009AC16B /* LCDataStyleAllViewController.m */,
-			);
-			path = DataStyle;
-			sourceTree = "<group>";
-		};
-		990894C921E71EC0009AC16B /* CellStyle */ = {
-			isa = PBXGroup;
-			children = (
-				990894CA21E71EEC009AC16B /* LCCellsViewController.h */,
-				990894CB21E71EEC009AC16B /* LCCellsViewController.m */,
-				9902FFC521EECEB00024C497 /* LCTableStyleViewController.h */,
-				9902FFC621EECEB00024C497 /* LCTableStyleViewController.m */,
-			);
-			path = CellStyle;
 			sourceTree = "<group>";
 		};
 		990894CD21E72101009AC16B /* Views */ = {
@@ -556,27 +564,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				990894D121E72173009AC16B /* LCAnimalModel.m in Sources */,
-				990894CC21E71EEC009AC16B /* LCCellsViewController.m in Sources */,
+				9902FFD721EF2DF60024C497 /* LCCellsViewController.m in Sources */,
 				9902FFAE21EDACAE0024C497 /* LCAnimalCell.m in Sources */,
 				9902FFB221EDB2210024C497 /* LCAnimalCellViewModel.m in Sources */,
 				990894B921E5E302009AC16B /* LCLabelCell.m in Sources */,
 				99F1A1D421EC2FCE0076E3B2 /* LCTableViewIMP.m in Sources */,
+				9902FFDA21EF2DF60024C497 /* LCDataStyleSectionsViewController.m in Sources */,
 				6003F59E195388D20070C39A /* LCAppDelegate.m in Sources */,
 				9902FFCB21EEF0A20024C497 /* UIView+LCAdd.m in Sources */,
 				990894BA21E5E302009AC16B /* LCTextFieldCell.m in Sources */,
 				99F1A1D721EC330E0076E3B2 /* LCTableViewProxy.m in Sources */,
+				9902FFD921EF2DF60024C497 /* LCDataStyleAllViewController.m in Sources */,
 				990894B721E5E302009AC16B /* LCTextFieldCellViewModel.m in Sources */,
 				9902FFBC21EDDA4A0024C497 /* LCPlantModel.m in Sources */,
-				9902FFC421EEC7B80024C497 /* LCDataStyleSectionsViewController.m in Sources */,
+				9902FFD821EF2DF60024C497 /* LCTableStyleViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* LCViewController.m in Sources */,
-				990894C721E71BF9009AC16B /* LCDataStyleAllViewController.m in Sources */,
 				9902FFC021EDDA8D0024C497 /* LCPlantCell.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				990894B621E5E302009AC16B /* LCLabelCellViewModel.m in Sources */,
 				990894B821E5E302009AC16B /* LCActionCell.m in Sources */,
 				99F1A1D121EC21D10076E3B2 /* UITableView+LCAdd.m in Sources */,
 				990894B521E5E302009AC16B /* LCActionCellViewModel.m in Sources */,
-				9902FFC721EECEB00024C497 /* LCTableStyleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
