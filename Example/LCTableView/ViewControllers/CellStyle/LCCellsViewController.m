@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"不同的cell显示";
+    self.title = @"cell的不同实现方式";
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self configDatas];

@@ -18,17 +18,26 @@ SetCellClass(LCActionCell);
     if (self) {
         // 默认设置
         _cellHeight = 44;
-                
-        _spaceHorizontal = 16;
         
-        _iconAndTextSpaceH = 8;
+        // 间距
+        _iconEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 0);
+        _textEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 0);
+        _detailTextEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 0);
+        _accessoryEdgeInsets = UIEdgeInsetsMake(0, 8, 0, 16);
         
+        // 标题
         _textColor = [UIColor blackColor];
         _textFont = [UIFont systemFontOfSize:15];
         _textAlignment = NSTextAlignmentLeft;
+        _textNumberOfLines = 1;
         
-        _textAndIndicatorSpaceH = 8;
+        // 详情
+        _detailTextColor = [UIColor lightGrayColor];
+        _detailTextFont = [UIFont systemFontOfSize:12];
+        _detailTextAlignment = NSTextAlignmentLeft;
+        _detailTextNumberOfLines = 1;
 
+        // 分割线
         _lineColor = [UIColor lightGrayColor];
         _lineWidth = kLCLineWidth;
         _showTopLine = NO;

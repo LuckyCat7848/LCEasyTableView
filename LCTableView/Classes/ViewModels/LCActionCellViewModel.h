@@ -16,31 +16,43 @@
 @property (nonatomic, strong) id model;
 @property (nonatomic, assign) CGFloat cellHeight;
 
-#pragma mark - 配置
+#pragma mark - 间距
 
-/** 左右两边边距 */
-@property (nonatomic, assign) CGFloat spaceHorizontal;
+@property(nonatomic, assign) UIEdgeInsets iconEdgeInsets;
+@property(nonatomic, assign) UIEdgeInsets textEdgeInsets;
+@property(nonatomic, assign) UIEdgeInsets detailTextEdgeInsets;
+@property (nonatomic, assign) UIEdgeInsets accessoryEdgeInsets;
 
-/** 图片icon */
+#pragma mark - 图片
+
 @property (nonatomic, strong) UIImage *iconImage;
-/** 图片大小（默认为iconImage.size） */
+/** icon图片大小（默认为iconImage.size） */
 @property (nonatomic, assign) CGSize iconSize;
-/** icon和文字水平间距（默认8） */
-@property (nonatomic, assign) CGFloat iconAndTextSpaceH;
 
-/** 文字 */
+#pragma mark - 标题
+
 @property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, strong) UIFont *textFont;
 @property (nonatomic, assign) NSTextAlignment textAlignment;
 @property (nonatomic, copy) NSString *textStr;
 @property (nonatomic, copy) NSAttributedString *textAttrStr;
+@property (nonatomic, assign) NSInteger textNumberOfLines;
 
-/** 箭头图片(默认不显示) */
-@property (nonatomic, strong) UIImage *indicatorImage;
-/** 文字和箭头水平间距（默认8） */
-@property (nonatomic, assign) CGFloat textAndIndicatorSpaceH;
+#pragma mark - 详情
 
-/** 分割线(默认不显示) */
+@property (nonatomic, strong) UIColor *detailTextColor;
+@property (nonatomic, strong) UIFont *detailTextFont;
+@property (nonatomic, assign) NSTextAlignment detailTextAlignment;
+@property (nonatomic, copy) NSString *detailTextStr;
+@property (nonatomic, copy) NSAttributedString *detailTextAttrStr;
+@property (nonatomic, assign) NSInteger detailTextNumberOfLines;
+
+#pragma mark - 箭头图片(默认不显示)
+
+@property (nonatomic, strong) UIImage *accessoryImage;
+
+#pragma mark - 分割线(默认不显示)
+
 @property (nonatomic, strong) UIColor *lineColor;
 @property (nonatomic, assign) CGFloat lineWidth;
 @property (nonatomic, assign) UIEdgeInsets topLineInsets;

@@ -7,6 +7,7 @@
 //
 
 #import "LCAppDelegate.h"
+#import "LCNavigationController.h"
 #import "LCViewController.h"
 
 @implementation LCAppDelegate
@@ -15,7 +16,7 @@
 {
     LCViewController *viewController = [[LCViewController alloc] init];
     
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    LCNavigationController *navController = [[LCNavigationController alloc] initWithRootViewController:viewController];
     self.window.rootViewController = navController;
     
     return YES;

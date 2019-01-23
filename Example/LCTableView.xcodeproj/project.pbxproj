@@ -43,6 +43,7 @@
 		990894B921E5E302009AC16B /* LCLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894AF21E5E302009AC16B /* LCLabelCell.m */; };
 		990894BA21E5E302009AC16B /* LCTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894B121E5E302009AC16B /* LCTextFieldCell.m */; };
 		990894D121E72173009AC16B /* LCAnimalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894D021E72173009AC16B /* LCAnimalModel.m */; };
+		99EE720A21F85505004A1817 /* LCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EE720921F85505004A1817 /* LCNavigationController.m */; };
 		99F1A1D121EC21D10076E3B2 /* UITableView+LCAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F1A1D021EC21D10076E3B2 /* UITableView+LCAdd.m */; };
 		99F1A1D421EC2FCE0076E3B2 /* LCTableViewIMP.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F1A1D321EC2FCE0076E3B2 /* LCTableViewIMP.m */; };
 		99F1A1D721EC330E0076E3B2 /* LCTableViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F1A1D621EC330E0076E3B2 /* LCTableViewProxy.m */; };
@@ -127,6 +128,8 @@
 		990894B121E5E302009AC16B /* LCTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTextFieldCell.m; sourceTree = "<group>"; };
 		990894CF21E72173009AC16B /* LCAnimalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCAnimalModel.h; sourceTree = "<group>"; };
 		990894D021E72173009AC16B /* LCAnimalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCAnimalModel.m; sourceTree = "<group>"; };
+		99EE720821F85505004A1817 /* LCNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCNavigationController.h; sourceTree = "<group>"; };
+		99EE720921F85505004A1817 /* LCNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCNavigationController.m; sourceTree = "<group>"; };
 		99F1A1CF21EC21D10076E3B2 /* UITableView+LCAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+LCAdd.h"; sourceTree = "<group>"; };
 		99F1A1D021EC21D10076E3B2 /* UITableView+LCAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+LCAdd.m"; sourceTree = "<group>"; };
 		99F1A1D221EC2FCE0076E3B2 /* LCTableViewIMP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCTableViewIMP.h; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 				6003F59C195388D20070C39A /* LCAppDelegate.h */,
 				6003F59D195388D20070C39A /* LCAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
+				99EE720821F85505004A1817 /* LCNavigationController.h */,
+				99EE720921F85505004A1817 /* LCNavigationController.m */,
 				6003F5A5195388D20070C39A /* LCViewController.h */,
 				6003F5A6195388D20070C39A /* LCViewController.m */,
 				9902FFCC21EF2DF60024C497 /* ViewControllers */,
@@ -594,6 +599,7 @@
 				9902FFC021EDDA8D0024C497 /* LCPlantCell.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				990894B621E5E302009AC16B /* LCLabelCellViewModel.m in Sources */,
+				99EE720A21F85505004A1817 /* LCNavigationController.m in Sources */,
 				990894B821E5E302009AC16B /* LCActionCell.m in Sources */,
 				99F1A1D121EC21D10076E3B2 /* UITableView+LCAdd.m in Sources */,
 				990894B521E5E302009AC16B /* LCActionCellViewModel.m in Sources */,

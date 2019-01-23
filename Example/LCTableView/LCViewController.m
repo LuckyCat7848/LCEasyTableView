@@ -28,7 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"1个section,多个row";
+    self.title = @"1-section,N-row";
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self configDatas];
@@ -78,16 +78,16 @@
 - (NSArray<NSDictionary *> *)titleArray {
     if (!_titleArray) {
         _titleArray = @[
-                        @{@"title" : @"多个section,1个row",
+                        @{@"title" : @"N-section,1-row",
                           @"class" : NSStringFromClass([LCDataStyleSectionsViewController class])},
   
-                        @{@"title" : @"多个section,多个row",
+                        @{@"title" : @"N-section,N-row",
                           @"class" : NSStringFromClass([LCDataStyleAllViewController class])},
                         
-                        @{@"title" : @"不同的cell显示",
+                        @{@"title" : @"cell的不同实现方式",
                           @"class" : NSStringFromClass([LCCellsViewController class])},
                         
-                        @{@"title" : @"表格样式",
+                        @{@"title" : @"LCActionCell",
                           @"class" : NSStringFromClass([LCTableStyleViewController class])},
                         ];
     }

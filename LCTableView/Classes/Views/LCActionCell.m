@@ -14,8 +14,6 @@
 
 /** 顶部分割线 */
 @property (nonatomic, strong) UIView *topLineView;
-/** icon */
-@property (nonatomic, strong) UIImageView *iconImageView;
 /** 底部分割线 */
 @property (nonatomic, strong) UIView *bottomLineView;
 
@@ -24,9 +22,9 @@
 @implementation LCActionCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
     if (self) {
-        
+        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     return self;
 }
@@ -41,14 +39,14 @@
     _viewModel = viewModel;
     
     // icon
-    self.iconImageView.hidden = !viewModel.iconImage;
-    self.iconImageView.image = viewModel.iconImage;
-    if (!self.iconImageView.hidden && viewModel.iconSize.width == 0 && viewModel.iconSize.height == 0) {
+    self.imageView.hidden = !viewModel.iconImage;
+    self.imageView.image = viewModel.iconImage;
+    if (!self.imageView.hidden && viewModel.iconSize.width == 0 && viewModel.iconSize.height == 0) {
         viewModel.iconSize = viewModel.iconImage.size;
     }
     
-    // 文字
-    self.textLabel.numberOfLines = 0;
+    // 标题
+    self.textLabel.numberOfLines = viewModel.textNumberOfLines;
     self.textLabel.textColor = viewModel.textColor;
     self.textLabel.font = viewModel.textFont;
     self.textLabel.text = viewModel.textStr;
@@ -57,11 +55,21 @@
     }
     self.textLabel.textAlignment = viewModel.textAlignment;
     
+    // 详情
+    self.detailTextLabel.numberOfLines = viewModel.detailTextNumberOfLines;
+    self.detailTextLabel.textColor = viewModel.detailTextColor;
+    self.detailTextLabel.font = viewModel.detailTextFont;
+    self.detailTextLabel.text = viewModel.detailTextStr;
+    if (viewModel.detailTextAttrStr) {
+        self.detailTextLabel.attributedText = viewModel.detailTextAttrStr;
+    }
+    self.detailTextLabel.textAlignment = viewModel.detailTextAlignment;
+    
     // 箭头图片
-    if (viewModel.indicatorImage) {
+    if (viewModel.accessoryImage) {
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
-        UIImageView *accessoryView = [[UIImageView alloc] initWithImage:viewModel.indicatorImage];
+        UIImageView *accessoryView = [[UIImageView alloc] initWithImage:viewModel.accessoryImage];
         accessoryView.contentMode = UIViewContentModeScaleAspectFit;
         self.accessoryView = accessoryView;
     } else {
@@ -84,19 +92,37 @@
     LCActionCellViewModel *vm = self.viewModel;
     
     // 箭头
-    CGFloat accessoryLeft = self.width - vm.indicatorImage.size.width - vm.spaceHorizontal;
-    self.accessoryView.frame = CGRectMake(accessoryLeft, 0, vm.indicatorImage.size.width, self.height);
+    CGFloat accessoryLeft = self.width - vm.accessoryImage.size.width - vm.accessoryEdgeInsets.right;
+    self.accessoryView.frame = CGRectMake(accessoryLeft, 0, vm.accessoryImage.size.width, self.height);
     
     // icon
-    CGFloat pointX = vm.spaceHorizontal, textRight = 0;
-    if (!_iconImageView.hidden) {
-        _iconImageView.frame = CGRectMake(pointX, 0, vm.iconSize.width, self.height);
-        pointX = _iconImageView.right + vm.iconAndTextSpaceH;
-        textRight = vm.textAndIndicatorSpaceH;
+    CGFloat textPointX = vm.textEdgeInsets.left, detailPointX = vm.detailTextEdgeInsets.left;
+    if (!self.imageView.hidden) {
+        self.imageView.frame = CGRectMake(vm.iconEdgeInsets.left, 0, vm.iconSize.width, self.height);
+        textPointX = self.imageView.right + vm.textEdgeInsets.left;
+        detailPointX = self.imageView.right + vm.detailTextEdgeInsets.left;
     }
     
-    // 文字
-    self.textLabel.frame = CGRectMake(pointX, 0, accessoryLeft - pointX - textRight, self.height);
+    // 标题
+    self.textLabel.frame = CGRectMake(textPointX, 0, accessoryLeft - textPointX - vm.accessoryEdgeInsets.left, self.height);
+    
+    // 详情
+    if (self.detailTextLabel.text.length || self.detailTextLabel.attributedText.string.length) {
+        [self.textLabel sizeToFit];
+
+        self.detailTextLabel.left = detailPointX;
+        [self.detailTextLabel sizeToFit];
+        
+        self.textLabel.width = accessoryLeft - textPointX - vm.accessoryEdgeInsets.left;
+        self.detailTextLabel.width = accessoryLeft - detailPointX - vm.accessoryEdgeInsets.left;
+
+        CGFloat space = (self.height - self.textLabel.height - self.detailTextLabel.height) / 3;
+        self.textLabel.top = space + 2;
+        self.detailTextLabel.bottom = self.height - space - 2;
+    }
+    
+    // icon
+    self.imageView.centerY = self.textLabel.centerY;
     
     // 上/下线
     _topLineView.frame = CGRectMake(vm.topLineInsets.left, vm.topLineInsets.top, self.width - vm.topLineInsets.left - vm.topLineInsets.right, vm.lineWidth);
@@ -114,17 +140,6 @@
         _topLineView = view;
     }
     return _topLineView;
-}
-
-- (UIImageView *)iconImageView {
-    if (!_iconImageView) {
-        UIImageView *imageView = [[UIImageView alloc] init];
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
-        
-        [self.contentView addSubview:imageView];
-        _iconImageView = imageView;
-    }
-    return _iconImageView;
 }
 
 - (UIView *)bottomLineView {

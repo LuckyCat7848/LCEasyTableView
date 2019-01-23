@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.title = @"多个section,多个row";
+    self.title = @"N-section,N-row";
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self configDatas];
@@ -44,12 +44,12 @@
 #pragma mark - UITableViewDelegate & UITableViewDataSource
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 20;
+    return 25;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *label = [[UILabel alloc] init];
-    label.backgroundColor = [UIColor lightGrayColor];
+    label.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.00];
     label.text = [NSString stringWithFormat:@"section %ld", (long)section];
     return label;
 }
