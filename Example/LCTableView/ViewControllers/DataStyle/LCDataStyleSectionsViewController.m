@@ -55,7 +55,7 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-        tableView.lc_dataStyle = LCTableViewDataStyleSections;
+        tableView.lc_isSectionsStyle = YES;
         tableView.lc_Delegate = self;
         
         [self.view addSubview:tableView];

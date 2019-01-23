@@ -18,20 +18,33 @@
 
 #pragma mark - 配置
 
+/** 左右两边边距 */
+@property (nonatomic, assign) CGFloat spaceHorizontal;
+
+/** 图片icon */
+@property (nonatomic, strong) UIImage *iconImage;
+/** 图片大小（默认为iconImage.size） */
+@property (nonatomic, assign) CGSize iconSize;
+/** icon和文字水平间距（默认8） */
+@property (nonatomic, assign) CGFloat iconAndTextSpaceH;
+
 /** 文字 */
-@property (nonatomic, assign) CGFloat textLeft;
 @property (nonatomic, strong) UIColor *textColor;
 @property (nonatomic, strong) UIFont *textFont;
 @property (nonatomic, assign) NSTextAlignment textAlignment;
 @property (nonatomic, copy) NSString *textStr;
+@property (nonatomic, copy) NSAttributedString *textAttrStr;
 
 /** 箭头图片(默认不显示) */
 @property (nonatomic, strong) UIImage *indicatorImage;
+/** 文字和箭头水平间距（默认8） */
+@property (nonatomic, assign) CGFloat textAndIndicatorSpaceH;
 
 /** 分割线(默认不显示) */
+@property (nonatomic, strong) UIColor *lineColor;
+@property (nonatomic, assign) CGFloat lineWidth;
 @property (nonatomic, assign) UIEdgeInsets topLineInsets;
 @property (nonatomic, assign) UIEdgeInsets bottomLineInsets;
-@property (nonatomic, strong) UIColor *lineColor;
 @property (nonatomic, assign) BOOL showTopLine;
 @property (nonatomic, assign) BOOL showBottomLine;
 

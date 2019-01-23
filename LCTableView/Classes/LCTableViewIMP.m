@@ -13,37 +13,23 @@
 #pragma mark - UITableViewDelegate & UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    switch (self.dataStyle) {
-        case LCTableViewDataStyleRows:
-            return 1;
-            break;
-        case LCTableViewDataStyleSections:
-            return self.dataArray.count;
-            break;
-        case LCTableViewDataStyleAll:
-            return self.dataArray.count;
-            break;
-        default:
-            break;
+    if (self.dataArray.count && [self.dataArray[0] isKindOfClass:[NSArray class]]) {
+        return self.dataArray.count;
+    }
+    if (self.isSectionsStyle) {
+        return self.dataArray.count;
     }
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    switch (self.dataStyle) {
-        case LCTableViewDataStyleRows:
-            return self.dataArray.count;
-            break;
-        case LCTableViewDataStyleSections:
-            return 1;
-            break;
-        case LCTableViewDataStyleAll:
-            return [self.dataArray[section] count];
-            break;
-        default:
-            break;
+    if (self.dataArray.count && [self.dataArray[0] isKindOfClass:[NSArray class]]) {
+        return [self.dataArray[section] count];
     }
-    return 0;
+    if (self.isSectionsStyle) {
+        return 1;
+    }
+    return self.dataArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -115,20 +101,13 @@
 
 /** 根据数据类型和位置取数据 */
 - (id<LCCellDataProtocol>)cellViewModelWithIndexPath:(NSIndexPath *)indexPath {
-    switch (self.dataStyle) {
-        case LCTableViewDataStyleRows:
-            return self.dataArray[indexPath.row];
-            break;
-        case LCTableViewDataStyleSections:
-            return self.dataArray[indexPath.section];
-            break;
-        case LCTableViewDataStyleAll:
-            return self.dataArray[indexPath.section][indexPath.row];
-            break;
-        default:
-            break;
+    if (self.dataArray.count && [self.dataArray[0] isKindOfClass:[NSArray class]]) {
+        return self.dataArray[indexPath.section][indexPath.row];
     }
-    return nil;
+    if (self.isSectionsStyle) {
+        return self.dataArray[indexPath.section];
+    }
+    return self.dataArray[indexPath.row];
 }
 
 @end

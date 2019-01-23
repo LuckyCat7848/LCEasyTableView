@@ -16,15 +16,4 @@
 /** 线 */
 #define kLCLineWidth    (1 / [UIScreen mainScreen].scale)
 
-
-/** TableView数据样式 */
-typedef NS_ENUM(NSInteger, LCTableViewDataStyle) {
-    /** 默认:1个section,多个row */
-    LCTableViewDataStyleRows,
-    /** 多个section,1个row */
-    LCTableViewDataStyleSections,
-    /** 多个section,多个row（数据为嵌套数组） */
-    LCTableViewDataStyleAll,
-};
-
 #endif /* LCDefines_h */

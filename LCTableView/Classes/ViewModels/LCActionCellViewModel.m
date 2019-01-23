@@ -18,13 +18,19 @@ SetCellClass(LCActionCell);
     if (self) {
         // 默认设置
         _cellHeight = 44;
-
-        _textLeft = 16;
+                
+        _spaceHorizontal = 16;
+        
+        _iconAndTextSpaceH = 8;
+        
         _textColor = [UIColor blackColor];
-        _textFont = [UIFont systemFontOfSize:12];
+        _textFont = [UIFont systemFontOfSize:15];
         _textAlignment = NSTextAlignmentLeft;
+        
+        _textAndIndicatorSpaceH = 8;
 
         _lineColor = [UIColor lightGrayColor];
+        _lineWidth = kLCLineWidth;
         _showTopLine = NO;
         _showBottomLine = NO;
     }

@@ -14,9 +14,9 @@
 static const void *kLCTableViewProxy = &kLCTableViewProxy;
 static const void *kLCTableViewIMP = &kLCTableViewIMP;
 
-static const void *kLCTableViewDataStyle = &kLCTableViewDataStyle;
 static const void *kLCTableViewDelegate = &kLCTableViewDelegate;
 static const void *kLCTableViewDataArray = &kLCTableViewDataArray;
+static const void *kLCTableViewIsSectionsStyle = &kLCTableViewIsSectionsStyle;
 
 @interface UITableView ()
 
@@ -40,13 +40,13 @@ static const void *kLCTableViewDataArray = &kLCTableViewDataArray;
 
 #pragma mark - data
 
-- (void)setLc_dataStyle:(LCTableViewDataStyle)lc_dataStyle {
-    objc_setAssociatedObject(self, kLCTableViewDataStyle, @(lc_dataStyle), OBJC_ASSOCIATION_ASSIGN);
-    self.imp.dataStyle = lc_dataStyle;
+- (void)setLc_isSectionsStyle:(BOOL)lc_isSectionsStyle {
+    objc_setAssociatedObject(self, kLCTableViewIsSectionsStyle, @(lc_isSectionsStyle), OBJC_ASSOCIATION_ASSIGN);
+    self.imp.isSectionsStyle = lc_isSectionsStyle;
 }
 
-- (LCTableViewDataStyle)lc_dataStyle {
-    return [objc_getAssociatedObject(self, kLCTableViewDataStyle) integerValue];
+- (BOOL)lc_isSectionsStyle {
+    return [objc_getAssociatedObject(self, kLCTableViewIsSectionsStyle) integerValue];
 }
 
 - (void)setLc_dataArray:(NSMutableArray *)lc_dataArray {

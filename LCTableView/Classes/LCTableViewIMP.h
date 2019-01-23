@@ -14,11 +14,11 @@
 
 @interface LCTableViewIMP : NSObject<UITableViewDelegate, UITableViewDataSource>
 
-/** 数据类型 */
-@property (nonatomic, assign) LCTableViewDataStyle dataStyle;
+/** 单层数组,多个section，1个row类型 */
+@property (nonatomic, assign) BOOL isSectionsStyle;
 
 /**
- 数据(如果LCTableViewDataStyleAll,为嵌套数组)
+    数据
  */
 @property (nonatomic, strong) NSArray *dataArray;
 

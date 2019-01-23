@@ -14,7 +14,8 @@
 
 /** 顶部分割线 */
 @property (nonatomic, strong) UIView *topLineView;
-
+/** icon */
+@property (nonatomic, strong) UIImageView *iconImageView;
 /** 底部分割线 */
 @property (nonatomic, strong) UIView *bottomLineView;
 
@@ -39,12 +40,22 @@
 - (void)setViewModel:(LCActionCellViewModel *)viewModel {
     _viewModel = viewModel;
     
+    // icon
+    self.iconImageView.hidden = !viewModel.iconImage;
+    self.iconImageView.image = viewModel.iconImage;
+    if (!self.iconImageView.hidden && viewModel.iconSize.width == 0 && viewModel.iconSize.height == 0) {
+        viewModel.iconSize = viewModel.iconImage.size;
+    }
+    
     // 文字
+    self.textLabel.numberOfLines = 0;
     self.textLabel.textColor = viewModel.textColor;
     self.textLabel.font = viewModel.textFont;
-    self.textLabel.textAlignment = viewModel.textAlignment;
     self.textLabel.text = viewModel.textStr;
-    self.textLabel.numberOfLines = 0;
+    if (viewModel.textAttrStr) {
+        self.textLabel.attributedText = viewModel.textAttrStr;
+    }
+    self.textLabel.textAlignment = viewModel.textAlignment;
     
     // 箭头图片
     if (viewModel.indicatorImage) {
@@ -72,14 +83,25 @@
     
     LCActionCellViewModel *vm = self.viewModel;
     
-    CGFloat accessoryLeft = self.width - vm.indicatorImage.size.width - vm.textLeft;
+    // 箭头
+    CGFloat accessoryLeft = self.width - vm.indicatorImage.size.width - vm.spaceHorizontal;
     self.accessoryView.frame = CGRectMake(accessoryLeft, 0, vm.indicatorImage.size.width, self.height);
     
-    self.textLabel.frame = CGRectMake(vm.textLeft, 0, accessoryLeft - vm.textLeft - 10, self.height);
+    // icon
+    CGFloat pointX = vm.spaceHorizontal, textRight = 0;
+    if (!_iconImageView.hidden) {
+        _iconImageView.frame = CGRectMake(pointX, 0, vm.iconSize.width, self.height);
+        pointX = _iconImageView.right + vm.iconAndTextSpaceH;
+        textRight = vm.textAndIndicatorSpaceH;
+    }
     
-    self.topLineView.frame = CGRectMake(vm.topLineInsets.left, 0, self.width - vm.topLineInsets.left - vm.topLineInsets.right, kLCLineWidth);
+    // 文字
+    self.textLabel.frame = CGRectMake(pointX, 0, accessoryLeft - pointX - textRight, self.height);
     
-    self.bottomLineView.frame = CGRectMake(vm.bottomLineInsets.left, self.height - kLCLineWidth, self.width - vm.bottomLineInsets.left - vm.bottomLineInsets.right, kLCLineWidth);
+    // 上/下线
+    _topLineView.frame = CGRectMake(vm.topLineInsets.left, vm.topLineInsets.top, self.width - vm.topLineInsets.left - vm.topLineInsets.right, vm.lineWidth);
+    
+    _bottomLineView.frame = CGRectMake(vm.bottomLineInsets.left, self.height - vm.lineWidth - vm.bottomLineInsets.bottom, self.width - vm.bottomLineInsets.left - vm.bottomLineInsets.right, vm.lineWidth);
 }
 
 #pragma mark - Getter
@@ -92,6 +114,17 @@
         _topLineView = view;
     }
     return _topLineView;
+}
+
+- (UIImageView *)iconImageView {
+    if (!_iconImageView) {
+        UIImageView *imageView = [[UIImageView alloc] init];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        
+        [self.contentView addSubview:imageView];
+        _iconImageView = imageView;
+    }
+    return _iconImageView;
 }
 
 - (UIView *)bottomLineView {

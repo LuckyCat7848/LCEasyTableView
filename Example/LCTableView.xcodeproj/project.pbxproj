@@ -284,8 +284,8 @@
 		9902FFCC21EF2DF60024C497 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9902FFCD21EF2DF60024C497 /* CellStyle */,
 				9902FFD221EF2DF60024C497 /* DataStyle */,
+				9902FFCD21EF2DF60024C497 /* CellStyle */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -304,10 +304,10 @@
 		9902FFD221EF2DF60024C497 /* DataStyle */ = {
 			isa = PBXGroup;
 			children = (
-				9902FFD321EF2DF60024C497 /* LCDataStyleAllViewController.h */,
-				9902FFD421EF2DF60024C497 /* LCDataStyleAllViewController.m */,
 				9902FFD521EF2DF60024C497 /* LCDataStyleSectionsViewController.h */,
 				9902FFD621EF2DF60024C497 /* LCDataStyleSectionsViewController.m */,
+				9902FFD321EF2DF60024C497 /* LCDataStyleAllViewController.h */,
+				9902FFD421EF2DF60024C497 /* LCDataStyleAllViewController.m */,
 			);
 			path = DataStyle;
 			sourceTree = "<group>";
