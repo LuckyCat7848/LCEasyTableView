@@ -21,6 +21,7 @@
 @property(nonatomic, assign) UIEdgeInsets iconEdgeInsets;
 @property(nonatomic, assign) UIEdgeInsets textEdgeInsets;
 @property(nonatomic, assign) UIEdgeInsets detailTextEdgeInsets;
+@property(nonatomic, assign) UIEdgeInsets valueTextEdgeInsets;
 @property (nonatomic, assign) UIEdgeInsets accessoryEdgeInsets;
 
 #pragma mark - 图片
@@ -46,6 +47,17 @@
 @property (nonatomic, copy) NSString *detailTextStr;
 @property (nonatomic, copy) NSAttributedString *detailTextAttrStr;
 @property (nonatomic, assign) NSInteger detailTextNumberOfLines;
+
+#pragma mark - 右侧提示文字/图片
+
+@property (nonatomic, strong) UIColor *valueTextColor;
+@property (nonatomic, strong) UIFont *valueTextFont;
+@property (nonatomic, copy) NSString *valueTextStr;
+@property (nonatomic, copy) NSAttributedString *valueTextAttrStr;
+
+@property (nonatomic, strong) UIImage *valueImage;
+/** 提示图片大小（默认为valueImage.size） */
+@property (nonatomic, assign) CGSize valueSize;
 
 #pragma mark - 箭头图片(默认不显示)
 

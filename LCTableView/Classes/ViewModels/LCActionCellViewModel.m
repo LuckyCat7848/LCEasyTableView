@@ -23,6 +23,7 @@ SetCellClass(LCActionCell);
         _iconEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 0);
         _textEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 0);
         _detailTextEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 0);
+        _valueTextEdgeInsets = UIEdgeInsetsMake(0, 8, 0, 16);
         _accessoryEdgeInsets = UIEdgeInsetsMake(0, 8, 0, 16);
         
         // 标题
@@ -37,6 +38,10 @@ SetCellClass(LCActionCell);
         _detailTextAlignment = NSTextAlignmentLeft;
         _detailTextNumberOfLines = 1;
 
+        // 右侧提示文字/图片
+        _valueTextColor = [UIColor lightGrayColor];
+        _valueTextFont = [UIFont systemFontOfSize:12];
+        
         // 分割线
         _lineColor = [UIColor lightGrayColor];
         _lineWidth = kLCLineWidth;
