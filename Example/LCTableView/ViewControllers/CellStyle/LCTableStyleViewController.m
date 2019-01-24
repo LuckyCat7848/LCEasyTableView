@@ -44,34 +44,60 @@
                 if (j == 0) {
                     
                 } else if (j == 1) {
-                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
+                    cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
+//                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
                 } else if (j == 2) {
-                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
+                    cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
+//                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
                     cellVM.detailTextStr = @"detailTextStr";
                     cellVM.cellHeight = 60;
                 } else if (j == 3) {
-                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
+                    cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
+//                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
                     cellVM.iconImage = [UIImage imageNamed:@"question_gray"];
                 } else if (j == 4) {
-                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
+                    cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
+//                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
                     cellVM.iconImage = [UIImage imageNamed:@"question_gray"];
                     cellVM.detailTextStr = @"detailTextStr";
                     cellVM.cellHeight = 60;
                 }
             } else if (i == 1) {
-                cellVM.cellHeight = 60 + j * 10;
-                cellVM.valueTextStr = @"valueTextStr";
+                cellVM.cellHeight = 60;
                 cellVM.valueTextColor = [UIColor colorWithRed:0.87 green:0.31 blue:0.27 alpha:1.00];
                 if (j == 0) {
-                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
+                    cellVM.valueTextStr = @"valueTextStr";
+                    cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
+//                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
                     cellVM.valueTextEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 8);
                 } else if (j == 1) {
-                    cellVM.textStr = @"LCActionCellLCActionCellLCActionCellLCActionCell";
-                    cellVM.detailTextStr = @"detailTextStrdetailTextStrdetailTextStrdetailTextStrdetailTextStrdetailTextStrdetailTextStr";
-                    cellVM.detailTextNumberOfLines = 0;
+                    cellVM.valueTextAttrStr = [[NSAttributedString alloc] initWithString:@"valueTextStr" attributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:0.10 green:0.63 blue:0.37 alpha:1.00]}];
+                    cellVM.detailTextStr = @"detailTextStr";
+                } else if (j == 2) {
+                    cellVM.valueImage = [UIImage imageNamed:@"question_gray"];
+                    cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
+//                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
+                    cellVM.valueTextEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 8);
+                } else if (j == 3) {
+                    cellVM.valueImage = [UIImage imageNamed:@"question_gray"];
+                    cellVM.detailTextStr = @"detailTextStr";
+                } else if (j == 4) {
+                    cellVM.accessoryType = LCActionCellAccessoryTypeSwitch;
+                    cellVM.textStr = @"UISwitch类型";
+                } else if (j == 5) {
+                    cellVM.accessoryType = LCActionCellAccessoryTypeSwitch;
+                    cellVM.textStr = @"UISwitch类型";
+                    cellVM.detailTextStr = @"detailTextStr";
+                    cellVM.accessorySwitchOn = YES;
+                } else if (j == 6) {
+                    cellVM.cellHeight = 44;
+                    cellVM.textStr = @"确认提交";
+                    cellVM.textColor = [UIColor colorWithRed:0.87 green:0.31 blue:0.27 alpha:1.00];
+                    cellVM.textAlignment = NSTextAlignmentCenter;
                 }
             } else if (i == 2) {
-                cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
+                cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
+//                cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
                 cellVM.cellHeight = 60;
                 if (j == 0) {
                     cellVM.textEdgeInsets = UIEdgeInsetsMake(0, 40, 0, 0);
@@ -94,7 +120,8 @@
                     cellVM.detailTextStr = @"accessoryEdgeInsets,accessoryEdgeInsets,accessoryEdgeInsets,accessoryEdgeInsets,accessoryEdgeInsets";
                 }
             } else if (i == 3) {
-                cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
+                cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
+//                cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
                 cellVM.cellHeight = 60 + j * 10;
                 if (j == 0) {
                     cellVM.textNumberOfLines = 0;
@@ -152,14 +179,6 @@
     return label;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    if (indexPath.row == self.actionArray.count - 1) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-}
-
 #pragma mark - Getter
 
 - (UITableView *)tableView {
@@ -186,6 +205,11 @@
                              ],
                          
                          @[
+                             @"LCActionCell",
+                             @"LCActionCell",
+                             @"LCActionCell",
+                             @"LCActionCell",
+                             @"LCActionCell",
                              @"LCActionCell",
                              @"LCActionCell",
                              ],

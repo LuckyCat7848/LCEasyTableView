@@ -11,6 +11,16 @@
 #import <Foundation/Foundation.h>
 #import "LCCellDataProtocol.h"
 
+/** 右侧箭头显示类型 */
+typedef NS_ENUM(NSInteger, LCActionCellAccessoryType) {
+    /** 无 */
+    LCActionCellAccessoryTypeNone,
+    /** 箭头或其他图片 */
+    LCActionCellAccessoryTypeIndicator,
+    /** 开关 */
+    LCActionCellAccessoryTypeSwitch,
+};
+
 @interface LCActionCellViewModel : NSObject<LCCellDataProtocol>
 
 @property (nonatomic, strong) id model;
@@ -59,9 +69,11 @@
 /** 提示图片大小（默认为valueImage.size） */
 @property (nonatomic, assign) CGSize valueSize;
 
-#pragma mark - 箭头图片(默认不显示)
+#pragma mark - 箭头图片/开关(默认不显示)
 
+@property (nonatomic, assign) LCActionCellAccessoryType accessoryType;
 @property (nonatomic, strong) UIImage *accessoryImage;
+@property (nonatomic, assign) BOOL accessorySwitchOn;
 
 #pragma mark - 分割线(默认不显示)
 

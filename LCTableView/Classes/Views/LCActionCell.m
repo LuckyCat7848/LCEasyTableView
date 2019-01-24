@@ -13,7 +13,7 @@
 @interface LCActionCell ()
 
 /** 右侧提示文字/图片 */
- @property (nonatomic, strong) UILabel *valueTextLabel;
+ @property (nonatomic, strong) UIButton *valueTextButton;
 
 /** 顶部分割线 */
 @property (nonatomic, strong) UIView *topLineView;
@@ -69,27 +69,50 @@
     self.detailTextLabel.textAlignment = viewModel.detailTextAlignment;
     
     // 右侧提示文字/图片
-    _valueTextLabel.hidden = YES;
-    if (viewModel.valueTextStr.length || viewModel.valueTextAttrStr.length) {
-        self.valueTextLabel.hidden = NO;
-        self.valueTextLabel.textColor = viewModel.valueTextColor;
-        self.valueTextLabel.font = viewModel.valueTextFont;
-        self.valueTextLabel.text = viewModel.valueTextStr;
-        if (viewModel.valueTextAttrStr) {
-            self.valueTextLabel.attributedText = viewModel.valueTextAttrStr;
+    _valueTextButton.hidden = YES;
+    if (viewModel.valueImage || viewModel.valueTextStr.length || viewModel.valueTextAttrStr.length) {
+        self.valueTextButton.hidden = NO;
+        [self.valueTextButton setTitleColor:viewModel.valueTextColor forState:UIControlStateNormal];
+        self.valueTextButton.titleLabel.font = viewModel.valueTextFont;
+        
+        if (viewModel.valueImage) {
+            [self.valueTextButton setImage:viewModel.valueImage forState:UIControlStateNormal];
+            if (viewModel.valueSize.width == 0 && viewModel.valueSize.height == 0) {
+                viewModel.valueSize = viewModel.valueImage.size;
+            }
+        } else if (viewModel.valueTextAttrStr) {
+            [self.valueTextButton setAttributedTitle:viewModel.valueTextAttrStr forState:UIControlStateNormal];
+        } else {
+            [self.valueTextButton setTitle:viewModel.valueTextStr forState:UIControlStateNormal];
         }
-        self.valueTextLabel.textAlignment = NSTextAlignmentRight;
+        self.valueTextButton.titleLabel.textAlignment = NSTextAlignmentRight;
     }
     
-    // 箭头图片
-    if (viewModel.accessoryImage) {
+    // 箭头
+    if (viewModel.accessoryType == LCActionCellAccessoryTypeSwitch) {
+        // 开关
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
-        UIImageView *accessoryView = [[UIImageView alloc] initWithImage:viewModel.accessoryImage];
-        accessoryView.contentMode = UIViewContentModeScaleAspectFit;
-        self.accessoryView = accessoryView;
+        UISwitch *aSwitch = (UISwitch *)self.accessoryView;
+        if (!aSwitch || ![aSwitch isKindOfClass:[UISwitch class]]) {
+            aSwitch = [[UISwitch alloc] init];
+            self.accessoryView = aSwitch;
+        }
+        aSwitch.on = viewModel.accessorySwitchOn;
+    } else if (viewModel.accessoryType == LCActionCellAccessoryTypeIndicator) {
+        // 图片
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+        UIImageView *imageView = (UIImageView *)self.accessoryView;
+        if (!imageView || ![imageView isKindOfClass:[UIImageView class]]) {
+            imageView = [[UIImageView alloc] init];
+            imageView.contentMode = UIViewContentModeScaleAspectFit;
+            self.accessoryView = imageView;
+        }
+        imageView.image = viewModel.accessoryImage;
     } else {
         self.accessoryType = UITableViewCellAccessoryNone;
+        self.accessoryView = nil;
     }
     
     // 分隔线
@@ -111,9 +134,15 @@
     CGFloat valueRight = self.width - vm.valueTextEdgeInsets.right;
     CGFloat textRight = self.width - vm.accessoryEdgeInsets.right;
     CGFloat detailRight = self.width - vm.accessoryEdgeInsets.right;
-    if (vm.accessoryImage.size.width) {
-        textRight -= vm.accessoryImage.size.width;
-        self.accessoryView.frame = CGRectMake(textRight, 0, vm.accessoryImage.size.width, self.height);
+    if (self.accessoryType != UITableViewCellAccessoryNone) {
+        CGFloat accessoryWidth = vm.accessoryImage.size.width;
+        CGFloat accessoryHeight = vm.accessoryImage.size.height;
+        if (vm.accessoryType == LCActionCellAccessoryTypeSwitch) {
+            accessoryWidth = 51;
+            accessoryHeight = 31;
+        }
+        textRight -= accessoryWidth;
+        self.accessoryView.frame = CGRectMake(textRight, (self.height - accessoryHeight) / 2, accessoryWidth, accessoryHeight);
         valueRight = textRight - vm.valueTextEdgeInsets.right;
         
         textRight -= vm.accessoryEdgeInsets.left;
@@ -121,14 +150,18 @@
     }
     
     // 右侧提示文字/图片
-    if (_valueTextLabel && !_valueTextLabel.hidden) {
-        [_valueTextLabel sizeToFit];
-        if (_valueTextLabel.width > self.width / 2) {
-            _valueTextLabel.width = self.width / 2;
+    if (_valueTextButton && !_valueTextButton.hidden) {
+        if (vm.valueImage.size.width) {
+            _valueTextButton.frame = CGRectMake(0, 0, vm.valueSize.width, vm.valueSize.height);
+        } else {
+            [_valueTextButton sizeToFit];
+            if (_valueTextButton.width > self.width / 2) {
+                _valueTextButton.width = self.width / 2;
+            }
         }
-        _valueTextLabel.right = valueRight;
-        textRight = _valueTextLabel.left - vm.valueTextEdgeInsets.left;
-        detailRight = _valueTextLabel.right;
+        _valueTextButton.right = valueRight;
+        textRight = _valueTextButton.left - vm.valueTextEdgeInsets.left;
+        detailRight = _valueTextButton.right;
     }
     
     // icon
@@ -159,9 +192,9 @@
     
     // icon、value,centerY
     self.imageView.centerY = self.textLabel.centerY;
-    _valueTextLabel.centerY = self.textLabel.centerY;
-    if (vm.accessoryImage.size.width) {
-        _valueTextLabel.centerY = self.accessoryView.centerY;
+    _valueTextButton.centerY = self.accessoryView.centerY;
+    if (self.detailTextLabel.text.length || self.detailTextLabel.attributedText.length) {
+        _valueTextButton.centerY = self.textLabel.centerY;
     }
 
     // 上/下线
@@ -172,14 +205,14 @@
 
 #pragma mark - Getter
 
-- (UILabel *)valueTextLabel {
-    if (!_valueTextLabel) {
-        UILabel *label = [[UILabel alloc] init];
+- (UIButton *)valueTextButton {
+    if (!_valueTextButton) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        [self.contentView addSubview:label];
-        _valueTextLabel = label;
+        [self.contentView addSubview:button];
+        _valueTextButton = button;
     }
-    return _valueTextLabel;
+    return _valueTextButton;
 }
 
 - (UIView *)topLineView {

@@ -42,6 +42,9 @@ SetCellClass(LCActionCell);
         _valueTextColor = [UIColor lightGrayColor];
         _valueTextFont = [UIFont systemFontOfSize:12];
         
+        // 箭头图片/开关
+        _accessoryImage = [UIImage imageNamed:@"arrow_right"];
+        
         // 分割线
         _lineColor = [UIColor lightGrayColor];
         _lineWidth = kLCLineWidth;
