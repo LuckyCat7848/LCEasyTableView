@@ -71,7 +71,7 @@
 //                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
                     cellVM.valueTextEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 8);
                 } else if (j == 1) {
-                    cellVM.valueTextAttrStr = [[NSAttributedString alloc] initWithString:@"valueTextStr" attributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:0.10 green:0.63 blue:0.37 alpha:1.00]}];
+                    cellVM.valueTextAttrStr = [[NSAttributedString alloc] initWithString:@"valueTextAttrStr" attributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:0.10 green:0.63 blue:0.37 alpha:1.00]}];
                     cellVM.detailTextStr = @"detailTextStr";
                 } else if (j == 2) {
                     cellVM.valueImage = [UIImage imageNamed:@"question_gray"];
@@ -146,6 +146,7 @@
                     cellVM.detailTextAttrStr = detailAttrStr;
                 }
             }
+//            [cellVM calculateCellHeight];
             [tmpArray addObject:cellVM];
         }
         [dataArray addObject:tmpArray];
@@ -178,6 +179,10 @@
     label.text = [NSString stringWithFormat:@"  %@", title];
     return label;
 }
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return UITableViewAutomaticDimension;
+//}
 
 #pragma mark - Getter
 

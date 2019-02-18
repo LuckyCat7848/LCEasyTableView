@@ -32,3 +32,4 @@ return class;\
 + (Class)cellClass;
 
 @end
+

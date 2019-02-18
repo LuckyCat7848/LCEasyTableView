@@ -87,4 +87,7 @@ typedef NS_ENUM(NSInteger, LCActionCellAccessoryType) {
 /** 写明这个ViewModel对应的cell类 */
 + (Class)cellClass;
 
+/** 计算高度:所有设置完成后,若需要根据内容计算高度,调用该方法 */
+- (void)calculateCellHeight;
+
 @end

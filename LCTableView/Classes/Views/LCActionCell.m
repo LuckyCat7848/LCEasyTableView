@@ -52,9 +52,12 @@
     self.textLabel.numberOfLines = viewModel.textNumberOfLines;
     self.textLabel.textColor = viewModel.textColor;
     self.textLabel.font = viewModel.textFont;
-    self.textLabel.text = viewModel.textStr;
     if (viewModel.textAttrStr) {
+        self.textLabel.text = nil;
         self.textLabel.attributedText = viewModel.textAttrStr;
+    } else {
+        self.textLabel.attributedText = nil;
+        self.textLabel.text = viewModel.textStr;
     }
     self.textLabel.textAlignment = viewModel.textAlignment;
     
@@ -62,9 +65,12 @@
     self.detailTextLabel.numberOfLines = viewModel.detailTextNumberOfLines;
     self.detailTextLabel.textColor = viewModel.detailTextColor;
     self.detailTextLabel.font = viewModel.detailTextFont;
-    self.detailTextLabel.text = viewModel.detailTextStr;
     if (viewModel.detailTextAttrStr) {
+        self.detailTextLabel.text = nil;
         self.detailTextLabel.attributedText = viewModel.detailTextAttrStr;
+    } else {
+        self.detailTextLabel.attributedText = nil;
+        self.detailTextLabel.text = viewModel.detailTextStr;
     }
     self.detailTextLabel.textAlignment = viewModel.detailTextAlignment;
     
@@ -128,6 +134,8 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    NSLog(@"-------------%.2f", self.height);
+
     LCActionCellViewModel *vm = self.viewModel;
     
     // 箭头
@@ -177,17 +185,17 @@
     
     // 详情
     if (self.detailTextLabel.text.length || self.detailTextLabel.attributedText.length) {
-        [self.textLabel sizeToFit];
-
         self.detailTextLabel.left = detailPointX;
-        [self.detailTextLabel sizeToFit];
-        
         self.textLabel.width = textRight - textPointX;
         self.detailTextLabel.width = detailRight - detailPointX;
 
-        CGFloat space = (self.height - self.textLabel.height - self.detailTextLabel.height) / 3;
-        self.textLabel.top = space + 2;
-        self.detailTextLabel.bottom = self.height - space - 2;
+        [self.textLabel sizeToFit];
+        [self.detailTextLabel sizeToFit];
+
+        CGFloat space = 5;//MAX(0, (self.height - self.textLabel.height - self.detailTextLabel.height) / 3);
+        self.textLabel.top = space;
+        self.detailTextLabel.top = self.textLabel.bottom;
+        self.detailTextLabel.height += (space * 2);
     }
     
     // icon、value,centerY

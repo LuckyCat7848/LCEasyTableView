@@ -34,7 +34,7 @@ static const void *kLCTableViewIsSectionsStyle = &kLCTableViewIsSectionsStyle;
     self.proxy.extraDelegate = lc_Delegate;
 }
 
-- (id<UITableViewDelegate,UITableViewDataSource>)lc_Delegate {
+- (id<UITableViewDelegate, UITableViewDataSource>)lc_Delegate {
     return objc_getAssociatedObject(self, kLCTableViewDelegate);
 }
 
