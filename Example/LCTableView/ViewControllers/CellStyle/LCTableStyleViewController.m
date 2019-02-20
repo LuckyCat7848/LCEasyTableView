@@ -122,7 +122,7 @@
             } else if (i == 3) {
                 cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
 //                cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
-                cellVM.cellHeight = 60 + j * 10;
+                cellVM.cellHeight = 65 + j * 10;
                 if (j == 0) {
                     cellVM.textNumberOfLines = 0;
                     cellVM.textStr = @"LCActionCellLCActionCellLCActionCellLCActionCell";

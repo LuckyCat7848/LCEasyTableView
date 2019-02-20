@@ -34,6 +34,11 @@ typedef NS_ENUM(NSInteger, LCActionCellAccessoryType) {
 @property(nonatomic, assign) UIEdgeInsets valueTextEdgeInsets;
 @property (nonatomic, assign) UIEdgeInsets accessoryEdgeInsets;
 
+/** 高度需要计算是需要,自适应高度时不需要 */
+@property (nonatomic, assign) CGFloat topSpace;
+@property (nonatomic, assign) CGFloat middleSpace;
+@property (nonatomic, assign) CGFloat bottomSpace;
+
 #pragma mark - 图片
 
 @property (nonatomic, strong) UIImage *iconImage;
@@ -84,10 +89,34 @@ typedef NS_ENUM(NSInteger, LCActionCellAccessoryType) {
 @property (nonatomic, assign) BOOL showTopLine;
 @property (nonatomic, assign) BOOL showBottomLine;
 
+#pragma mark - Cell布局
+
+/** 箭头 */
+@property (nonatomic, assign) CGRect accessoryFrame;
+/** 右侧提示文字/图片 */
+@property (nonatomic, assign) CGRect valueFrame;
+/** 图片 */
+@property (nonatomic, assign) CGRect iconFrame;
+/** 文字 */
+@property (nonatomic, assign) CGRect textFrame;
+/** 详情 */
+@property (nonatomic, assign) CGRect detailFrame;
+/** 上线 */
+@property (nonatomic, assign) CGRect topLineFrame;
+/** 下线 */
+@property (nonatomic, assign) CGRect bottomLineFrame;
+
 /** 写明这个ViewModel对应的cell类 */
 + (Class)cellClass;
 
-/** 计算高度:所有设置完成后,若需要根据内容计算高度,调用该方法 */
+/**
+ 固定高度：自适应布局(不调用的话cell中会调用)
+ */
+- (void)calculateLayout;
+
+/**
+ 计算高度：所有设置完成后,调用
+ */
 - (void)calculateCellHeight;
 
 @end

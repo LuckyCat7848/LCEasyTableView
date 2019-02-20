@@ -12,8 +12,17 @@
 
 @interface LCActionCell ()
 
+/** icon */
+@property (nonatomic, strong) UIImageView *iconImageView;
+/** 文字 */
+@property (nonatomic, strong) UILabel *titleLabel;
+/** 详情 */
+@property (nonatomic, strong) UILabel *subtitleLabel;
+
 /** 右侧提示文字/图片 */
  @property (nonatomic, strong) UIButton *valueTextButton;
+/** 右侧箭头/开关 */
+@property (nonatomic, strong) UIView *actionView;
 
 /** 顶部分割线 */
 @property (nonatomic, strong) UIView *topLineView;
@@ -27,7 +36,7 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        self.accessoryType = UITableViewCellAccessoryNone;
     }
     return self;
 }
@@ -42,38 +51,42 @@
     _viewModel = viewModel;
     
     // icon
-    self.imageView.hidden = !viewModel.iconImage;
-    self.imageView.image = viewModel.iconImage;
-    if (!self.imageView.hidden && viewModel.iconSize.width == 0 && viewModel.iconSize.height == 0) {
-        viewModel.iconSize = viewModel.iconImage.size;
+    _iconImageView.hidden = YES;
+    if (viewModel.iconImage) {
+        self.iconImageView.hidden = NO;
+        self.iconImageView.image = viewModel.iconImage;
     }
     
     // 标题
-    self.textLabel.numberOfLines = viewModel.textNumberOfLines;
-    self.textLabel.textColor = viewModel.textColor;
-    self.textLabel.font = viewModel.textFont;
+    self.titleLabel.numberOfLines = viewModel.textNumberOfLines;
+    self.titleLabel.textColor = viewModel.textColor;
+    self.titleLabel.font = viewModel.textFont;
     if (viewModel.textAttrStr) {
-        self.textLabel.text = nil;
-        self.textLabel.attributedText = viewModel.textAttrStr;
+        self.titleLabel.text = nil;
+        self.titleLabel.attributedText = viewModel.textAttrStr;
     } else {
-        self.textLabel.attributedText = nil;
-        self.textLabel.text = viewModel.textStr;
+        self.titleLabel.attributedText = nil;
+        self.titleLabel.text = viewModel.textStr;
     }
-    self.textLabel.textAlignment = viewModel.textAlignment;
+    self.titleLabel.textAlignment = viewModel.textAlignment;
     
     // 详情
-    self.detailTextLabel.numberOfLines = viewModel.detailTextNumberOfLines;
-    self.detailTextLabel.textColor = viewModel.detailTextColor;
-    self.detailTextLabel.font = viewModel.detailTextFont;
-    if (viewModel.detailTextAttrStr) {
-        self.detailTextLabel.text = nil;
-        self.detailTextLabel.attributedText = viewModel.detailTextAttrStr;
-    } else {
-        self.detailTextLabel.attributedText = nil;
-        self.detailTextLabel.text = viewModel.detailTextStr;
+    _subtitleLabel.hidden = YES;
+    if (viewModel.detailTextStr || viewModel.detailTextAttrStr) {
+        self.subtitleLabel.hidden = NO;
+        self.subtitleLabel.numberOfLines = viewModel.detailTextNumberOfLines;
+        self.subtitleLabel.textColor = viewModel.detailTextColor;
+        self.subtitleLabel.font = viewModel.detailTextFont;
+        if (viewModel.detailTextAttrStr) {
+            self.subtitleLabel.text = nil;
+            self.subtitleLabel.attributedText = viewModel.detailTextAttrStr;
+        } else {
+            self.subtitleLabel.attributedText = nil;
+            self.subtitleLabel.text = viewModel.detailTextStr;
+        }
+        self.subtitleLabel.textAlignment = viewModel.detailTextAlignment;
     }
-    self.detailTextLabel.textAlignment = viewModel.detailTextAlignment;
-    
+
     // 右侧提示文字/图片
     _valueTextButton.hidden = YES;
     if (viewModel.valueImage || viewModel.valueTextStr.length || viewModel.valueTextAttrStr.length) {
@@ -83,9 +96,6 @@
         
         if (viewModel.valueImage) {
             [self.valueTextButton setImage:viewModel.valueImage forState:UIControlStateNormal];
-            if (viewModel.valueSize.width == 0 && viewModel.valueSize.height == 0) {
-                viewModel.valueSize = viewModel.valueImage.size;
-            }
         } else if (viewModel.valueTextAttrStr) {
             [self.valueTextButton setAttributedTitle:viewModel.valueTextAttrStr forState:UIControlStateNormal];
         } else {
@@ -95,38 +105,58 @@
     }
     
     // 箭头
+    _actionView.hidden = NO;
     if (viewModel.accessoryType == LCActionCellAccessoryTypeSwitch) {
         // 开关
-        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
-        UISwitch *aSwitch = (UISwitch *)self.accessoryView;
+        UISwitch *aSwitch = (UISwitch *)self.actionView;
         if (!aSwitch || ![aSwitch isKindOfClass:[UISwitch class]]) {
             aSwitch = [[UISwitch alloc] init];
-            self.accessoryView = aSwitch;
+            self.actionView = aSwitch;
         }
         aSwitch.on = viewModel.accessorySwitchOn;
     } else if (viewModel.accessoryType == LCActionCellAccessoryTypeIndicator) {
         // 图片
-        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
-        UIImageView *imageView = (UIImageView *)self.accessoryView;
+        UIImageView *imageView = (UIImageView *)self.actionView;
         if (!imageView || ![imageView isKindOfClass:[UIImageView class]]) {
             imageView = [[UIImageView alloc] init];
             imageView.contentMode = UIViewContentModeScaleAspectFit;
-            self.accessoryView = imageView;
+            self.actionView = imageView;
         }
         imageView.image = viewModel.accessoryImage;
     } else {
-        self.accessoryType = UITableViewCellAccessoryNone;
-        self.accessoryView = nil;
+        _actionView.hidden = YES;
+    }
+    if (!_actionView.hidden && !self.actionView.superview) {
+        [self.contentView addSubview:self.actionView];
+    }
+
+    // 分隔线
+    _topLineView.hidden = YES;
+    if (viewModel.showTopLine) {
+        self.topLineView.hidden = NO;
+        self.topLineView.backgroundColor = viewModel.lineColor;
     }
     
-    // 分隔线
-    self.topLineView.backgroundColor = viewModel.lineColor;
-    self.topLineView.hidden = !viewModel.showTopLine;
+    _bottomLineView.hidden = YES;
+    if (viewModel.showBottomLine) {
+        self.bottomLineView.hidden = NO;
+        self.bottomLineView.backgroundColor = viewModel.lineColor;
+    }
     
-    self.bottomLineView.backgroundColor = viewModel.lineColor;
-    self.bottomLineView.hidden = !viewModel.showBottomLine;
+    // 已计算布局,更新
+    if (!CGRectIsEmpty(viewModel.textFrame)) {
+        [self updateUIFrame];
+    }
+}
+
+- (void)updateUIFrame {
+    _iconImageView.frame = self.viewModel.iconFrame;
+    _titleLabel.frame = self.viewModel.textFrame;
+    _subtitleLabel.frame = self.viewModel.detailFrame;
+    _valueTextButton.frame = self.viewModel.valueFrame;
+    _actionView.frame = self.viewModel.accessoryFrame;
+    _topLineView.frame = self.viewModel.topLineFrame;
+    _bottomLineView.frame = self.viewModel.bottomLineFrame;
 }
 
 #pragma mark - Layout
@@ -134,84 +164,47 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    NSLog(@"-------------%.2f", self.height);
-
-    LCActionCellViewModel *vm = self.viewModel;
-    
-    // 箭头
-    CGFloat valueRight = self.width - vm.valueTextEdgeInsets.right;
-    CGFloat textRight = self.width - vm.accessoryEdgeInsets.right;
-    CGFloat detailRight = self.width - vm.accessoryEdgeInsets.right;
-    if (self.accessoryType != UITableViewCellAccessoryNone) {
-        CGFloat accessoryWidth = vm.accessoryImage.size.width;
-        CGFloat accessoryHeight = vm.accessoryImage.size.height;
-        if (vm.accessoryType == LCActionCellAccessoryTypeSwitch) {
-            accessoryWidth = 51;
-            accessoryHeight = 31;
-        }
-        textRight -= accessoryWidth;
-        self.accessoryView.frame = CGRectMake(textRight, (self.height - accessoryHeight) / 2, accessoryWidth, accessoryHeight);
-        valueRight = textRight - vm.valueTextEdgeInsets.right;
-        
-        textRight -= vm.accessoryEdgeInsets.left;
-        detailRight -= vm.accessoryEdgeInsets.left;
+    LCActionCellViewModel *viewModel = self.viewModel;
+    if (!CGRectIsEmpty(viewModel.textFrame)) {
+        return;
     }
-    
-    // 右侧提示文字/图片
-    if (_valueTextButton && !_valueTextButton.hidden) {
-        if (vm.valueImage.size.width) {
-            _valueTextButton.frame = CGRectMake(0, 0, vm.valueSize.width, vm.valueSize.height);
-        } else {
-            [_valueTextButton sizeToFit];
-            if (_valueTextButton.width > self.width / 2) {
-                _valueTextButton.width = self.width / 2;
-            }
-        }
-        _valueTextButton.right = valueRight;
-        textRight = _valueTextButton.left - vm.valueTextEdgeInsets.left;
-        detailRight = _valueTextButton.right;
-    }
-    
-    // icon
-    CGFloat textPointX = vm.textEdgeInsets.left, detailPointX = vm.detailTextEdgeInsets.left;
-    if (!self.imageView.hidden) {
-        self.imageView.frame = CGRectMake(vm.iconEdgeInsets.left, 0, vm.iconSize.width, self.height);
-        textPointX = self.imageView.right + vm.textEdgeInsets.left;
-        detailPointX = self.imageView.right + vm.detailTextEdgeInsets.left;
-    }
-    
-    // 标题
-    self.textLabel.frame = CGRectMake(textPointX, 0, textRight - textPointX, self.height);
-    
-    // 详情
-    if (self.detailTextLabel.text.length || self.detailTextLabel.attributedText.length) {
-        self.detailTextLabel.left = detailPointX;
-        self.textLabel.width = textRight - textPointX;
-        self.detailTextLabel.width = detailRight - detailPointX;
-
-        [self.textLabel sizeToFit];
-        [self.detailTextLabel sizeToFit];
-
-        CGFloat space = 5;//MAX(0, (self.height - self.textLabel.height - self.detailTextLabel.height) / 3);
-        self.textLabel.top = space;
-        self.detailTextLabel.top = self.textLabel.bottom;
-        self.detailTextLabel.height += (space * 2);
-    }
-    
-    // icon、value,centerY
-    self.imageView.centerY = self.textLabel.centerY;
-    _valueTextButton.centerY = self.accessoryView.centerY;
-    if (self.detailTextLabel.text.length || self.detailTextLabel.attributedText.length) {
-        _valueTextButton.centerY = self.textLabel.centerY;
-    }
-
-    // 上/下线
-    _topLineView.frame = CGRectMake(vm.topLineInsets.left, vm.topLineInsets.top, self.width - vm.topLineInsets.left - vm.topLineInsets.right, vm.lineWidth);
-    
-    _bottomLineView.frame = CGRectMake(vm.bottomLineInsets.left, self.height - vm.lineWidth - vm.bottomLineInsets.bottom, self.width - vm.bottomLineInsets.left - vm.bottomLineInsets.right, vm.lineWidth);
+    // 未计算布局,计算,更新
+    [viewModel calculateLayout];
+    [self updateUIFrame];
 }
 
 #pragma mark - Getter
+
+- (UIImageView *)iconImageView {
+    if (!_iconImageView) {
+        UIImageView *imageView = [[UIImageView alloc] init];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
+        
+        [self.contentView addSubview:imageView];
+        _iconImageView = imageView;
+    }
+    return _iconImageView;
+}
+
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        UILabel *label = [[UILabel alloc] init];
+        
+        [self.contentView addSubview:label];
+        _titleLabel = label;
+    }
+    return _titleLabel;
+}
+
+- (UILabel *)subtitleLabel {
+    if (!_subtitleLabel) {
+        UILabel *label = [[UILabel alloc] init];
+
+        [self.contentView addSubview:label];
+        _subtitleLabel = label;
+    }
+    return _subtitleLabel;
+}
 
 - (UIButton *)valueTextButton {
     if (!_valueTextButton) {
