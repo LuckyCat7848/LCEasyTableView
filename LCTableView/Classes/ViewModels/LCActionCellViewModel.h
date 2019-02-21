@@ -34,16 +34,12 @@ typedef NS_ENUM(NSInteger, LCActionCellAccessoryType) {
 @property(nonatomic, assign) UIEdgeInsets valueTextEdgeInsets;
 @property (nonatomic, assign) UIEdgeInsets accessoryEdgeInsets;
 
-/** 高度需要计算是需要,自适应高度时不需要 */
-@property (nonatomic, assign) CGFloat topSpace;
-@property (nonatomic, assign) CGFloat middleSpace;
-@property (nonatomic, assign) CGFloat bottomSpace;
-
 #pragma mark - 图片
 
 @property (nonatomic, strong) UIImage *iconImage;
 /** icon图片大小（默认为iconImage.size） */
 @property (nonatomic, assign) CGSize iconSize;
+@property (nonatomic, copy) void (^iconActionBlock)(void);
 
 #pragma mark - 标题
 
@@ -53,6 +49,7 @@ typedef NS_ENUM(NSInteger, LCActionCellAccessoryType) {
 @property (nonatomic, copy) NSString *textStr;
 @property (nonatomic, copy) NSAttributedString *textAttrStr;
 @property (nonatomic, assign) NSInteger textNumberOfLines;
+@property (nonatomic, copy) void (^textActionBlock)(void);
 
 #pragma mark - 详情
 
@@ -62,6 +59,7 @@ typedef NS_ENUM(NSInteger, LCActionCellAccessoryType) {
 @property (nonatomic, copy) NSString *detailTextStr;
 @property (nonatomic, copy) NSAttributedString *detailTextAttrStr;
 @property (nonatomic, assign) NSInteger detailTextNumberOfLines;
+@property (nonatomic, copy) void (^detailTextActionBlock)(void);
 
 #pragma mark - 右侧提示文字/图片
 
@@ -74,11 +72,15 @@ typedef NS_ENUM(NSInteger, LCActionCellAccessoryType) {
 /** 提示图片大小（默认为valueImage.size） */
 @property (nonatomic, assign) CGSize valueSize;
 
+@property (nonatomic, copy) void (^valueActionBlock)(void);
+
 #pragma mark - 箭头图片/开关(默认不显示)
 
 @property (nonatomic, assign) LCActionCellAccessoryType accessoryType;
 @property (nonatomic, strong) UIImage *accessoryImage;
 @property (nonatomic, assign) BOOL accessorySwitchOn;
+
+@property (nonatomic, copy) void (^accessoryActionBlock)(void);
 
 #pragma mark - 分割线(默认不显示)
 

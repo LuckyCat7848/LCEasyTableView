@@ -33,7 +33,7 @@
         NSMutableArray *array = [NSMutableArray array];
         for (NSUInteger j = 0; j < i + 1; j++) {
             LCActionCellViewModel *cellVM = [[LCActionCellViewModel alloc] init];
-            cellVM.textStr = [NSString stringWithFormat:@"actionCell %lu,%lu", (unsigned long)i, (unsigned long)j];
+            cellVM.textStr = [NSString stringWithFormat:@"section：%lu,  row：%lu", (unsigned long)i, (unsigned long)j];
             [array addObject:cellVM];
         }
         [dataArray addObject:array];
@@ -50,6 +50,8 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     UILabel *label = [[UILabel alloc] init];
     label.backgroundColor = [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1.00];
+    label.font = [UIFont systemFontOfSize:14];
+    label.textColor = [UIColor colorWithRed:0.52 green:0.54 blue:0.59 alpha:1.00];
     label.text = [NSString stringWithFormat:@"section %ld", (long)section];
     return label;
 }

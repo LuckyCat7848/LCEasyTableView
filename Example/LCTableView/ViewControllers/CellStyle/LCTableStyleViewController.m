@@ -45,38 +45,30 @@
                     
                 } else if (j == 1) {
                     cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
-//                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
-                } else if (j == 2) {
-                    cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
-//                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
                     cellVM.detailTextStr = @"detailTextStr";
                     cellVM.cellHeight = 60;
+                } else if (j == 2) {
+                    cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
+                    cellVM.iconImage = [UIImage imageNamed:@"question_gray"];
                 } else if (j == 3) {
                     cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
-//                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
-                    cellVM.iconImage = [UIImage imageNamed:@"question_gray"];
-                } else if (j == 4) {
-                    cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
-//                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
                     cellVM.iconImage = [UIImage imageNamed:@"question_gray"];
                     cellVM.detailTextStr = @"detailTextStr";
                     cellVM.cellHeight = 60;
                 }
             } else if (i == 1) {
                 cellVM.cellHeight = 60;
-                cellVM.valueTextColor = [UIColor colorWithRed:0.87 green:0.31 blue:0.27 alpha:1.00];
                 if (j == 0) {
                     cellVM.valueTextStr = @"valueTextStr";
-                    cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
-//                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
+                    cellVM.valueTextColor = [UIColor colorWithRed:0.87 green:0.31 blue:0.27 alpha:1.00];
                     cellVM.valueTextEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 8);
+                    cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
                 } else if (j == 1) {
                     cellVM.valueTextAttrStr = [[NSAttributedString alloc] initWithString:@"valueTextAttrStr" attributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:0.10 green:0.63 blue:0.37 alpha:1.00]}];
                     cellVM.detailTextStr = @"detailTextStr";
                 } else if (j == 2) {
                     cellVM.valueImage = [UIImage imageNamed:@"question_gray"];
                     cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
-//                    cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
                     cellVM.valueTextEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 8);
                 } else if (j == 3) {
                     cellVM.valueImage = [UIImage imageNamed:@"question_gray"];
@@ -97,10 +89,9 @@
                 }
             } else if (i == 2) {
                 cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
-//                cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
                 cellVM.cellHeight = 60;
                 if (j == 0) {
-                    cellVM.textEdgeInsets = UIEdgeInsetsMake(0, 40, 0, 0);
+                    cellVM.textEdgeInsets = UIEdgeInsetsMake(16, 40, 0, 0);
                     cellVM.detailTextStr = @"textEdgeInsets";
                 } else if (j == 1) {
                     cellVM.iconImage = [UIImage imageNamed:@"question_gray"];
@@ -108,11 +99,11 @@
                     cellVM.detailTextStr = @"iconEdgeInsets";
                 } else if (j == 2) {
                     cellVM.iconImage = [UIImage imageNamed:@"question_gray"];
-                    cellVM.textEdgeInsets = UIEdgeInsetsMake(0, 30, 0, 0);
+                    cellVM.textEdgeInsets = UIEdgeInsetsMake(16, 30, 0, 0);
                     cellVM.detailTextStr = @"textEdgeInsets";
                 } else if (j == 3) {
                     cellVM.iconImage = [UIImage imageNamed:@"question_gray"];
-                    cellVM.detailTextEdgeInsets = UIEdgeInsetsMake(0, 30, 0, 0);
+                    cellVM.detailTextEdgeInsets = UIEdgeInsetsMake(8, 30, 16, 0);
                     cellVM.detailTextStr = @"detailTextEdgeInsets";
                 } else if (j == 4) {
                     cellVM.iconImage = [UIImage imageNamed:@"question_gray"];
@@ -121,32 +112,45 @@
                 }
             } else if (i == 3) {
                 cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
-//                cellVM.accessoryImage = [UIImage imageNamed:@"arrow_right"];
                 cellVM.cellHeight = 65 + j * 10;
+                cellVM.textNumberOfLines = 0;
                 if (j == 0) {
-                    cellVM.textNumberOfLines = 0;
                     cellVM.textStr = @"LCActionCellLCActionCellLCActionCellLCActionCell";
                 } else if (j == 1) {
                     cellVM.textStr = @"LCActionCellLCActionCellLCActionCellLCActionCell";
-                    cellVM.detailTextNumberOfLines = 0;
-                    cellVM.detailTextStr = @"显示多行,显示多行,显示多行,显示多行,显示多行,显示多行,显示多行,显示多行";
+                    cellVM.detailTextNumberOfLines = 2;
+                    cellVM.detailTextStr = @"显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行";
                 } else if (j == 2) {
-                    cellVM.textNumberOfLines = 0;
                     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:@"LCActionCellLCActionCellLCActionCellLCActionCell"];
                     [attrStr appendAttributedString:[[NSAttributedString alloc] initWithString:@"【attrStr】"
                                                                                     attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:11],
                                                                                                  NSForegroundColorAttributeName : [UIColor redColor]}]];
                     cellVM.textAttrStr = attrStr;
                     
-                    cellVM.detailTextNumberOfLines = 2;
-                    NSMutableAttributedString *detailAttrStr = [[NSMutableAttributedString alloc] initWithString:@"显示多行,显示多行,显示多行,显示多行,显示多行,显示多行,显示多行,显示多行,显示多行"];
+                    cellVM.detailTextNumberOfLines = 0;
+                    NSMutableAttributedString *detailAttrStr = [[NSMutableAttributedString alloc] initWithString:@"显示多行,显示多行,显示多行,显示多行,显示多行,显示多行,显示多行,显示多行"];
                     [detailAttrStr appendAttributedString:[[NSAttributedString alloc] initWithString:@"（说明文字）"
                                                                                     attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:11],
                                                                                                  NSForegroundColorAttributeName : [UIColor redColor]}]];
                     cellVM.detailTextAttrStr = detailAttrStr;
                 }
             }
-//            [cellVM calculateCellHeight];
+            [cellVM calculateCellHeight];
+            cellVM.iconActionBlock = ^{
+                NSLog(@"icon");
+            };
+            cellVM.textActionBlock = ^{
+                NSLog(@"text");
+            };
+            cellVM.detailTextActionBlock = ^{
+                NSLog(@"detailText");
+            };
+            cellVM.valueActionBlock = ^{
+                NSLog(@"value");
+            };
+            cellVM.accessoryActionBlock = ^{
+                NSLog(@"accessory");
+            };
             [tmpArray addObject:cellVM];
         }
         [dataArray addObject:tmpArray];
@@ -180,10 +184,6 @@
     return label;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return UITableViewAutomaticDimension;
-//}
-
 #pragma mark - Getter
 
 - (UITableView *)tableView {
@@ -202,7 +202,6 @@
     if (!_actionArray) {
         _actionArray = @[
                          @[
-                             @"LCActionCell",
                              @"LCActionCell",
                              @"LCActionCell",
                              @"LCActionCell",

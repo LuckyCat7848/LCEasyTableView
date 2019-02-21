@@ -89,6 +89,9 @@
 
     // 右侧提示文字/图片
     _valueTextButton.hidden = YES;
+    [self.valueTextButton setImage:nil forState:UIControlStateNormal];
+    [self.valueTextButton setAttributedTitle:nil forState:UIControlStateNormal];
+    [self.valueTextButton setTitle:nil forState:UIControlStateNormal];
     if (viewModel.valueImage || viewModel.valueTextStr.length || viewModel.valueTextAttrStr.length) {
         self.valueTextButton.hidden = NO;
         [self.valueTextButton setTitleColor:viewModel.valueTextColor forState:UIControlStateNormal];
@@ -111,6 +114,7 @@
         UISwitch *aSwitch = (UISwitch *)self.actionView;
         if (!aSwitch || ![aSwitch isKindOfClass:[UISwitch class]]) {
             aSwitch = [[UISwitch alloc] init];
+            [aSwitch addTarget:self action:@selector(accessoryTapAction) forControlEvents:UIControlEventTouchUpInside];
             self.actionView = aSwitch;
         }
         aSwitch.on = viewModel.accessorySwitchOn;
@@ -120,6 +124,11 @@
         if (!imageView || ![imageView isKindOfClass:[UIImageView class]]) {
             imageView = [[UIImageView alloc] init];
             imageView.contentMode = UIViewContentModeScaleAspectFit;
+            
+            imageView.userInteractionEnabled = YES;
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(accessoryTapAction)];
+            [imageView addGestureRecognizer:tapGesture];
+            
             self.actionView = imageView;
         }
         imageView.image = viewModel.accessoryImage;
@@ -142,6 +151,13 @@
         self.bottomLineView.hidden = NO;
         self.bottomLineView.backgroundColor = viewModel.lineColor;
     }
+    
+    // 事件
+    _iconImageView.userInteractionEnabled = (viewModel.iconActionBlock != nil);
+    _titleLabel.userInteractionEnabled = (viewModel.textActionBlock != nil);
+    _subtitleLabel.userInteractionEnabled = (viewModel.detailTextActionBlock != nil);
+    _valueTextButton.userInteractionEnabled = (viewModel.valueActionBlock != nil);
+    _actionView.userInteractionEnabled = (viewModel.accessoryActionBlock != nil);
     
     // 已计算布局,更新
     if (!CGRectIsEmpty(viewModel.textFrame)) {
@@ -173,12 +189,48 @@
     [self updateUIFrame];
 }
 
+#pragma mark - Action
+
+- (void)iconTapAction {
+    if (self.viewModel.iconActionBlock) {
+        self.viewModel.iconActionBlock();
+    }
+}
+
+- (void)textTapAction {
+    if (self.viewModel.textActionBlock) {
+        self.viewModel.textActionBlock();
+    }
+}
+
+- (void)detailTextTapAction {
+    if (self.viewModel.detailTextActionBlock) {
+        self.viewModel.detailTextActionBlock();
+    }
+}
+
+- (void)valueTapAction {
+    if (self.viewModel.valueActionBlock) {
+        self.viewModel.valueActionBlock();
+    }
+}
+
+- (void)accessoryTapAction {
+    if (self.viewModel.accessoryActionBlock) {
+        self.viewModel.accessoryActionBlock();
+    }
+}
+
 #pragma mark - Getter
 
 - (UIImageView *)iconImageView {
     if (!_iconImageView) {
         UIImageView *imageView = [[UIImageView alloc] init];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
+        
+        imageView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(iconTapAction)];
+        [imageView addGestureRecognizer:tapGesture];
         
         [self.contentView addSubview:imageView];
         _iconImageView = imageView;
@@ -190,6 +242,10 @@
     if (!_titleLabel) {
         UILabel *label = [[UILabel alloc] init];
         
+        label.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textTapAction)];
+        [label addGestureRecognizer:tapGesture];
+        
         [self.contentView addSubview:label];
         _titleLabel = label;
     }
@@ -200,6 +256,10 @@
     if (!_subtitleLabel) {
         UILabel *label = [[UILabel alloc] init];
 
+        label.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(detailTextTapAction)];
+        [label addGestureRecognizer:tapGesture];
+        
         [self.contentView addSubview:label];
         _subtitleLabel = label;
     }
@@ -209,6 +269,8 @@
 - (UIButton *)valueTextButton {
     if (!_valueTextButton) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        
+        [button addTarget:self action:@selector(valueTapAction) forControlEvents:UIControlEventTouchUpInside];
         
         [self.contentView addSubview:button];
         _valueTextButton = button;

@@ -43,6 +43,7 @@
 		990894B921E5E302009AC16B /* LCLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894AF21E5E302009AC16B /* LCLabelCell.m */; };
 		990894BA21E5E302009AC16B /* LCTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894B121E5E302009AC16B /* LCTextFieldCell.m */; };
 		990894D121E72173009AC16B /* LCAnimalModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 990894D021E72173009AC16B /* LCAnimalModel.m */; };
+		991CA06A221D446E008952E5 /* LCDataStyleRowsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991CA069221D446E008952E5 /* LCDataStyleRowsViewController.m */; };
 		99EE720A21F85505004A1817 /* LCNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EE720921F85505004A1817 /* LCNavigationController.m */; };
 		99F1A1D121EC21D10076E3B2 /* UITableView+LCAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F1A1D021EC21D10076E3B2 /* UITableView+LCAdd.m */; };
 		99F1A1D421EC2FCE0076E3B2 /* LCTableViewIMP.m in Sources */ = {isa = PBXBuildFile; fileRef = 99F1A1D321EC2FCE0076E3B2 /* LCTableViewIMP.m */; };
@@ -128,6 +129,8 @@
 		990894B121E5E302009AC16B /* LCTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCTextFieldCell.m; sourceTree = "<group>"; };
 		990894CF21E72173009AC16B /* LCAnimalModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCAnimalModel.h; sourceTree = "<group>"; };
 		990894D021E72173009AC16B /* LCAnimalModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCAnimalModel.m; sourceTree = "<group>"; };
+		991CA068221D446E008952E5 /* LCDataStyleRowsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCDataStyleRowsViewController.h; sourceTree = "<group>"; };
+		991CA069221D446E008952E5 /* LCDataStyleRowsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCDataStyleRowsViewController.m; sourceTree = "<group>"; };
 		99EE720821F85505004A1817 /* LCNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCNavigationController.h; sourceTree = "<group>"; };
 		99EE720921F85505004A1817 /* LCNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCNavigationController.m; sourceTree = "<group>"; };
 		99F1A1CF21EC21D10076E3B2 /* UITableView+LCAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+LCAdd.h"; sourceTree = "<group>"; };
@@ -309,6 +312,8 @@
 		9902FFD221EF2DF60024C497 /* DataStyle */ = {
 			isa = PBXGroup;
 			children = (
+				991CA068221D446E008952E5 /* LCDataStyleRowsViewController.h */,
+				991CA069221D446E008952E5 /* LCDataStyleRowsViewController.m */,
 				9902FFD521EF2DF60024C497 /* LCDataStyleSectionsViewController.h */,
 				9902FFD621EF2DF60024C497 /* LCDataStyleSectionsViewController.m */,
 				9902FFD321EF2DF60024C497 /* LCDataStyleAllViewController.h */,
@@ -467,6 +472,10 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = LuckyCat7848;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = CT46VH7JN4;
+						ProvisioningStyle = Manual;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -596,6 +605,7 @@
 				9902FFD821EF2DF60024C497 /* LCTableStyleViewController.m in Sources */,
 				9902FFDD21F055E00024C497 /* LCPersonModel.m in Sources */,
 				6003F5A7195388D20070C39A /* LCViewController.m in Sources */,
+				991CA06A221D446E008952E5 /* LCDataStyleRowsViewController.m in Sources */,
 				9902FFC021EDDA8D0024C497 /* LCPlantCell.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				990894B621E5E302009AC16B /* LCLabelCellViewModel.m in Sources */,
@@ -730,12 +740,15 @@
 			baseConfigurationReference = A4D07DC0D2BB864B63708E27 /* Pods-LCTableView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = CT46VH7JN4;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LCTableView/LCTableView-Prefix.pch";
 				INFOPLIST_FILE = "LCTableView/LCTableView-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -745,12 +758,15 @@
 			baseConfigurationReference = 57B33BAA1F21A0CED237A9A5 /* Pods-LCTableView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LCTableView/LCTableView-Prefix.pch";
 				INFOPLIST_FILE = "LCTableView/LCTableView-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -21,14 +21,10 @@ SetCellClass(LCActionCell);
         
         // 间距
         _iconEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 0);
-        _textEdgeInsets = UIEdgeInsetsMake(16, 16, 16, 0);
-        _detailTextEdgeInsets = UIEdgeInsetsMake(6, 16, 16, 0);
+        _textEdgeInsets = UIEdgeInsetsMake(16, 16, 0, 0);
+        _detailTextEdgeInsets = UIEdgeInsetsMake(8, 16, 16, 0);
         _valueTextEdgeInsets = UIEdgeInsetsMake(0, 8, 0, 16);
         _accessoryEdgeInsets = UIEdgeInsetsMake(0, 8, 0, 16);
-        
-        _topSpace = 16;
-        _middleSpace = 8;
-        _bottomSpace = 16;
         
         // 标题
         _textColor = [UIColor blackColor];
@@ -131,46 +127,49 @@ SetCellClass(LCActionCell);
     
     // 标题
     CGFloat textWidth = textRight - textPointX;
-    CGFloat textHeight = [self calculateTextHeight:textWidth];
+    CGSize textSize = [self calculateTextSize:textWidth];
     
     // 详情
     if (self.detailTextStr.length || self.detailTextAttrStr.length) {
         CGFloat detailWidth = detailRight - detailPointX;
-        CGFloat detailHeight = [self calculateDetailTextHeight:detailWidth];
+        CGSize detailSize = [self calculateDetailTextSize:detailWidth];
         
-        CGFloat totalHeight = self.topSpace + textHeight + self.middleSpace + detailHeight + self.bottomSpace;
+        CGFloat totalHeight = self.textEdgeInsets.top + textSize.height + (self.textEdgeInsets.bottom + self.detailTextEdgeInsets.top) + detailSize.height + self.detailTextEdgeInsets.bottom;
         if (needCalculateCellHeight) {
-            self.cellHeight = self.topSpace + textHeight + self.middleSpace + detailHeight + self.bottomSpace;
+            self.cellHeight = totalHeight;
         } else {
             // 自适应布局
             if (ABS(totalHeight - self.cellHeight) > 5) {
-                CGFloat space = (self.cellHeight - textHeight - detailHeight) / 3;
+                CGFloat space = (self.cellHeight - textSize.height - detailSize.height) / 3;
                 CGFloat diff = space / 3;
-                if (self.cellHeight < (textHeight + detailHeight)) {
+                if (self.cellHeight < (textSize.height + detailSize.height)) {
                     self.textNumberOfLines = 1;
                     self.detailTextNumberOfLines = 1;
-                    textHeight = [self calculateTextHeight:textWidth];
-                    detailHeight = [self calculateDetailTextHeight:detailWidth];
+                    textSize = [self calculateTextSize:textWidth];
+                    detailSize = [self calculateDetailTextSize:detailWidth];
                     
-                    space = (self.cellHeight - textHeight - detailHeight) / 3;
+                    space = (self.cellHeight - textSize.height - detailSize.height) / 3;
                     diff = 0;
                 }
-                self.topSpace = space + diff;
-                self.middleSpace = space - diff * 2;
-                self.bottomSpace = space + diff;
+                UIEdgeInsets tmpText = self.textEdgeInsets;
+                UIEdgeInsets tmpDetail = self.detailTextEdgeInsets;
+                tmpText.top = tmpDetail.bottom = space + diff;
+                tmpText.bottom = tmpDetail.top = (space - diff * 2) / 2;
+                self.textEdgeInsets = tmpText;
+                self.detailTextEdgeInsets = tmpDetail;
             }
         }
-        self.textFrame = CGRectMake(textPointX, self.topSpace, textWidth, textHeight);
-        self.detailFrame = CGRectMake(detailPointX, CGRectGetMaxY(self.textFrame) + self.middleSpace, detailWidth, detailHeight);
+        self.textFrame = CGRectMake(textPointX, self.textEdgeInsets.top, textSize.width, textSize.height);
+        self.detailFrame = CGRectMake(detailPointX, CGRectGetMaxY(self.textFrame) + (self.textEdgeInsets.bottom + self.detailTextEdgeInsets.top), detailSize.width, detailSize.height);
     } else {
         if (needCalculateCellHeight) {
-            self.cellHeight = self.topSpace + textHeight + self.bottomSpace;
+            self.cellHeight = self.textEdgeInsets.top + textSize.height + self.detailTextEdgeInsets.bottom;
         }
         // 自适应布局
-        if (textHeight > self.cellHeight) {
+        if (textSize.height > self.cellHeight) {
             self.textNumberOfLines = 1;
         }
-        self.textFrame = CGRectMake(textPointX, 0, textWidth, self.cellHeight);
+        self.textFrame = CGRectMake(textPointX, 0, textSize.width, self.cellHeight);
     }
     
     // 垂直居中布局
@@ -206,31 +205,38 @@ SetCellClass(LCActionCell);
     return valueSize;
 }
 
-- (CGFloat)calculateTextHeight:(CGFloat)width {
-    CGFloat textHeight;
+- (CGSize)calculateTextSize:(CGFloat)width {
+    CGSize textSize;
     if (self.textAttrStr) {
-        textHeight = [self attrTextSize:self.textAttrStr width:width numberOfLines:self.textNumberOfLines].height;
+        textSize = [self attrTextSize:self.textAttrStr width:width numberOfLines:self.textNumberOfLines];
     } else {
-        textHeight = [self textSize:self.textStr font:self.textFont width:width numberOfLines:self.textNumberOfLines].height;
+        textSize = [self textSize:self.textStr font:self.textFont width:width numberOfLines:self.textNumberOfLines];
     }
-    return textHeight;
+    if (textSize.width > width) {
+        textSize.width = width;
+    }
+    return textSize;
 }
 
-- (CGFloat)calculateDetailTextHeight:(CGFloat)width {
-    CGFloat detailHeight;
+- (CGSize)calculateDetailTextSize:(CGFloat)width {
+    CGSize detailSize;
     if (self.detailTextAttrStr) {
-        detailHeight = [self attrTextSize:self.detailTextAttrStr width:width numberOfLines:self.detailTextNumberOfLines].height;
+        detailSize = [self attrTextSize:self.detailTextAttrStr width:width numberOfLines:self.detailTextNumberOfLines];
     } else {
-        detailHeight = [self textSize:self.detailTextStr font:self.detailTextFont width:width numberOfLines:self.detailTextNumberOfLines].height;
+        detailSize = [self textSize:self.detailTextStr font:self.detailTextFont width:width numberOfLines:self.detailTextNumberOfLines];
     }
-    return detailHeight;
+    if (detailSize.width > width) {
+        detailSize.width = width;
+    }
+    return detailSize;
 }
 
 #pragma mark - Tool Methods
 
 /** NSString：固定高度 */
 - (CGSize)textSize:(NSString *)string font:(UIFont *)font height:(CGFloat)height {
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGFLOAT_MAX, height)];
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(0, 0, CGFLOAT_MAX, height);
     label.font = font;
     label.text = string;
     [label sizeToFit];
@@ -239,7 +245,8 @@ SetCellClass(LCActionCell);
 
 /** NSAttributedString：固定高度 */
 - (CGSize)attrTextSize:(NSAttributedString *)attrString height:(CGFloat)height {
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, CGFLOAT_MAX, height)];
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(0, 0, CGFLOAT_MAX, height);
     label.attributedText = attrString;
     [label sizeToFit];
     return label.frame.size;
@@ -247,7 +254,8 @@ SetCellClass(LCActionCell);
 
 /** NSString：固定宽度 */
 - (CGSize)textSize:(NSString *)string font:(UIFont *)font width:(CGFloat)width numberOfLines:(NSInteger)numberOfLines {
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, CGFLOAT_MAX)];
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(0, 0, width, CGFLOAT_MAX);
     label.font = font;
     label.numberOfLines = numberOfLines;
     label.text = string;
@@ -257,7 +265,8 @@ SetCellClass(LCActionCell);
 
 /** NSAttributedString：固定宽度 */
 - (CGSize)attrTextSize:(NSAttributedString *)attrString width:(CGFloat)width numberOfLines:(NSInteger)numberOfLines {
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, CGFLOAT_MAX)];
+    UILabel *label = [[UILabel alloc] init];
+    label.frame = CGRectMake(0, 0, width, CGFLOAT_MAX);
     label.numberOfLines = numberOfLines;
     label.attributedText = attrString;
     [label sizeToFit];
