@@ -552,10 +552,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LCTableView_Example/Pods-LCTableView_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/LCTableView/LCTableView.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LCTableView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

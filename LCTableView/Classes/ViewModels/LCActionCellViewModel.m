@@ -71,161 +71,156 @@ SetCellClass(LCActionCell);
 /** 计算布局 */
 - (void)updateUIWithCalculateCellHeight:(BOOL)needCalculateCellHeight {
     // 箭头
-    CGFloat valueRight = kLCScreenWidth - self.valueTextEdgeInsets.right;
-    CGFloat textRight = kLCScreenWidth - self.accessoryEdgeInsets.right;
-    CGFloat detailRight = kLCScreenWidth - self.accessoryEdgeInsets.right;
-    if (self.accessoryType != UITableViewCellAccessoryNone) {
-        CGFloat accessoryWidth = self.accessoryImage.size.width;
-        CGFloat accessoryHeight = self.accessoryImage.size.height;
-        if (self.accessoryType == LCActionCellAccessoryTypeSwitch) {
+    CGFloat valueRight = kLCScreenWidth - _valueTextEdgeInsets.right;
+    CGFloat textRight = kLCScreenWidth - _accessoryEdgeInsets.right;
+    CGFloat detailRight = kLCScreenWidth - _accessoryEdgeInsets.right;
+    if (_accessoryType != UITableViewCellAccessoryNone) {
+        CGFloat accessoryWidth = _accessoryImage.size.width;
+        CGFloat accessoryHeight = _accessoryImage.size.height;
+        if (_accessoryType == LCActionCellAccessoryTypeSwitch) {
             accessoryWidth = 51;
             accessoryHeight = 31;
         }
-        self.accessoryFrame = CGRectMake(textRight - accessoryWidth, 0, accessoryWidth, accessoryHeight);
+        _accessoryFrame = CGRectMake(textRight - accessoryWidth, 0, accessoryWidth, accessoryHeight);
         
-        valueRight = CGRectGetMinX(self.accessoryFrame) - self.valueTextEdgeInsets.right;
-        textRight = CGRectGetMinX(self.accessoryFrame) - self.accessoryEdgeInsets.left;
-        detailRight = CGRectGetMinX(self.accessoryFrame) - self.accessoryEdgeInsets.left;
+        valueRight = CGRectGetMinX(_accessoryFrame) - _valueTextEdgeInsets.right;
+        textRight = CGRectGetMinX(_accessoryFrame) - _accessoryEdgeInsets.left;
+        detailRight = CGRectGetMinX(_accessoryFrame) - _accessoryEdgeInsets.left;
     }
     
     // 右侧提示文字/图片
-    if (self.valueImage || self.valueTextStr.length || self.valueTextAttrStr.length) {
-        CGFloat valueWidth = 0;
-        if (self.valueImage) {
-            if (self.valueSize.width == 0 || self.valueSize.height == 0) {
-                self.valueSize = self.valueImage.size;
+    if (_valueImage || _valueTextStr.length || _valueTextAttrStr.length) {
+        if (_valueImage) {
+            if (_valueSize.width == 0 || _valueSize.height == 0) {
+                _valueSize = _valueImage.size;
             }
-            valueWidth = self.valueSize.width;
-            self.valueFrame = CGRectMake(0, 0, self.valueSize.width, self.valueSize.height);
-        } else {
-            CGSize valueSize = [self calculateValueSize];
-            valueWidth = valueSize.width;
-            if (valueWidth > kLCScreenWidth / 2) {
-                valueWidth = kLCScreenWidth / 2;
-            }
-            self.valueFrame = CGRectMake(0, 0, valueWidth, valueSize.height);
+            _valueTextAttrStr = [NSMutableAttributedString attachmentStringWithContent:_valueImage contentMode:UIViewContentModeCenter attachmentSize:_valueImage.size alignToFont:_valueTextFont alignment:YYTextVerticalAlignmentCenter];
+            _valueTextAttrStr.font = _valueTextFont;
+        } else if (!_valueTextAttrStr) {
+            _valueTextAttrStr = [[NSMutableAttributedString alloc] initWithString:_valueTextStr
+                                                                       attributes:@{NSFontAttributeName : _valueTextFont,
+                                                                                    NSForegroundColorAttributeName : _valueTextColor}];
         }
-        CGRect tmpValue = self.valueFrame;
-        tmpValue.origin.x = valueRight - valueWidth;
-        self.valueFrame = tmpValue;
-        
-        textRight = CGRectGetMinX(self.valueFrame) - self.valueTextEdgeInsets.left;
+        _textAttrStr.alignment = _textAlignment;
+        CGSize valueSize = [self calculateValueSize];
+        _valueFrame = CGRectMake((valueRight - valueSize.width), 0, valueSize.width, valueSize.height);
+
+        textRight = CGRectGetMinX(_valueFrame) - _valueTextEdgeInsets.left;
         detailRight = valueRight;
     }
     
     // icon
-    CGFloat textPointX = self.textEdgeInsets.left, detailPointX = self.detailTextEdgeInsets.left;
-    if (self.iconImage) {
-        if (self.iconSize.width == 0 || self.iconSize.height == 0) {
-            self.iconSize = self.iconImage.size;
+    CGFloat textPointX = _textEdgeInsets.left, detailPointX = _detailTextEdgeInsets.left;
+    if (_iconImage) {
+        if (_iconSize.width == 0 || _iconSize.height == 0) {
+            _iconSize = _iconImage.size;
         }
-        self.iconFrame = CGRectMake(self.iconEdgeInsets.left, 0, self.iconSize.width, self.iconSize.height);
+        _iconFrame = CGRectMake(_iconEdgeInsets.left, 0, _iconSize.width, _iconSize.height);
 
-        textPointX = CGRectGetMaxX(self.iconFrame) + self.textEdgeInsets.left;
-        detailPointX = CGRectGetMaxX(self.iconFrame) + self.detailTextEdgeInsets.left;
+        textPointX = CGRectGetMaxX(_iconFrame) + _textEdgeInsets.left;
+        detailPointX = CGRectGetMaxX(_iconFrame) + _detailTextEdgeInsets.left;
     }
     
     // 标题
+    if (!_textAttrStr) {
+        _textAttrStr = [[NSMutableAttributedString alloc] initWithString:_textStr
+                                                                  attributes:@{NSFontAttributeName : _textFont,
+                                                                               NSForegroundColorAttributeName : _textColor}];
+    }
+    _textAttrStr.alignment = _textAlignment;
+    
     CGFloat textWidth = textRight - textPointX;
     CGSize textSize = [self calculateTextSize:textWidth];
     
     // 详情
-    if (self.detailTextStr.length || self.detailTextAttrStr.length) {
+    if (_detailTextStr.length || _detailTextAttrStr.length) {
+        if (!_detailTextAttrStr) {
+            _detailTextAttrStr = [[NSMutableAttributedString alloc] initWithString:_detailTextStr
+                                                                            attributes:@{NSFontAttributeName : _detailTextFont,
+                                                                                         NSForegroundColorAttributeName : _detailTextColor}];
+        }
+        _detailTextAttrStr.alignment = _detailTextAlignment;
+        
         CGFloat detailWidth = detailRight - detailPointX;
         CGSize detailSize = [self calculateDetailTextSize:detailWidth];
         
-        CGFloat totalHeight = self.textEdgeInsets.top + textSize.height + (self.textEdgeInsets.bottom + self.detailTextEdgeInsets.top) + detailSize.height + self.detailTextEdgeInsets.bottom;
+        CGFloat totalHeight = _textEdgeInsets.top + textSize.height + (_textEdgeInsets.bottom + _detailTextEdgeInsets.top) + detailSize.height + _detailTextEdgeInsets.bottom;
         if (needCalculateCellHeight) {
-            self.cellHeight = totalHeight;
+            _cellHeight = totalHeight;
         } else {
-            // 自适应布局
-            if (ABS(totalHeight - self.cellHeight) > 5) {
-                CGFloat space = (self.cellHeight - textSize.height - detailSize.height) / 3;
+            // 自适应布局,调整间距、行数
+            if (ABS(totalHeight - _cellHeight) > 5) {
+                CGFloat space = (_cellHeight - textSize.height - detailSize.height) / 3;
                 CGFloat diff = space / 3;
-                if (self.cellHeight < (textSize.height + detailSize.height)) {
-                    self.textNumberOfLines = 1;
-                    self.detailTextNumberOfLines = 1;
+                if (_cellHeight < (textSize.height + detailSize.height)) {
+                    _textNumberOfLines = 1;
+                    _detailTextNumberOfLines = 1;
                     textSize = [self calculateTextSize:textWidth];
                     detailSize = [self calculateDetailTextSize:detailWidth];
                     
-                    space = (self.cellHeight - textSize.height - detailSize.height) / 3;
+                    space = (_cellHeight - textSize.height - detailSize.height) / 3;
                     diff = 0;
                 }
-                UIEdgeInsets tmpText = self.textEdgeInsets;
-                UIEdgeInsets tmpDetail = self.detailTextEdgeInsets;
+                UIEdgeInsets tmpText = _textEdgeInsets;
+                UIEdgeInsets tmpDetail = _detailTextEdgeInsets;
                 tmpText.top = tmpDetail.bottom = space + diff;
                 tmpText.bottom = tmpDetail.top = (space - diff * 2) / 2;
-                self.textEdgeInsets = tmpText;
-                self.detailTextEdgeInsets = tmpDetail;
+                _textEdgeInsets = tmpText;
+                _detailTextEdgeInsets = tmpDetail;
             }
         }
-        self.textFrame = CGRectMake(textPointX, self.textEdgeInsets.top, textSize.width, textSize.height);
-        self.detailFrame = CGRectMake(detailPointX, CGRectGetMaxY(self.textFrame) + (self.textEdgeInsets.bottom + self.detailTextEdgeInsets.top), detailSize.width, detailSize.height);
+        _textFrame = CGRectMake(textPointX, _textEdgeInsets.top, textSize.width, textSize.height);
+        _detailFrame = CGRectMake(detailPointX, CGRectGetMaxY(_textFrame) + (_textEdgeInsets.bottom + _detailTextEdgeInsets.top), detailSize.width, detailSize.height);
     } else {
         if (needCalculateCellHeight) {
-            self.cellHeight = self.textEdgeInsets.top + textSize.height + self.detailTextEdgeInsets.bottom;
+            _cellHeight = _textEdgeInsets.top + textSize.height + _detailTextEdgeInsets.bottom;
         }
         // 自适应布局
-        if (textSize.height > self.cellHeight) {
-            self.textNumberOfLines = 1;
+        if (textSize.height > _cellHeight) {
+            _textNumberOfLines = 1;
         }
-        self.textFrame = CGRectMake(textPointX, 0, textSize.width, self.cellHeight);
+        _textFrame = CGRectMake(textPointX, 0, textSize.width, _cellHeight);
     }
     
     // 垂直居中布局
-    CGRect tmpAccessory = self.accessoryFrame;
-    tmpAccessory.origin.y = (self.cellHeight - CGRectGetHeight(self.accessoryFrame)) / 2;
-    self.accessoryFrame = tmpAccessory;
+    _accessoryFrame.origin.y = (_cellHeight - CGRectGetHeight(_accessoryFrame)) / 2;
+    _iconFrame.origin.y = CGRectGetMinY(_textFrame) + (CGRectGetHeight(_textFrame) - CGRectGetHeight(_iconFrame)) / 2;
     
-    CGRect tmpIcon = self.iconFrame;
-    tmpIcon.origin.y = CGRectGetMinY(self.textFrame) + (CGRectGetHeight(self.textFrame) - CGRectGetHeight(self.iconFrame)) / 2;
-    self.iconFrame = tmpIcon;
-    
-    CGRect tmpValue = self.valueFrame;
-    if (self.detailTextStr.length || self.detailTextAttrStr.length) {
-        tmpValue.origin.y = CGRectGetMinY(self.textFrame) + (CGRectGetHeight(self.textFrame) - CGRectGetHeight(self.valueFrame)) / 2;
+    if (_detailTextStr.length || _detailTextAttrStr.length) {
+        _valueFrame.origin.y = CGRectGetMinY(_textFrame) + (CGRectGetHeight(_textFrame) - CGRectGetHeight(_valueFrame)) / 2;
     } else {
-        tmpValue.origin.y = CGRectGetMinY(self.accessoryFrame) + (CGRectGetHeight(self.accessoryFrame) - CGRectGetHeight(self.valueFrame)) / 2;
+        _valueFrame.origin.y = CGRectGetMinY(_accessoryFrame) + (CGRectGetHeight(_accessoryFrame) - CGRectGetHeight(_valueFrame)) / 2;
     }
-    self.valueFrame = tmpValue;
     
     // 上/下线
-    self.topLineFrame = CGRectMake(self.topLineInsets.left, self.topLineInsets.top, kLCScreenWidth - self.topLineInsets.left - self.topLineInsets.right, self.lineWidth);
-    
-    self.bottomLineFrame = CGRectMake(self.bottomLineInsets.left, self.cellHeight - self.lineWidth - self.bottomLineInsets.bottom, kLCScreenWidth - self.bottomLineInsets.left - self.bottomLineInsets.right, self.lineWidth);
+    _topLineFrame = CGRectMake(_topLineInsets.left, _topLineInsets.top, kLCScreenWidth - _topLineInsets.left - _topLineInsets.right, _lineWidth);
+    _bottomLineFrame = CGRectMake(_bottomLineInsets.left, _cellHeight - _lineWidth - _bottomLineInsets.bottom, kLCScreenWidth - _bottomLineInsets.left - _bottomLineInsets.right, _lineWidth);
 }
 
+#pragma mark - 分别计算size
+
 - (CGSize)calculateValueSize {
-    CGSize valueSize;
-    if (self.valueTextAttrStr) {
-        valueSize = [self attrTextSize:self.valueTextAttrStr height:self.valueTextFont.pointSize];
-    } else {
-        valueSize = [self textSize:self.valueTextStr font:self.valueTextFont height:self.valueTextFont.pointSize];
+    _valueTextLayout = [self textLayout:_valueTextAttrStr containerSize:CGSizeMake(CGFLOAT_MAX, _valueTextFont.lineHeight) numberOfLines:1];
+    CGSize valueSize = _valueTextLayout.textBoundingSize;
+    if (valueSize.width > kLCScreenWidth / 2) {
+        valueSize.width = kLCScreenWidth / 2;
     }
     return valueSize;
 }
 
 - (CGSize)calculateTextSize:(CGFloat)width {
-    CGSize textSize;
-    if (self.textAttrStr) {
-        textSize = [self attrTextSize:self.textAttrStr width:width numberOfLines:self.textNumberOfLines];
-    } else {
-        textSize = [self textSize:self.textStr font:self.textFont width:width numberOfLines:self.textNumberOfLines];
-    }
-    if (textSize.width > width) {
+    _textLayout = [self textLayout:_textAttrStr containerSize:CGSizeMake(width, CGFLOAT_MAX) numberOfLines:_textNumberOfLines];
+    CGSize textSize = _textLayout.textBoundingSize;
+    if ((textSize.width > width) || (_textAlignment == NSTextAlignmentCenter) || (_textAlignment == NSTextAlignmentRight)) {
         textSize.width = width;
     }
     return textSize;
 }
 
 - (CGSize)calculateDetailTextSize:(CGFloat)width {
-    CGSize detailSize;
-    if (self.detailTextAttrStr) {
-        detailSize = [self attrTextSize:self.detailTextAttrStr width:width numberOfLines:self.detailTextNumberOfLines];
-    } else {
-        detailSize = [self textSize:self.detailTextStr font:self.detailTextFont width:width numberOfLines:self.detailTextNumberOfLines];
-    }
-    if (detailSize.width > width) {
+    _detailTextLayout = [self textLayout:_detailTextAttrStr containerSize:CGSizeMake(width, CGFLOAT_MAX) numberOfLines:_detailTextNumberOfLines];
+    CGSize detailSize = _detailTextLayout.textBoundingSize;
+    if ((detailSize.width > width) || (_detailTextAlignment == NSTextAlignmentCenter) || (_detailTextAlignment == NSTextAlignmentRight)) {
         detailSize.width = width;
     }
     return detailSize;
@@ -233,44 +228,13 @@ SetCellClass(LCActionCell);
 
 #pragma mark - Tool Methods
 
-/** NSString：固定高度 */
-- (CGSize)textSize:(NSString *)string font:(UIFont *)font height:(CGFloat)height {
-    UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(0, 0, CGFLOAT_MAX, height);
-    label.font = font;
-    label.text = string;
-    [label sizeToFit];
-    return label.frame.size;
-}
-
-/** NSAttributedString：固定高度 */
-- (CGSize)attrTextSize:(NSAttributedString *)attrString height:(CGFloat)height {
-    UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(0, 0, CGFLOAT_MAX, height);
-    label.attributedText = attrString;
-    [label sizeToFit];
-    return label.frame.size;
-}
-
-/** NSString：固定宽度 */
-- (CGSize)textSize:(NSString *)string font:(UIFont *)font width:(CGFloat)width numberOfLines:(NSInteger)numberOfLines {
-    UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(0, 0, width, CGFLOAT_MAX);
-    label.font = font;
-    label.numberOfLines = numberOfLines;
-    label.text = string;
-    [label sizeToFit];
-    return label.frame.size;
-}
-
-/** NSAttributedString：固定宽度 */
-- (CGSize)attrTextSize:(NSAttributedString *)attrString width:(CGFloat)width numberOfLines:(NSInteger)numberOfLines {
-    UILabel *label = [[UILabel alloc] init];
-    label.frame = CGRectMake(0, 0, width, CGFLOAT_MAX);
-    label.numberOfLines = numberOfLines;
-    label.attributedText = attrString;
-    [label sizeToFit];
-    return label.frame.size;
+/** 计算YYTextLayout */
+- (YYTextLayout *)textLayout:(NSMutableAttributedString *)attrString containerSize:(CGSize)containerSize numberOfLines:(NSInteger)numberOfLines {
+    YYTextContainer *container = [YYTextContainer containerWithSize:containerSize];
+    container.maximumNumberOfRows = numberOfLines;
+    container.truncationType = YYTextTruncationTypeEnd;
+    YYTextLayout *layout = [YYTextLayout layoutWithContainer:container text:attrString];
+    return layout;
 }
 
 @end

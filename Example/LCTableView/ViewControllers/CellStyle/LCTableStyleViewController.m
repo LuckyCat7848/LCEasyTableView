@@ -9,6 +9,7 @@
 #import "LCTableStyleViewController.h"
 #import "UITableView+LCAdd.h"
 #import "LCActionCellViewModel.h"
+#import "YYKit.h"
 
 @interface LCTableStyleViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -64,7 +65,8 @@
                     cellVM.valueTextEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 8);
                     cellVM.accessoryType = LCActionCellAccessoryTypeIndicator;
                 } else if (j == 1) {
-                    cellVM.valueTextAttrStr = [[NSAttributedString alloc] initWithString:@"valueTextAttrStr" attributes:@{NSForegroundColorAttributeName : [UIColor colorWithRed:0.10 green:0.63 blue:0.37 alpha:1.00]}];
+                    cellVM.valueTextAttrStr = [[NSMutableAttributedString alloc] initWithString:@"valueTextAttrStr" attributes:@{NSFontAttributeName : cellVM.valueTextFont,
+                                                                                                                                                 NSForegroundColorAttributeName : [UIColor colorWithRed:0.10 green:0.63 blue:0.37 alpha:1.00]}];
                     cellVM.detailTextStr = @"detailTextStr";
                 } else if (j == 2) {
                     cellVM.valueImage = [UIImage imageNamed:@"question_gray"];
@@ -121,17 +123,22 @@
                     cellVM.detailTextNumberOfLines = 2;
                     cellVM.detailTextStr = @"显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行,显示2行";
                 } else if (j == 2) {
-                    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:@"LCActionCellLCActionCellLCActionCellLCActionCell"];
+                    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:@"LCActionCellLCActionCellLCActionCellLCActionCell"
+                                                                                                attributes:@{NSFontAttributeName : cellVM.textFont,
+                                                                                                             NSForegroundColorAttributeName : cellVM.textColor}];
                     [attrStr appendAttributedString:[[NSAttributedString alloc] initWithString:@"【attrStr】"
                                                                                     attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:11],
                                                                                                  NSForegroundColorAttributeName : [UIColor redColor]}]];
                     cellVM.textAttrStr = attrStr;
                     
                     cellVM.detailTextNumberOfLines = 0;
-                    NSMutableAttributedString *detailAttrStr = [[NSMutableAttributedString alloc] initWithString:@"显示多行,显示多行,显示多行,显示多行,显示多行,显示多行,显示多行,显示多行"];
+                    NSMutableAttributedString *detailAttrStr = [[NSMutableAttributedString alloc] initWithString:@"显示多行,显示多行,显示多行,显示多行,显示多行,显示多行,显示多行,显示多行"
+                                                                                                      attributes:@{NSFontAttributeName : cellVM.detailTextFont,
+                                                                                                                   NSForegroundColorAttributeName : cellVM.detailTextColor}];
                     [detailAttrStr appendAttributedString:[[NSAttributedString alloc] initWithString:@"（说明文字）"
                                                                                     attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:11],
                                                                                                  NSForegroundColorAttributeName : [UIColor redColor]}]];
+                    detailAttrStr.lineSpacing = 5;
                     cellVM.detailTextAttrStr = detailAttrStr;
                 }
             }

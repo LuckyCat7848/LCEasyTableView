@@ -10,6 +10,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LCCellDataProtocol.h"
+#import "YYKit.h"
 
 /** 右侧箭头显示类型 */
 typedef NS_ENUM(NSInteger, LCActionCellAccessoryType) {
@@ -37,7 +38,7 @@ typedef NS_ENUM(NSInteger, LCActionCellAccessoryType) {
 #pragma mark - 图片
 
 @property (nonatomic, strong) UIImage *iconImage;
-/** icon图片大小（默认为iconImage.size） */
+/** 图片大小（默认为iconImage.size） */
 @property (nonatomic, assign) CGSize iconSize;
 @property (nonatomic, copy) void (^iconActionBlock)(void);
 
@@ -47,7 +48,7 @@ typedef NS_ENUM(NSInteger, LCActionCellAccessoryType) {
 @property (nonatomic, strong) UIFont *textFont;
 @property (nonatomic, assign) NSTextAlignment textAlignment;
 @property (nonatomic, copy) NSString *textStr;
-@property (nonatomic, copy) NSAttributedString *textAttrStr;
+@property (nonatomic, strong) NSMutableAttributedString *textAttrStr;
 @property (nonatomic, assign) NSInteger textNumberOfLines;
 @property (nonatomic, copy) void (^textActionBlock)(void);
 
@@ -57,24 +58,24 @@ typedef NS_ENUM(NSInteger, LCActionCellAccessoryType) {
 @property (nonatomic, strong) UIFont *detailTextFont;
 @property (nonatomic, assign) NSTextAlignment detailTextAlignment;
 @property (nonatomic, copy) NSString *detailTextStr;
-@property (nonatomic, copy) NSAttributedString *detailTextAttrStr;
+@property (nonatomic, strong) NSMutableAttributedString *detailTextAttrStr;
 @property (nonatomic, assign) NSInteger detailTextNumberOfLines;
 @property (nonatomic, copy) void (^detailTextActionBlock)(void);
 
-#pragma mark - 右侧提示文字/图片
+#pragma mark - 右侧提示文字/图片,同时设置的话可以使用valueTextAttrStr
 
 @property (nonatomic, strong) UIColor *valueTextColor;
 @property (nonatomic, strong) UIFont *valueTextFont;
 @property (nonatomic, copy) NSString *valueTextStr;
-@property (nonatomic, copy) NSAttributedString *valueTextAttrStr;
+@property (nonatomic, strong) NSMutableAttributedString *valueTextAttrStr;
 
 @property (nonatomic, strong) UIImage *valueImage;
-/** 提示图片大小（默认为valueImage.size） */
+/** 图片大小（默认为valueImage.size） */
 @property (nonatomic, assign) CGSize valueSize;
 
 @property (nonatomic, copy) void (^valueActionBlock)(void);
 
-#pragma mark - 箭头图片/开关(默认不显示)
+#pragma mark - 箭头图片/开关(默认显示箭头)
 
 @property (nonatomic, assign) LCActionCellAccessoryType accessoryType;
 @property (nonatomic, strong) UIImage *accessoryImage;
@@ -93,19 +94,16 @@ typedef NS_ENUM(NSInteger, LCActionCellAccessoryType) {
 
 #pragma mark - Cell布局
 
-/** 箭头 */
+@property (nonatomic, strong) YYTextLayout *textLayout;
+@property (nonatomic, strong) YYTextLayout *detailTextLayout;
+@property (nonatomic, strong) YYTextLayout *valueTextLayout;
+
 @property (nonatomic, assign) CGRect accessoryFrame;
-/** 右侧提示文字/图片 */
 @property (nonatomic, assign) CGRect valueFrame;
-/** 图片 */
 @property (nonatomic, assign) CGRect iconFrame;
-/** 文字 */
 @property (nonatomic, assign) CGRect textFrame;
-/** 详情 */
 @property (nonatomic, assign) CGRect detailFrame;
-/** 上线 */
 @property (nonatomic, assign) CGRect topLineFrame;
-/** 下线 */
 @property (nonatomic, assign) CGRect bottomLineFrame;
 
 /** 写明这个ViewModel对应的cell类 */

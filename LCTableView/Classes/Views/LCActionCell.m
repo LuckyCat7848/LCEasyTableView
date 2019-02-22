@@ -15,12 +15,12 @@
 /** icon */
 @property (nonatomic, strong) UIImageView *iconImageView;
 /** 文字 */
-@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) YYLabel *titleLabel;
 /** 详情 */
-@property (nonatomic, strong) UILabel *subtitleLabel;
+@property (nonatomic, strong) YYLabel *subtitleLabel;
 
 /** 右侧提示文字/图片 */
- @property (nonatomic, strong) UIButton *valueTextButton;
+ @property (nonatomic, strong) YYLabel *valueTextLabel;
 /** 右侧箭头/开关 */
 @property (nonatomic, strong) UIView *actionView;
 
@@ -58,53 +58,20 @@
     }
     
     // 标题
-    self.titleLabel.numberOfLines = viewModel.textNumberOfLines;
-    self.titleLabel.textColor = viewModel.textColor;
-    self.titleLabel.font = viewModel.textFont;
-    if (viewModel.textAttrStr) {
-        self.titleLabel.text = nil;
-        self.titleLabel.attributedText = viewModel.textAttrStr;
-    } else {
-        self.titleLabel.attributedText = nil;
-        self.titleLabel.text = viewModel.textStr;
-    }
-    self.titleLabel.textAlignment = viewModel.textAlignment;
+    self.titleLabel.textLayout = viewModel.textLayout;
     
     // 详情
     _subtitleLabel.hidden = YES;
-    if (viewModel.detailTextStr || viewModel.detailTextAttrStr) {
+    if (viewModel.detailTextAttrStr) {
         self.subtitleLabel.hidden = NO;
-        self.subtitleLabel.numberOfLines = viewModel.detailTextNumberOfLines;
-        self.subtitleLabel.textColor = viewModel.detailTextColor;
-        self.subtitleLabel.font = viewModel.detailTextFont;
-        if (viewModel.detailTextAttrStr) {
-            self.subtitleLabel.text = nil;
-            self.subtitleLabel.attributedText = viewModel.detailTextAttrStr;
-        } else {
-            self.subtitleLabel.attributedText = nil;
-            self.subtitleLabel.text = viewModel.detailTextStr;
-        }
-        self.subtitleLabel.textAlignment = viewModel.detailTextAlignment;
+        self.subtitleLabel.textLayout = viewModel.detailTextLayout;
     }
 
     // 右侧提示文字/图片
-    _valueTextButton.hidden = YES;
-    [self.valueTextButton setImage:nil forState:UIControlStateNormal];
-    [self.valueTextButton setAttributedTitle:nil forState:UIControlStateNormal];
-    [self.valueTextButton setTitle:nil forState:UIControlStateNormal];
-    if (viewModel.valueImage || viewModel.valueTextStr.length || viewModel.valueTextAttrStr.length) {
-        self.valueTextButton.hidden = NO;
-        [self.valueTextButton setTitleColor:viewModel.valueTextColor forState:UIControlStateNormal];
-        self.valueTextButton.titleLabel.font = viewModel.valueTextFont;
-        
-        if (viewModel.valueImage) {
-            [self.valueTextButton setImage:viewModel.valueImage forState:UIControlStateNormal];
-        } else if (viewModel.valueTextAttrStr) {
-            [self.valueTextButton setAttributedTitle:viewModel.valueTextAttrStr forState:UIControlStateNormal];
-        } else {
-            [self.valueTextButton setTitle:viewModel.valueTextStr forState:UIControlStateNormal];
-        }
-        self.valueTextButton.titleLabel.textAlignment = NSTextAlignmentRight;
+    _valueTextLabel.hidden = YES;
+    if (viewModel.valueTextAttrStr) {
+        self.valueTextLabel.hidden = NO;
+        self.valueTextLabel.textLayout = viewModel.valueTextLayout;
     }
     
     // 箭头
@@ -152,24 +119,28 @@
         self.bottomLineView.backgroundColor = viewModel.lineColor;
     }
     
-    // 事件
-    _iconImageView.userInteractionEnabled = (viewModel.iconActionBlock != nil);
-    _titleLabel.userInteractionEnabled = (viewModel.textActionBlock != nil);
-    _subtitleLabel.userInteractionEnabled = (viewModel.detailTextActionBlock != nil);
-    _valueTextButton.userInteractionEnabled = (viewModel.valueActionBlock != nil);
-    _actionView.userInteractionEnabled = (viewModel.accessoryActionBlock != nil);
-    
+    // 响应事件
+    [self updateInteractionEnabled];
+
     // 已计算布局,更新
     if (!CGRectIsEmpty(viewModel.textFrame)) {
         [self updateUIFrame];
     }
 }
 
+- (void)updateInteractionEnabled {
+    _iconImageView.userInteractionEnabled = (self.viewModel.iconActionBlock != nil);
+    _titleLabel.userInteractionEnabled = (self.viewModel.textActionBlock != nil);
+    _subtitleLabel.userInteractionEnabled = (self.viewModel.detailTextActionBlock != nil);
+    _valueTextLabel.userInteractionEnabled = (self.viewModel.valueActionBlock != nil);
+    _actionView.userInteractionEnabled = (self.viewModel.accessoryActionBlock != nil);
+}
+
 - (void)updateUIFrame {
     _iconImageView.frame = self.viewModel.iconFrame;
     _titleLabel.frame = self.viewModel.textFrame;
     _subtitleLabel.frame = self.viewModel.detailFrame;
-    _valueTextButton.frame = self.viewModel.valueFrame;
+    _valueTextLabel.frame = self.viewModel.valueFrame;
     _actionView.frame = self.viewModel.accessoryFrame;
     _topLineView.frame = self.viewModel.topLineFrame;
     _bottomLineView.frame = self.viewModel.bottomLineFrame;
@@ -186,7 +157,7 @@
     }
     // 未计算布局,计算,更新
     [viewModel calculateLayout];
-    [self updateUIFrame];
+    [self setViewModel:viewModel];
 }
 
 #pragma mark - Action
@@ -238,9 +209,9 @@
     return _iconImageView;
 }
 
-- (UILabel *)titleLabel {
+- (YYLabel *)titleLabel {
     if (!_titleLabel) {
-        UILabel *label = [[UILabel alloc] init];
+        YYLabel *label = [[YYLabel alloc] init];
         
         label.userInteractionEnabled = YES;
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(textTapAction)];
@@ -252,9 +223,9 @@
     return _titleLabel;
 }
 
-- (UILabel *)subtitleLabel {
+- (YYLabel *)subtitleLabel {
     if (!_subtitleLabel) {
-        UILabel *label = [[UILabel alloc] init];
+        YYLabel *label = [[YYLabel alloc] init];
 
         label.userInteractionEnabled = YES;
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(detailTextTapAction)];
@@ -266,16 +237,18 @@
     return _subtitleLabel;
 }
 
-- (UIButton *)valueTextButton {
-    if (!_valueTextButton) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+- (YYLabel *)valueTextLabel {
+    if (!_valueTextLabel) {
+        YYLabel *label = [[YYLabel alloc] init];
         
-        [button addTarget:self action:@selector(valueTapAction) forControlEvents:UIControlEventTouchUpInside];
+        label.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(valueTapAction)];
+        [label addGestureRecognizer:tapGesture];
         
-        [self.contentView addSubview:button];
-        _valueTextButton = button;
+        [self.contentView addSubview:label];
+        _valueTextLabel = label;
     }
-    return _valueTextButton;
+    return _valueTextLabel;
 }
 
 - (UIView *)topLineView {
