@@ -27,7 +27,6 @@
 		9902FFBC21EDDA4A0024C497 /* LCPlantModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFBB21EDDA4A0024C497 /* LCPlantModel.m */; };
 		9902FFC021EDDA8D0024C497 /* LCPlantCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFBE21EDDA8D0024C497 /* LCPlantCell.m */; };
 		9902FFC121EDDA8D0024C497 /* LCPlantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9902FFBF21EDDA8D0024C497 /* LCPlantCell.xib */; };
-		9902FFCB21EEF0A20024C497 /* UIView+LCAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFCA21EEF0A20024C497 /* UIView+LCAdd.m */; };
 		9902FFD721EF2DF60024C497 /* LCCellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFCF21EF2DF60024C497 /* LCCellsViewController.m */; };
 		9902FFD821EF2DF60024C497 /* LCTableStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFD121EF2DF60024C497 /* LCTableStyleViewController.m */; };
 		9902FFD921EF2DF60024C497 /* LCDataStyleAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9902FFD421EF2DF60024C497 /* LCDataStyleAllViewController.m */; };
@@ -99,8 +98,6 @@
 		9902FFBE21EDDA8D0024C497 /* LCPlantCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCPlantCell.m; sourceTree = "<group>"; };
 		9902FFBF21EDDA8D0024C497 /* LCPlantCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LCPlantCell.xib; sourceTree = "<group>"; };
 		9902FFC821EED2940024C497 /* LCDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCDefines.h; sourceTree = "<group>"; };
-		9902FFC921EEF0A20024C497 /* UIView+LCAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+LCAdd.h"; sourceTree = "<group>"; };
-		9902FFCA21EEF0A20024C497 /* UIView+LCAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+LCAdd.m"; sourceTree = "<group>"; };
 		9902FFCE21EF2DF60024C497 /* LCCellsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCCellsViewController.h; sourceTree = "<group>"; };
 		9902FFCF21EF2DF60024C497 /* LCCellsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCCellsViewController.m; sourceTree = "<group>"; };
 		9902FFD021EF2DF60024C497 /* LCTableStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCTableStyleViewController.h; sourceTree = "<group>"; };
@@ -352,7 +349,6 @@
 				99F1A1D621EC330E0076E3B2 /* LCTableViewProxy.m */,
 				99F1A1D221EC2FCE0076E3B2 /* LCTableViewIMP.h */,
 				99F1A1D321EC2FCE0076E3B2 /* LCTableViewIMP.m */,
-				990894BB21E5E4BF009AC16B /* Category */,
 				990894A421E5E302009AC16B /* ViewModels */,
 				990894AB21E5E302009AC16B /* Views */,
 			);
@@ -383,15 +379,6 @@
 				990894B121E5E302009AC16B /* LCTextFieldCell.m */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		990894BB21E5E4BF009AC16B /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				9902FFC921EEF0A20024C497 /* UIView+LCAdd.h */,
-				9902FFCA21EEF0A20024C497 /* UIView+LCAdd.m */,
-			);
-			path = Category;
 			sourceTree = "<group>";
 		};
 		990894CD21E72101009AC16B /* Views */ = {
@@ -550,7 +537,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-LCTableView_Example/Pods-LCTableView_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-LCTableView_Example/Pods-LCTableView_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/LCTableView/LCTableView.framework",
 				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
 			);
@@ -561,7 +548,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LCTableView_Example/Pods-LCTableView_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LCTableView_Example/Pods-LCTableView_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF3A3B39EDC10DBA295F6421 /* [CP] Check Pods Manifest.lock */ = {
@@ -598,7 +585,6 @@
 				9902FFDA21EF2DF60024C497 /* LCDataStyleSectionsViewController.m in Sources */,
 				9902FFE021F0566F0024C497 /* LCPersonCell.m in Sources */,
 				6003F59E195388D20070C39A /* LCAppDelegate.m in Sources */,
-				9902FFCB21EEF0A20024C497 /* UIView+LCAdd.m in Sources */,
 				990894BA21E5E302009AC16B /* LCTextFieldCell.m in Sources */,
 				99F1A1D721EC330E0076E3B2 /* LCTableViewProxy.m in Sources */,
 				9902FFD921EF2DF60024C497 /* LCDataStyleAllViewController.m in Sources */,
