@@ -1,12 +1,12 @@
 PODS:
-  - LCTableView (0.1.0):
-    - YYKit
+  - LCTableView (0.1.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - LCTableView (from `../`)
+  - YYKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -17,9 +17,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LCTableView: 766964912637312cc891a1d89e0bc935f7036f06
+  LCTableView: 4268fa6f2a9850c653b7e71591c5b54ff83da740
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: a0bc2c09bbf2a47877f553d139de534139bb6c4f
+PODFILE CHECKSUM: 630ecccb5c6b49f00bfc0b5c402aa23f4638c5af
 
 COCOAPODS: 1.6.1

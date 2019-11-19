@@ -10,7 +10,6 @@
 
 #import <Foundation/Foundation.h>
 #import "LCCellDataProtocol.h"
-#import "LCDefines.h"
 
 @interface LCTableViewIMP : NSObject<UITableViewDelegate, UITableViewDataSource>
 

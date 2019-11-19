@@ -10,7 +10,7 @@
 #import "UITableView+LCAdd.h"
 #import "LCActionCellViewModel.h"
 
-@interface LCDataStyleSectionsViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface LCDataStyleSectionsViewController ()<UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 

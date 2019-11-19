@@ -7,7 +7,13 @@
 //
 
 #import "LCActionCellViewModel.h"
-#import "LCDefines.h"
+
+/** 屏幕尺寸 */
+#define kLCScreenWidth  [[UIScreen mainScreen] bounds].size.width
+#define kLCScreenHeight [[UIScreen mainScreen] bounds].size.height
+
+/** 线 */
+#define kLCLineWidth    (1 / [UIScreen mainScreen].scale)
 
 @implementation LCActionCellViewModel
 

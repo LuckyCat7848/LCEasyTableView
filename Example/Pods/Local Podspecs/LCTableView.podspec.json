@@ -1,7 +1,7 @@
 {
   "name": "LCTableView",
   "version": "0.1.0",
-  "summary": "一个摆脱代理方法的TableView。",
+  "summary": "一个懒人要摆脱啰嗦的TableView代理方法~✌️",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/LuckyCat7848/LCTableView",
   "license": {
@@ -18,10 +18,5 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "LCTableView/Classes/**/*",
-  "dependencies": {
-    "YYKit": [
-
-    ]
-  }
+  "source_files": "LCTableView/Classes/**/*"
 }

@@ -11,7 +11,7 @@
 #import "LCActionCellViewModel.h"
 #import "YYKit.h"
 
-@interface LCTableStyleViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface LCTableStyleViewController ()<UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 

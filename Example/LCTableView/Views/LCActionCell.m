@@ -7,7 +7,6 @@
 //
 
 #import "LCActionCell.h"
-#import "LCDefines.h"
 
 @interface LCActionCell ()
 

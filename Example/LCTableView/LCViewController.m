@@ -16,7 +16,7 @@
 #import "LCCellsViewController.h"
 #import "LCTableStyleViewController.h"
 
-@interface LCViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface LCViewController ()<UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 

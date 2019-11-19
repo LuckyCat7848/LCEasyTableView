@@ -25,10 +25,15 @@ return class;\
 
 @protocol LCCellDataProtocol <NSObject>
 
-@required
+@optional
 
 @property (nonatomic, assign) CGFloat cellHeight;
 
+/** 可用于数组多种cell样式,增加类型方便处理逻辑 */
+@property (nonatomic, assign) NSInteger identityType;
+
+
+/** 需提供cell类 */
 + (Class)cellClass;
 
 @end

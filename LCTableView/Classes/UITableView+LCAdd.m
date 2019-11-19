@@ -76,7 +76,7 @@ static const void *kLCTableViewIsSectionsStyle = &kLCTableViewIsSectionsStyle;
 - (LCTableViewProxy *)proxy {
     LCTableViewProxy *proxy = objc_getAssociatedObject(self, kLCTableViewProxy);
     if (!proxy) {
-        proxy = [[LCTableViewProxy alloc] init];
+        proxy = [LCTableViewProxy alloc];
         self.proxy = proxy;
     }
     return proxy;

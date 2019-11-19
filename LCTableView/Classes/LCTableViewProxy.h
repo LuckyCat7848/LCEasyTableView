@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LCTableViewProxy : NSObject
+@interface LCTableViewProxy : NSProxy
 
 /** 默认imp实现代理方法 */
 @property (nonatomic, weak) id<UITableViewDelegate, UITableViewDataSource> impDelegate;
