@@ -80,6 +80,7 @@
         // 开关
         UISwitch *aSwitch = (UISwitch *)self.actionView;
         if (!aSwitch || ![aSwitch isKindOfClass:[UISwitch class]]) {
+            aSwitch.hidden = YES;
             aSwitch = [[UISwitch alloc] init];
             [aSwitch addTarget:self action:@selector(accessoryTapAction) forControlEvents:UIControlEventTouchUpInside];
             self.actionView = aSwitch;
@@ -89,6 +90,7 @@
         // 图片
         UIImageView *imageView = (UIImageView *)self.actionView;
         if (!imageView || ![imageView isKindOfClass:[UIImageView class]]) {
+            imageView.hidden = YES;
             imageView = [[UIImageView alloc] init];
             imageView.contentMode = UIViewContentModeScaleAspectFit;
             
@@ -102,7 +104,7 @@
     } else {
         _actionView.hidden = YES;
     }
-    if (!_actionView.hidden && !self.actionView.superview) {
+    if (!_actionView.hidden && !_actionView.superview) {
         [self.contentView addSubview:self.actionView];
     }
 
