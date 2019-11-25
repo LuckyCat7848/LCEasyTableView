@@ -4,14 +4,14 @@
 
 嗯。。。因为懒，总是写 UITableView 的代理方法真的很烦，尤其是表格界面。
 
-先抛出[代码](https://github.com/LuckyCat7848/LCTableView)。
+先抛出[代码](https://github.com/LuckyCat7848/LCEasyTableView)。
 
 ## 一、使用超简单
 
 想要的就是这个样子的：
 
 ```
-pod `LCTableView`
+pod `LCEasyTableView`
 ```
 
 使用时：
