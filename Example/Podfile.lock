@@ -1,11 +1,11 @@
 PODS:
-  - LCTableView (0.1.0)
+  - LCEasyTableView (0.2.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
-  - LCTableView (from `../`)
+  - LCEasyTableView (from `../`)
   - YYKit
 
 SPEC REPOS:
@@ -13,13 +13,13 @@ SPEC REPOS:
     - YYKit
 
 EXTERNAL SOURCES:
-  LCTableView:
+  LCEasyTableView:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LCTableView: 4268fa6f2a9850c653b7e71591c5b54ff83da740
+  LCEasyTableView: 9a595abf5716d02325f679f25a9b0e9777428a4f
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 630ecccb5c6b49f00bfc0b5c402aa23f4638c5af
+PODFILE CHECKSUM: 0e214e3b62004d615ac871848f3a375d1a9e9441
 
 COCOAPODS: 1.6.1

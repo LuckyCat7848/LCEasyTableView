@@ -1,0 +1,6 @@
+framework module LCEasyTableView {
+  umbrella header "LCEasyTableView-umbrella.h"
+
+  export *
+  module * { export * }
+}

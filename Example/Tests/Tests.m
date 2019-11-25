@@ -1,8 +1,8 @@
 //
-//  LCTableViewTests.m
-//  LCTableViewTests
+//  LCEasyTableViewTests.m
+//  LCEasyTableViewTests
 //
-//  Created by LuckyCat7848 on 01/09/2019.
+//  Created by LuckyCat7848 on 11/25/2019.
 //  Copyright (c) 2019 LuckyCat7848. All rights reserved.
 //
 

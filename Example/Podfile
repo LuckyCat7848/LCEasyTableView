@@ -2,12 +2,12 @@ use_frameworks!
 
 platform :ios, '8.0'
 
-target 'LCTableView_Example' do
-  pod 'LCTableView', :path => '../'
+target 'LCEasyTableView_Example' do
+  pod 'LCEasyTableView', :path => '../'
 
   pod 'YYKit'
-  
-  target 'LCTableView_Tests' do
+
+  target 'LCEasyTableView_Tests' do
     inherit! :search_paths
 
     
